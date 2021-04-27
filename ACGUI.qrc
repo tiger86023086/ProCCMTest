@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="AC">
+    <file>ACGUI.png</file>
+  </qresource>
+</RCC>
