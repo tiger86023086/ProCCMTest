@@ -202,7 +202,7 @@ class AirCondition(QDialog,
             else:
                   pass
 
-            print(self.flgacrun)
+            #print(self.flgacrun)
 
       @Slot()
       def on_pushButtonACStop_clicked(self):
@@ -272,12 +272,12 @@ class AirCondition(QDialog,
       def on_pushButtonBLSub_clicked(self):
 
             if self.flgacrun:
-                  blvalue = eval(self.lineEditBLVal.Text())
+                  blvalue = eval(self.lineEditBLVal.text())
                   if blvalue == 1:
                         pass
                   else:
                        blvalue = blvalue-1 
-                       self.dictACFlg['valaacbl'] = blvalue
+                       self.dictACFlg['valacbl'] = blvalue
                        self.lineEditBLVal.setText(str(blvalue))
 
             else:
@@ -286,22 +286,83 @@ class AirCondition(QDialog,
       @Slot()            
       def on_pushButtonBLPlus_clicked(self):
 
-            print(self.flgacrun)
-            #print(self.lineEditBLVal.Text)
-            #print(type(self.lineEditBLVal.Text()))
-##            if self.flgacrun:
+##            print(self.flgacrun)
+##            print(self.lineEditBLVal.text())
+            #self.lineEditBLVal.setText('7')
+##            #print(type(self.lineEditBLVal.Text()))
+            if self.flgacrun:
                   
-##                  blvalue = eval(self.lineEditBLVal.Text())
+                  blvalue = eval(self.lineEditBLVal.text())
 ##                  print(blvalue)
-##                  if blvalue == 7:
-##                        pass
-##                  else:
-##                       blvalue = blvalue+1 
-##                       self.dictACFlg['valaacbl'] = blvalue
-##                       self.lineEditBLVal.setText(str(blvalue))
+                  if blvalue == 7:
+                        pass
+                  else:
+                       blvalue = blvalue+1 
+                       self.dictACFlg['valacbl'] = blvalue
+                       self.lineEditBLVal.setText(str(blvalue))
 
-##            else:
-##                  pass
+            else:
+                  pass
+
+      @Slot()
+      def on_pushButtonLTempSub_clicked(self):
+
+            if self.flgacrun:
+                    ltempvalue = eval(self.lineEditTempL.text())
+                    if ltempvalue == 16:
+                          pass
+                    else:
+                         ltempvalue = ltempvalue-0.5 
+                         self.dictACFlg['valacltemp'] = ltempvalue
+                         self.lineEditTempL.setText(str(ltempvalue))                 
+
+            else:
+                    pass
+
+      @Slot()
+      def on_pushButtonLTempPlus_clicked(self):
+
+            if self.flgacrun:
+                    ltempvalue = eval(self.lineEditTempL.text())
+                    if ltempvalue == 32:
+                          pass
+                    else:
+                         ltempvalue = ltempvalue+0.5 
+                         self.dictACFlg['valacltemp'] = ltempvalue
+                         self.lineEditTempL.setText(str(ltempvalue))
+
+            else:
+                  pass
+
+      @Slot()
+      def on_pushButtonRTempSub_clicked(self):
+
+            if self.flgacrun:
+                    rtempvalue = eval(self.lineEditTempR.text())
+                    if rtempvalue == 16:
+                          pass
+                    else:
+                         rtempvalue = rtempvalue-0.5 
+                         self.dictACFlg['valacrtemp'] = rtempvalue
+                         self.lineEditTempR.setText(str(rtempvalue))
+
+            else:
+                  pass
+
+      @Slot()
+      def on_pushButtonRTempPlus_clicked(self):
+
+            if self.flgacrun:
+                    rtempvalue = eval(self.lineEditTempR.text())
+                    if rtempvalue == 32:
+                          pass
+                    else:
+                         rtempvalue = rtempvalue+0.5 
+                         self.dictACFlg['valacltemp'] = rtempvalue
+                         self.lineEditTempR.setText(str(rtempvalue))
+
+            else:
+                  pass    
             
       @Slot()            
       def on_pushButtonDEF_clicked(self):
@@ -393,6 +454,10 @@ class AirCondition(QDialog,
                   
             else:
                   pass
+
+    
+
+    
 ##
 ##      @Slot()
 ##      def on_pushButtonSigStart_clicked(self):
