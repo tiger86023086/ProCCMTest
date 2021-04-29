@@ -11,7 +11,7 @@
 #  ------------------------------------------------------------------
 #  Author : Li Yonghu
 #  Build: 24.04.2021
-#  Last change: 26.04.2021 Li Yonghu 
+#  Last change: 29.04.2021 Li Yonghu 
 #
 #  Language: Python 3.7  PyQt5.15.2
 #  ------------------------------------------------------------------
@@ -45,12 +45,17 @@ import dbthread
 class MainWin(QMainWindow,
            ui_MainWindow.Ui_MainWindow):
 
+      canbox  = Signal(str)
+      dbfile = Signal(str)
+
       def __init__(self,parent=None):
             super(MainWin,self).__init__(parent)
 
             self.__diaexec = False
-            self.canbox = ''
-            self.DBCdir = ''
+
+            self.acdlg=AirCondition(parent=self)
+            self.canbox.connect(self.acdlg.getdata1)
+            self.dbfile.connect(self.acdlg.getdata2)
 ##            self.__startflg = False
 ##            self.__stopflg = False
 ##
@@ -77,8 +82,8 @@ class MainWin(QMainWindow,
             self.acdlg.show()
 
             #if self.acdlg.exec_():
-            self.acdlg.canbox = self.canbox
-            self.acdlg.dbfile = self.DBCdir
+##            self.acdlg.canbox = self.canbox
+##            self.acdlg.dbfile = self.DBCdir
 
             
 
@@ -92,10 +97,13 @@ class MainWin(QMainWindow,
       @Slot()
       def on_pushButtonDBC_clicked(self):
             
-            DBCdir=QFileDialog.getExistingDirectory(self,"Select DBC",QString(os.getcwd()),QFileDialog.DontResolveSymlinks)
-            self.DBCdir=QDir.convertSeparators(DBCdir)
+            self.DBCdirfile,filetype=QFileDialog.getOpenFileName(self,
+                                                    "Select DBC File",
+                                                    os.getcwd(),
+                                                    "DBC Files (*.dbc);;LDF Files (*.ldf)")
+            #self.DBCdir=QDir.convertSeparators(DBCdir)
             #print type(self.DBCdir)
-            self.lineEditDBC.setText(self.DBCdir)
+            self.lineEditDBC.setText(self.DBCdirfile)
                   
       @Slot()
       def on_pushButtonOK_clicked(self):
@@ -106,7 +114,10 @@ class MainWin(QMainWindow,
             if self.__diaexec:
                   #self.textBrowser.append("aaa")
 
-                  self.canbox = self.comboBox_selectCANbox.currentText()
+                  canbox = self.comboBox_selectCANbox.currentText()
+                  self.canbox.emit(canbox)
+
+                  self.dbfile.emit(self.DBCdirfile) 
                                     
                   self.timer.start(1)
 ##                  self.thread.initialize(self.casedir,self.usermapdir,self.a2ldir,self.HILName,self.modelmapdir,\
@@ -148,13 +159,13 @@ class AirCondition(QDialog,
                             'flgacauto':0,
                             'flgacac':0,
                             'flgacrec':0,
-                            'valacbl':0,
+                            'valacbl':1,
                             'flgacdef':0,
                             'flgacwindow':0,
                             'flgacface':0,
                             'flgacfoot':0,
-                            'valacltemp':0,
-                            'valacrtemp':0,
+                            'valacltemp':22,
+                            'valacrtemp':22,
                             'flgacdual':0,
                             'flgacldef':0,
                             'flgaclauto':0}
@@ -171,14 +182,14 @@ class AirCondition(QDialog,
             self.listmessageboxfile=[]
             self.listmessageboxinsert=[]
 ##
-            self.canbox = ''
-            self.dbfile = ''
+##            self.canbox = ''
+##            self.dbfile = ''
 ##
 ##            self.timer=QTimer(self)
 ##            self.timer.timeout.connect(self.showtime)
 ##            
             self.thread=acthread.ACThread()
-##            #self.thread.result.connect(self.hsresult)
+            #self.thread.result.connect(self.hsresult)
 
             self.setModal(True)#True为模态对话框，False为非模态对话框
             
@@ -191,13 +202,18 @@ class AirCondition(QDialog,
                   self.pushButtonACStop.setStyleSheet("QPushButton{background-color: rgb(199, 237, 204);border-radius: 30px;  border: 2px groove gray;}")
                   self.flgacrun = 1
 
-##                  self.thread.initialize(self.canbox,
-##                                         self.dbfile,
-##                                         self.flgacrun,
-##                                         self.flgsigrun,
-##                                         self.dictACFlg,
-##                                         self.dictSigVal)
-##                  self.thread.start()
+##                  self.getdata1()
+##                  self.getdata2()
+
+                  print(self.canbox)
+                  print(self.dbfile)
+
+                  self.thread.initialize(self.canbox,
+                                         self.dbfile,
+                                         self.flgacrun,
+                                         self.dictACFlg,
+                                         self.dictSigVal)
+                  self.thread.start()
                   
             else:
                   pass
@@ -211,7 +227,7 @@ class AirCondition(QDialog,
                   #self.pushButtonACStart.("QPushButton:pressed{background-color: rgb(199, 237, 204);}")
                   self.pushButtonACStart.setStyleSheet("QPushButton{background-color: rgb(199, 237, 204);border-radius: 30px;  border: 2px groove gray;}")
                   self.flgacrun = 0
-##                  self.thread.wait()
+                  self.thread.wait()
             else:
                   pass
             
@@ -455,6 +471,13 @@ class AirCondition(QDialog,
             else:
                   pass
 
+      def getdata1(self,canbox):
+            self.canbox = canbox
+            print(self.canbox)
+      def getdata2(self,dbfile):
+            self.dbfile = dbfile
+            print(self.dbfile)
+            
     
 
     
@@ -511,15 +534,17 @@ class Matrix(QDialog,
       @Slot()
       def on_pushButtonDBC_clicked(self):
             
-            DBCdir=QFileDialog.getExistingDirectory(self,"Select DBC",QString(os.getcwd()),QFileDialog.DontResolveSymlinks)
-            self.DBCdir=QDir.convertSeparators(DBCdir)
+            self.DBCdir=QFileDialog.getExistingDirectory(self,"Select DBC",os.getcwd(),QFileDialog.DontResolveSymlinks)
+            #self.DBCdir=QDir.convertSeparators(DBCdir)
             #print type(self.DBCdir)
             self.lineEditDBC.setText(self.DBCdir)
 
       @Slot()
       def on_pushButtonGen_clicked(self):
             self.pushButtonGen.setEnabled(False)
-            self.thread1.initialize(self.DBCdir,self.listmessageboxfile,self.listmessageboxinsert)
+            self.thread1.initialize(self.DBCdir,
+                                    self.listmessageboxfile,
+                                    self.listmessageboxinsert)
             self.timer1.start(1)
             self.thread1.start()            
 
