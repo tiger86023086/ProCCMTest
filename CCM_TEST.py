@@ -53,15 +53,16 @@ class MainWin(QMainWindow,
 
             self.__diaexec = False
 
-            self.acdlg=AirCondition(parent=self)
-            self.canbox.connect(self.acdlg.getdata1)
-            self.dbfile.connect(self.acdlg.getdata2)
+           
 ##            self.__startflg = False
 ##            self.__stopflg = False
 ##
             self.listmessagebox=[]
             self.error=False
 ##            self.progressvalue=[]
+            self.canbox = ''
+            self.dbfile = ''
+            
 
             self.timer=QTimer(self)
             self.timer.timeout.connect(self.showtime)            
@@ -79,7 +80,10 @@ class MainWin(QMainWindow,
       def on_AirCondition_triggered(self):
             #print('aa')
             self.acdlg=AirCondition(parent=self)
+            self.acdlg.getdata(self.canbox,self.dbfile)           
+            
             self.acdlg.show()
+            self.acdlg.exec_()
 
             #if self.acdlg.exec_():
 ##            self.acdlg.canbox = self.canbox
@@ -111,29 +115,9 @@ class MainWin(QMainWindow,
             self.pushButtonOK.setEnabled(False)
             self.pushButtonOK.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);"\
                                             "border-radius: 30px;  border: 2px groove gray;}")            
-            if self.__diaexec:
-                  #self.textBrowser.append("aaa")
+            self.canbox = self.comboBoxSelectCANbox.currentText()
+            self.dbfile = self.DBCdirfile                  
 
-                  canbox = self.comboBox_selectCANbox.currentText()
-                  self.canbox.emit(canbox)
-
-                  self.dbfile.emit(self.DBCdirfile) 
-                                    
-                  self.timer.start(1)
-##                  self.thread.initialize(self.casedir,self.usermapdir,self.a2ldir,self.HILName,self.modelmapdir,\
-##                  self.listmessagebox,self.progressvalue,self.error)
-##                  self.thread.start()
-
-##                  self.diaprogress = progress(parent=None)
-##                  self.diaprogress.show()
-                  
-                  
-            #self.textBrowser.append("aaa")
-      
-##      def selectionchange(self):
-##            
-##            self.canbox = self.comboBoxSelectCANbox.currentText()
-##            self.pushButtonOK.setEnabled(True)
             
       @Slot()
       def on_pushButtonClear_clicked(self):
@@ -471,12 +455,12 @@ class AirCondition(QDialog,
             else:
                   pass
 
-      def getdata1(self,canbox):
+      def getdata(self,canbox,dbfile):
             self.canbox = canbox
-            print(self.canbox)
-      def getdata2(self,dbfile):
             self.dbfile = dbfile
             print(self.dbfile)
+            print(self.canbox)
+      
             
     
 
