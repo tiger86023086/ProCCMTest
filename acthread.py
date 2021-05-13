@@ -11,7 +11,7 @@
 #  ------------------------------------------------------------------
 #  Author : Li Yonghu
 #  Build: 24.04.2021
-#  Last change: 26.04.2021 Li Yonghu 
+#  Last change: 12.05.2021 Li Yonghu 
 #
 #  Language: Python 3.7  PyQt5.15.2
 #  ------------------------------------------------------------------
@@ -37,6 +37,7 @@ from signalbit import canconvert
 
 
 class ACThread(QThread):
+      result = Signal(bool)
       
       def __init__(self,parent=None):
             super(ACThread,self).__init__(parent)
@@ -70,7 +71,8 @@ class ACThread(QThread):
                                  self.dictSigVal)
             #print 'cccc'
             if reflag == True:
-                  self.wait()
+                  pass
+                  #self.wait()
                   #self.finished.emit(self.completed)
             else:
                  self.wait()
@@ -151,13 +153,18 @@ class ACThread(QThread):
                                             pass
                                     except:
                                         pass
-      ##                                print(len(list(tasks.keys())))
-      ##                                if len(list(tasks.keys())) != 0:
-      ##                                      if canbox == 'canalystii':
-      ##                                            for tkey in list(tasks.keys()):
-      ##                                                  tasks[tkey].stop()
-      ##                                      else:
-      ##                                            pass
+
+##                                    print('111111')
+##                                    print(len(list(tasks.keys())))
+                                    if len(list(tasks.keys())) != 0:
+                                          if canbox == 'canalystii':
+                                                for tkey in list(tasks.keys()):
+                                                      tasks[tkey].stop()
+                                          else:
+                                                pass
+                                          
+                                print('acthread end')
+                              
                                 return True
                           except Exception as e:
                                 print('In AC Thread,There is some error!')

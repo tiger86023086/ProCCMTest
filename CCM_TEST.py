@@ -11,7 +11,7 @@
 #  ------------------------------------------------------------------
 #  Author : Li Yonghu
 #  Build: 24.04.2021
-#  Last change: 29.04.2021 Li Yonghu 
+#  Last change: 12.05.2021 Li Yonghu 
 #
 #  Language: Python 3.7  PyQt5.15.2
 #  ------------------------------------------------------------------
@@ -83,13 +83,7 @@ class MainWin(QMainWindow,
             self.acdlg.getdata(self.canbox,self.dbfile)           
             
             self.acdlg.show()
-            self.acdlg.exec_()
-
-            #if self.acdlg.exec_():
-##            self.acdlg.canbox = self.canbox
-##            self.acdlg.dbfile = self.DBCdir
-
-            
+            self.acdlg.exec_()            
 
       @Slot()            
       def on_DBCreate_triggered(self):
@@ -173,7 +167,7 @@ class AirCondition(QDialog,
 ##            self.timer.timeout.connect(self.showtime)
 ##            
             self.thread=acthread.ACThread()
-            #self.thread.result.connect(self.hsresult)
+            self.thread.result.connect(self.hsresult)
 
             self.setModal(True)#True为模态对话框，False为非模态对话框
             
@@ -212,6 +206,8 @@ class AirCondition(QDialog,
                   self.pushButtonACStart.setStyleSheet("QPushButton{background-color: rgb(199, 237, 204);border-radius: 30px;  border: 2px groove gray;}")
                   self.flgacrun = 0
                   self.thread.wait()
+                  
+                  
             else:
                   pass
             
@@ -461,39 +457,8 @@ class AirCondition(QDialog,
             print(self.dbfile)
             print(self.canbox)
       
-            
-    
-
-    
-##
-##      @Slot()
-##      def on_pushButtonSigStart_clicked(self):
-##            if not self.flgsigrun:
-##                  self.pushButtonSigStart.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0)"\
-##                                                        "border-radius: 30px;  border: 2px groove gray;}")
-##                  self.flgsigrun = 1
-##            else:
-##                  pass
-##
-##      @Slot()
-##      def on_pushButtonSigStop_clicked(self):
-##            if self.flgsigrun:
-##                  self.pushButtonSigStop.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0)"\
-##                                                       "border-radius: 30px;  border: 2px groove gray;}")
-##                  #self.pushButtonACStart.("QPushButton:pressed{background-color: rgb(199, 237, 204);}")
-##                  self.pushButtonSigStart.setStyleSheet("QPushButton{background-color: rgb(199, 237, 204)"\
-##                                                        "border-radius: 30px;  border: 2px groove gray;}")
-##                  self.flgsigrun = 0
-##            else:
-##                  pass
-
-##      def showtime(self):
-##            pass
-##
-##      def hsresult(self):
-##            self.thread.wait()
-##            self.timer.stop()
-            
+      def hsresult(self):
+            self.thread.wait()
             
 
 class Matrix(QDialog,
