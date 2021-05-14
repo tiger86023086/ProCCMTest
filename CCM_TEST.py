@@ -205,7 +205,15 @@ class AirCondition(QDialog,
                   #self.pushButtonACStart.("QPushButton:pressed{background-color: rgb(199, 237, 204);}")
                   self.pushButtonACStart.setStyleSheet("QPushButton{background-color: rgb(199, 237, 204);border-radius: 30px;  border: 2px groove gray;}")
                   self.flgacrun = 0
-                  self.thread.wait()
+
+                  self.thread.initialize(self.canbox,
+                                         self.dbfile,
+                                         self.flgacrun,
+                                         self.dictACFlg,
+                                         self.dictSigVal)
+                  self.thread.start()
+                  
+                  print('sssss')
                   
                   
             else:
