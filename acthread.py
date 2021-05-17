@@ -22,7 +22,7 @@
 
 # Module Imports
 
-from PyQt5.QtCore import (Qt,QThread,QMutex)
+from PyQt5.QtCore import (Qt,QThread,QMutex,QObject)
 from PyQt5.QtCore import pyqtSignal as Signal
 from PyQt5.QtCore import pyqtSlot as Slot
 import time,os
@@ -38,6 +38,7 @@ from signalbit import canconvert
 
 class ACThread(QThread):
       result = Signal(bool)
+      cantrx = Signal(object)
       
       def __init__(self,parent=None):
             super(ACThread,self).__init__(parent)           
@@ -68,7 +69,7 @@ class ACThread(QThread):
             #print 'bbbb'
             #while self.working ==True:
                   
-            reflag=self.ACCreate(self.canbox,
+            reflag,mycantrx=self.ACCreate(self.canbox,
                                  self.dbfile,
                                  self.flgacrun,
                                  self.dictACFlg,
@@ -76,13 +77,14 @@ class ACThread(QThread):
                   #self.sleep(5)
             #print 'cccc'
             if reflag == True:
-                  pass
+                  self.result.emit(True)
+                  self.cantrx.emit(mycantrx)
                   #self.wait()
                   #self.finished.emit(self.completed)
             else:
                  self.wait()
 
-            self.result.emit(True)
+            #self.result.emit(True)
 
       def ACCreate(self,
                    canbox,
