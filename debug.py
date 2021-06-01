@@ -30,94 +30,157 @@ from cantrx import cantrx
 from signalbit import canconvert
 
 def ACCreate(canbox,
-               dbfile,
-               flgacrun,
-               dictACFlg,
-               dictSigVal):
-
-        listmessagebox = ''#temporary
+             dbfile,
+             flgacrun,
+             dictACFlg,
+             dictSigVal):
+            try:
+                    listmessagebox = ''#temporary
         
-        mapdict = mapread('map.xls',listmessagebox)
-        dictsig = {}
-        if dbfile != '':
-              mycanconv = canconvert()
-              mycanconv.initcandb(dbfile)
+                    mapdict = mapread('map.xls',listmessagebox)
+                    dictsig = {}
+                    if dbfile != '':
+                          mycanconv = canconvert()
+                          mycanconv.initcandb(dbfile)
 
-              tasks={}
-              
-              try:
-                    
-                    if flgacrun:
-
-                        iterdictac = iter(dictACFlg)
-                        
-                        while True:
-                              try:
-                                    dictkey = next(iterdictac)
-                                    [CANsigTx,CANsigRx]= mapdict[dictkey]
-                                    CANsigTxVal = dictACFlg[dictkey]
-                                    dictsig[CANsigTx] = CANsigTxVal
-                              except StopIteration:
-                                    break
-
-                        iterdictsig = iter(dictSigVal)
-                        
-                        while True:
-                              try:
-                                    dictkey = next(iterdictsig)
-                                    [CANsigTx,CANsigRx]= mapdict[dictkey]
-                                    CANsigTxVal = dictSigVal[dictkey]
-                                    dictsig[CANsigTx] = CANsigTxVal
-                              except StopIteration:
-                                    break
-
+                          tasks={}
+                          
+                          try:
                                 
-                        mysigdata,myid  = mycanconv.encodemsg(dictsig)
+                                if flgacrun:
 
-                        mycantrx = cantrx()
-
-                        mylistmsg = mycantrx.clustermsg(mysigdata,myid)
+                                    iterdictac = iter(dictACFlg)
                                     
-                        if canbox == 'canalystii':
-                              mycantrx.initcan(canbox,0,500000)                             
+                                    while True:
+                                          try:
+                                                dictkey = next(iterdictac)
+                                                [CANsigTx,CANsigRx]= mapdict[dictkey]
+                                                CANsigTxVal = dictACFlg[dictkey]
+                                                dictsig[CANsigTx] = CANsigTxVal
+                                          except StopIteration:
+                                                break
+
+                                    iterdictsig = iter(dictSigVal)
+                                    
+                                    while True:
+                                          try:
+                                                dictkey = next(iterdictsig)
+                                                [CANsigTx,CANsigRx]= mapdict[dictkey]
+                                                CANsigTxVal = dictSigVal[dictkey]
+                                                dictsig[CANsigTx] = CANsigTxVal
+                                          except StopIteration:
+                                                break
+
+                                            
+                                    mysigdata,myid  = mycanconv.encodemsg(dictsig)
+
+                                    mycantrx = cantrx()
+
+                                    mylistmsg = mycantrx.clustermsg(mysigdata,myid)
+                                                
+                                    if canbox == 'canalystii':
+                                          mycantrx.initcan(canbox,0,500000)                             
+                                          
+                                          tasks={}
+                                          for msg in mylistmsg:
+                      
+                                              mymsg = msg[0]
+                                              #print(type(mymsg))
+                                              mycycle = float(msg[1]/1000)
+                                              #print(type(mycycle))
+                                              tasks[mymsg] = mycantrx.sendmsgperiod(mymsg,mycycle)
+                                              #counter =counter + 1
+                                              #print(tasks)
+                                    print('acthread true end')
+
+                                else:
+
+                                    iterdictac = iter(dictACFlg)
+                                    
+                                    while True:
+                                          try:
+                                                dictkey = next(iterdictac)
+                                                [CANsigTx,CANsigRx]= mapdict[dictkey]
+                                                CANsigTxVal = dictACFlg[dictkey]
+                                                dictsig[CANsigTx] = CANsigTxVal
+                                          except StopIteration:
+                                                break
+
+                                    iterdictsig = iter(dictSigVal)
+                                    
+                                    while True:
+                                          try:
+                                                dictkey = next(iterdictsig)
+                                                [CANsigTx,CANsigRx]= mapdict[dictkey]
+                                                CANsigTxVal = dictSigVal[dictkey]
+                                                dictsig[CANsigTx] = CANsigTxVal
+                                          except StopIteration:
+                                                break
+
+                                            
+                                    mysigdata,myid  = mycanconv.encodemsg(dictsig)
+
+                                    mycantrx = cantrx()
+
+                                    mylistmsg = mycantrx.clustermsg(mysigdata,myid)
+                                                
+                                    if canbox == 'canalystii':
+                                          mycantrx.initcan(canbox,0,500000)                             
+                                          
+                                          tasks={}
+                                          for msg in mylistmsg:
+                      
+                                              mymsg = msg[0]
+                                              #print(type(mymsg))
+                                              mycycle = float(msg[1]/1000)
+                                              #print(type(mycycle))
+                                              tasks[mymsg] = mycantrx.sendmsgperiod(mymsg,mycycle)
+                                              #counter =counter + 1
+                                              #print(tasks)
+                                      
+                                
+                                    try:
+                                        if isinstance(mycantrx,cantrx):
+                                            mycantrx.stopsendperiod()
+                                            print('mycantrx')
+                                            
+                                        else:
+                                            pass
+                                    except:
+                                        pass
+
+##                                    print('111111')
+##                                    print(len(list(tasks.keys())))
+##                                    if len(list(tasks.keys())) != 0:
+##                                          if canbox == 'canalystii':
+##                                                for tkey in list(tasks.keys()):
+##                                                      tasks[tkey].stop()
+##                                          else:
+##                                                pass
+                                          
+                                print('acthread false end')
                               
-                              tasks={}
-                              for msg in mylistmsg:
-          
-                                  mymsg = msg[0]
-                                  print(type(mymsg))
-                                  mycycle = float(msg[1]/1000)
-                                  print(type(mycycle))
-                                  tasks[mymsg] = mycantrx.sendmsgperiod(mymsg,mycycle)
-                                  #counter =counter + 1
-                                  print(tasks)
+                                return True,mycantrx
+                          except Exception as e:
+                                print('In AC Thread,There is some error!')
+                                print(traceback.print_exc())
+                                return False,None
 
                     else:
-                        try:
-                            if isinstance(mycantrx,cantrx):
-                                mycantrx.stopsendperiod()
-                            else:
-                                pass
-                        except:
-                            pass
-##                            
-##                          if len(list(tasks.keys())) != 0:
-##                                if canbox == 'canalystii':
-##                                      for tkey in list(tasks.keys()):
-##                                            tasks[tkey].stop()
-##                                else:
-##                                      pass
-              except Exception as e:
-                    print('In AC Thread,There is some error!')
-                    print(traceback.print_exc())
+                          print('There is no dbc!')
+                          return False,None
 
-        else:
-              print('There is no dbc!')
+            except Exception as e:
+                  print(traceback.print_exc())
+                  return False,None
 
 if __name__ == "__main__":
+    import time
     canbox = 'canalystii'
     dbfile = 'E:\\Project\\ProCCMTest\\ProCCMTest\\DBC\\M891改制冬标车版本_Body.dbc'
-    flgacrun=0
+    flgacrun=1
+    flagrun =None
+    objectcantrx = None
     dictACFlg={'flgacon':0,
             'flgacauto':0,
             'flgacac':0,
@@ -138,4 +201,11 @@ if __name__ == "__main__":
                  'ptcpwr':0,
                  'comppwr':0}
 
-    ACCreate(canbox,dbfile,flgacrun,dictACFlg,dictSigVal)
+    flagrun,objectcantrx = ACCreate(canbox,dbfile,flgacrun,dictACFlg,dictSigVal)
+
+    time.sleep(20)
+
+    objectcantrx.stopsendperiod()
+
+    
+    

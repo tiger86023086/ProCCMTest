@@ -8,7 +8,7 @@ from PyQt5 import QtWidgets,QtCore,QtGui,uic
 
 app = QtWidgets.QApplication(sys.argv)
 window = QtWidgets.QMainWindow()
-uic.loadUi(('E:\\Project\\ProCCMTest\\ProCCMTest\\UI\\ui_MainWindow.ui'), window)
+uic.loadUi(('E:\\Project\\ProCCMTest\\ProCCMTest\\UI\\MainWindowT1.ui'), window)
 
 style = qdarkstyle.load_stylesheet(palette=DarkPalette)
 #style = qdarkstyle.load_stylesheet(palette=LightPalette)

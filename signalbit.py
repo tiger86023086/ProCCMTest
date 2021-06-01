@@ -55,8 +55,35 @@ class canconvert():
              return mydata
 
      def decodemsg(self,msgid,msgdata):
-        mydictsig = self.mydb(msgid,msgdata)
+        mydictsig = self.mydb.decode_message(msgid,msgdata)
         return mydictsig
+    
+     def idserach(self,listsig):
+
+        listid = list()
+
+        myiter = iter(listsig)        
+        while True:
+            try:
+                mysignal = next(myiter)
+                sigdetail = self.list_postion(mysignal,1)
+
+                if sigdetail !=None:
+                    mymsgid = eval(sigdetail.ID)                    
+                else:
+                    print('cannot find the signal--%s',mysignal)
+                    sys.exit()
+                if mymsgid != '':
+                    if not mymsgid in listid:
+
+                        listid.append(mymsgid)
+                
+            except StopIteration:
+                
+                break
+            
+            
+        return listid        
      def encodemsg(self,dict_signals):
         mydict = {}
         mydatadict={}
@@ -193,7 +220,13 @@ if __name__=='__main__':
     
     #aa=mycan.list_postion('CCM_CcmBmsReqAcPower',1)
     mycan.initcandb('E:\\Project\\CCM_Test\\M891改制冬标车版本_Body.dbc')
-    #mysigdata,myid = mycan.encodemsg({'IVI_BlowerLvlSet':7,'IVI_CCMDrvTempSet':32})
-    mysigdata,myid = mycan.encodemsg({'IVI_BlowerLvlSet':7,'IVI_CCMDrvTempSet':32,'IVI_HourSet':12})
-    print(mysigdata,myid)
+
+##    #encoding debug
+##    #mysigdata,myid = mycan.encodemsg({'IVI_BlowerLvlSet':7,'IVI_CCMDrvTempSet':32})
+##    mysigdata,myid = mycan.encodemsg({'IVI_BlowerLvlSet':7,'IVI_CCMDrvTempSet':32,'IVI_HourSet':12})
+##    print(mysigdata,myid)
+
+    #decoding debug
+    mylist  = mycan.idserach(['IVI_BlowerLvlSet','IVI_CCMDrvTempSet','ESP_VehicleSpeed'])
+    print(mylist)
     

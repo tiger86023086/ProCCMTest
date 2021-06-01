@@ -15,10 +15,24 @@ print(mybus)
 ##mybus.stop_all_periodic_tasks()
 ##time.sleep(1000)
 
-while True:
+#while True:
+for i in range(4):
     msg = mybus.recv()
     if msg is not None:
         print(msg)
-    else:
-        print(msg)
+        print(msg.arbitration_id)
+        print(type(msg.arbitration_id))
+        if msg.arbitration_id == 838:
+            print('yes')
+        if msg.arbitration_id == 839:
+            print('yes1')
+        if msg.arbitration_id == 837:
+            print('yes2')
+        if msg.arbitration_id == 0x340:
+            print('yes3')
+
+
+
+##else:
+##    print(msg)
 mybus.shutdown()

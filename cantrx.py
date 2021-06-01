@@ -73,6 +73,8 @@ class cantrx:
                 mymsg = self.mybus.recv()
         except:
             mymsg = self.mybus.recv()
+        return mymsg
+    
     def clustermsg(self,datadict,cycdict):
 
         listmymsg = []
@@ -114,6 +116,9 @@ if __name__=='__main__':
     mycan.initcandb('E:\\Project\\CCM_Test\\M891改制冬标车版本_Body.dbc')
     mysigdata,myid = mycan.encodemsg({'IVI_BlowerLvlSet':7,'IVI_CCMDrvTempSet':32,
                                       'IVI_HourSet':12,'ESP_VehicleSpeed':20})
+
+    mysigdata1,myid1 = mycan.encodemsg({'IVI_BlowerLvlSet':2,'IVI_CCMDrvTempSet':32,
+                                      'IVI_HourSet':12,'ESP_VehicleSpeed':20})
     
     mycantrx = cantrx()
     mycantrx.initcan('canalystii',0,500000)
@@ -130,6 +135,7 @@ if __name__=='__main__':
 ##    print(bb)
 ##    time.sleep(100)
     mylistmsg = mycantrx.clustermsg(mysigdata,myid)
+    mylistmsg1 = mycantrx.clustermsg(mysigdata1,myid1)
     tasks={}
     
     for msg in mylistmsg:
@@ -141,12 +147,27 @@ if __name__=='__main__':
         tasks[mymsg] = mycantrx.sendmsgperiod(mymsg,mycycle)
         #counter =counter + 1
         print(tasks)
+
+    for i in range(5):
+
+        for msg in mylistmsg1:
+            
+            mymsg = msg[0]
+            mycantrx.sendmsg(mymsg)
+            time.sleep(0.01)
+            
+##            print(type(mymsg))
+##            mycycle = float(msg[1]/1000)
+##            print(type(mycycle))
+##            tasks[mymsg] = mycantrx.sendmsgperiod(mymsg,mycycle)
+##            #counter =counter + 1
+##            print(tasks)
     
        
                #assert isinstance(task, can.CyclicSendTaskABC)
     
     #mycantrx.mysendmsgp(mylistmsg)
-    time.sleep(10)
+    time.sleep(100)
 
     for tkey in list(tasks.keys()):
         tasks[tkey].stop()
