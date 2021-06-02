@@ -400,9 +400,6 @@ border-style: outset;</string>
                    <height>20</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -451,9 +448,6 @@ border-style: outset;</string>
                    <width>20</width>
                    <height>20</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -504,9 +498,6 @@ border-style: outset;</string>
                    <height>20</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -556,9 +547,6 @@ border-style: outset;</string>
                    <height>20</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -607,9 +595,6 @@ border-style: outset;</string>
                    <width>20</width>
                    <height>20</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -661,7 +646,7 @@ border-style: outset;</string>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string/>
@@ -712,9 +697,6 @@ border-style: outset;</string>
                    <height>20</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -763,9 +745,6 @@ border-style: outset;</string>
                    <width>20</width>
                    <height>20</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(0, 255, 0);</string>
                  </property>
                  <property name="text">
                   <string/>

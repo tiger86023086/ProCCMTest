@@ -49,9 +49,13 @@ class myctrlcan:
         self.mycantrx = cantrx()
                             
         if canbox == 'canalystii':
-            self.mycantrx.initcan(canbox,0,500000)
-            mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
-            print(mymsgbox)
+            try:
+                self.mycantrx.initcan(canbox,0,500000)
+                mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
+                print(mymsgbox)
+            except Exception as e:                  
+              mymsgbox = traceback.print_exc()
+              print(mymsgbox)
         else:
             mymsgbox = 'You select null canbox!'
             print(mymsgbox)
@@ -128,16 +132,21 @@ class myctrlcan:
 
         mysigdict = dict()
         mylistid = self.mycanconv.idserach(mysiglist)
+        #print(mylistid)
 
         for i in range(len(mylistid)):
-            canrecvmsg = self.mycantrx.recvmsg()
-##            print(canrecvmsg.arbitration_id)
-##            print(mylistid[i])
-            if canrecvmsg.arbitration_id in mylistid :
-                dicttemp = self.mycanconv.decodemsg(canrecvmsg.arbitration_id,
-                                           canrecvmsg.data)
-                mysigdict.update(dicttemp)
-                print('qqqq')
+
+            while True:
+                canrecvmsg = self.mycantrx.recvmsg()
+##                print(canrecvmsg.arbitration_id)
+##                print(mylistid[i])
+                if canrecvmsg.arbitration_id == mylistid[i] :
+                    dicttemp = self.mycanconv.decodemsg(canrecvmsg.arbitration_id,
+                                               canrecvmsg.data)
+                    mysigdict.update(dicttemp)
+                    break
+                #print('qqqq')
+            #time.sleep(0.5)
         return mysigdict
     def mydelcan(self):
         self.mycantrx.delcan()
@@ -149,20 +158,20 @@ if __name__ == "__main__":
     flgacrun=1
     flagrun =None
     objectcantrx = None
-    dictACFlg={'flgacon':0,
-            'flgacauto':0,
-            'flgacac':0,
-            'flgacrec':0,
-            'valacbl':1,
-            'flgacdef':0,
-            'flgacwindow':0,
-            'flgacface':0,
-            'flgacfoot':0,
-            'valacltemp':22,
-            'valacrtemp':22,
-            'flgacdual':0,
-            'flgacldef':0,
-            'flgaclauto':0}
+    dictACFlg={'flgacon':3,
+                'flgacauto':3,
+                'flgacac':2,
+                'flgacrec':3,
+                'valacbl':7,
+                'flgacdef':3,
+                'flgacwindow':7,
+                'flgacface':7,
+                'flgacfoot':7,
+                'valacltemp':22,
+                'valacrtemp':22,
+                'flgacdual':3,
+                'flgacldef':3,
+                'flgaclauto':3}
     dictSigVal = {'vspd':0,
                  'battcooltemp':0,
                  'battheattemp':0,
@@ -179,7 +188,7 @@ if __name__ == "__main__":
             'flgacac':0,
             'flgacrec':0,
             'valacbl':1,
-            'flgacdef':0,
+            'flgacdef':1,
             'flgacwindow':0,
             'flgacface':0,
             'flgacfoot':0,
@@ -199,12 +208,7 @@ if __name__ == "__main__":
     print('aaaaaaaa')
     print(mysigdict)
     print('bbbbbbb')
-
-    
-    
-    
-
-    time.sleep(60)
+    time.sleep(20)
     mycan.mymsgstop()
 
     mycan.mydelcan

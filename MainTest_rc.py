@@ -11,7 +11,7 @@
 #  ------------------------------------------------------------------
 #  Author : Li Yonghu
 #  Build: 19.05.2021
-#  Last change: 01.06.2021 Li Yonghu 
+#  Last change: 02.06.2021 Li Yonghu 
 #
 #  Language: Python 3.7  PyQt5.15.2
 #  ------------------------------------------------------------------
@@ -41,7 +41,8 @@ from qdarkstyle.light.palette import LightPalette  # noqa: E402
 import os,sys
 import time
 
-import acthread
+import cantxthread
+import canrxthread
 import dbthread
 
 import ctrlcantrx
@@ -60,24 +61,31 @@ class MainWin(QMainWindow,
             self.listmessagebox=[]
             self.error=False
 ##            self.progressvalue=[]
-            self.canbox = ''
-            self.dbfile = ''
+##            self.canbox = ''
+##            self.dbfile = ''
             self.mycantrx = None
 
-            self.dictACFlg={'flgacon':0,
-                            'flgacauto':0,
-                            'flgacac':0,
-                            'flgacrec':0,
-                            'valacbl':1,
-                            'flgacdef':0,
-                            'flgacwindow':0,
-                            'flgacface':0,
-                            'flgacfoot':0,
-                            'valacltemp':22,
-                            'valacrtemp':22,
-                            'flgacdual':0,
-                            'flgacldef':0,
-                            'flgaclauto':0}
+            self.flagacon = False
+            self.flgacauto = False
+            self.flgacac = False
+            self.flgacrec = False
+            self.flgacdef = False
+            self.flgacwindow = False
+            self.flgacface = False
+            self.flgacfoot = False
+
+            self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
             
             self.dictSigVal={'vspd':0,
                              'battcooltemp':0,
@@ -87,7 +95,10 @@ class MainWin(QMainWindow,
 ##
             self.flgacrun = 0
             self.flgbutton = 0
-##            self.thread=acthread.ACThread()
+            self.mysigdict = dict()
+            self.txthread=cantxthread.TxThread()
+            self.rxthread = canrxthread.RxThread()
+            self.rxthread.redict.connect(self.getdata)
 
             self.timer=QTimer(self)
             self.timer.timeout.connect(self.showtime)            
@@ -129,19 +140,14 @@ class MainWin(QMainWindow,
                   
                   self.flgacrun = 1
                   self.mycantrx = None
-##                  self.getdata1()
-##                  self.getdata2()
+                  
                   canbox = self.comboBoxSelectCANbox.currentText()
                   dbfile = self.DBCdirfile
-                  self.mycantrx = myctrlcan(dbfile,canbox)
-                  mylistmsg = self.mycantrx.inittxsig(self.dictACFlg,self.dictSigVal)
+                  self.mycantrx = myctrlcan(dbfile,canbox)                  
+                  mylistmsg = self.mycantrx.inittxsig(self.dictACFlg,self.dictSigVal)                  
                   self.mycantrx.mymsgtxperiod(mylistmsg)
 
                   self.timer.start(1)
-##                  print(self.canbox)
-##                  print(self.dbfile)
-##                  print(self.flgacrun)
-##                  print(self.mycantrx)
             else:
                   pass
 
@@ -168,17 +174,40 @@ class MainWin(QMainWindow,
       def on_pushButtonON_clicked(self):
 
             if self.flgacrun:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
                   
-                  if self.dictACFlg['flgacon'] == 0:
+                  if not self.flagacon:
                         self.dictACFlg['flgacon'] = 1
                         self.pushButtonON.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacon'] == 1:
+                        
+                        
+                  elif self.flagacon:
                         self.dictACFlg['flgacon'] = 0
                         self.pushButtonON.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
-                        self.flgbutton = 1
+                        self.flgbutton = 1                        
+                        
                   else:
                         print('Error Value!')
+
+                  if self.dictACFlg['flgacon'] == 1:
+                        self.flagacon = True
+                  elif self.dictACFlg['flgacon'] == 0:
+                        self.flagacon = False
+                  else:
+                        self.flagacon = False
+                        
             else:
                   pass
             #self.pushButtonON.setStyleSheet("QPushButton:pressed{background-color: rgb(255, 0, 0)}")           
@@ -187,16 +216,37 @@ class MainWin(QMainWindow,
       def on_pushButtonAUTO_clicked(self):
 
             if self.flgacrun:
-                  if self.dictACFlg['flgacauto'] == 0:
-                        self.dictACFlg['flgacauto'] = 12
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacauto:
+                        self.dictACFlg['flgacauto'] = 1
                         self.pushButtonAUTO.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacauto'] == 1:
+                        
+                  elif self.flgacauto:
                         self.dictACFlg['flgacauto'] = 0
                         self.pushButtonAUTO.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                        
                   else:
                         print('Error Value!')
+
+                  if self.dictACFlg['flgacauto'] == 1:
+                        self.flgacauto = True
+                  elif self.dictACFlg['flgacauto'] == 0:
+                        self.flgacauto = False
+                  else:
+                        self.flgacauto = False
             else:
                   pass            
      
@@ -204,16 +254,37 @@ class MainWin(QMainWindow,
       def on_pushButtonAC_clicked(self):
 
             if self.flgacrun:
-                  if self.dictACFlg['flgacac'] == 0:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacac:
                         self.dictACFlg['flgacac'] = 1
                         self.pushButtonAC.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacac'] == 1:
+                        
+                  elif self.flgacac:
                         self.dictACFlg['flgacac'] = 0
                         self.pushButtonAC.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                        
                   else:
                         print('Error Value!')
+
+                  if self.dictACFlg['flgacac'] == 1:
+                        self.flgacac = True
+                  elif self.dictACFlg['flgacac'] == 0:
+                        self.flgacac = False
+                  else:
+                        self.flgacac = False
             else:
                   pass            
             
@@ -221,24 +292,58 @@ class MainWin(QMainWindow,
       def on_pushButtonREC_clicked(self):
 
             if self.flgacrun:
-                  if self.dictACFlg['flgacrec'] == 0:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacrec:
                         self.dictACFlg['flgacrec'] = 1
                         self.pushButtonREC.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacrec'] == 1:
+                        
+                  elif self.flgacrec:
                         self.dictACFlg['flgacrec'] = 0
                         self.pushButtonREC.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                        
                   else:
                         print('Error Value!')
+
+                  if self.dictACFlg['flgacrec'] == 1:
+                        self.flgacrec = True
+                  elif self.dictACFlg['flgacrec'] == 0:
+                        self.flgacrec = False
+                  else:
+                        self.flgacrec = False
             else:
                   pass
 
       @Slot(int)
       def on_horizontalSliderBlwrLvl_valueChanged(self,value):
             if self.flgacrun:
-                  self.dictACFlg['valacbl'] = value
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  self.dictACFlg['valacbl'] = value-1
                   self.displayBlwrLvl.display(value)
+                  self.flgbutton = 1
             else:
                   self.dictACFlg['valacbl'] = 1
                   self.displayBlwrLvl.display(1)
@@ -246,111 +351,209 @@ class MainWin(QMainWindow,
       @Slot(int)
       def on_scrollBarLeftTemp_valueChanged(self,value):
             if self.flgacrun:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
                   self.lineEditTempL.setText(str(value))
+                  self.dictACFlg['valacltemp'] = value
+                  self.flgbutton = 1
                   
       @Slot(int)
       def on_scrollBarRightTemp_valueChanged(self,value):
             if self.flgacrun:
-                  self.lineEditTempR.setText(str(value))     
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  self.lineEditTempR.setText(str(value))
+                  self.dictACFlg['valacrtemp'] = value
+                  self.flgbutton = 1
             
       @Slot()            
       def on_pushButtonDEF_clicked(self):
 
             if self.flgacrun:
-                  if self.dictACFlg['flgacdef'] == 0:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacdef:
                         self.dictACFlg['flgacdef'] = 1
                         self.pushButtonDEF.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacdef'] == 1:
+                        
+                  elif self.flgacdef:
                         self.dictACFlg['flgacdef'] = 0
                         self.pushButtonDEF.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                        
                   else:
                         print('Error Value!')
+                  if self.dictACFlg['flgacdef'] == 1:
+                        self.flgacdef = True
+                  elif self.dictACFlg['flgacdef'] == 0:
+                        self.flgacdef = False
+                  else:
+                        self.flgacdef = False
             else:
                   pass            
             
       @Slot()            
-      def on_pushButtonWindow_clicked(self):
+      def on_pushButtonWIN_clicked(self):
 
             if self.flgacrun:
-                  if self.dictACFlg['flgacwindow'] == 0:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacwindow:                        
                         self.dictACFlg['flgacwindow'] = 1
-                        self.pushButtonWindow.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                        self.pushButtonWIN.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacwindow'] == 1:
+                        
+                  elif self.flgacwindow:
                         self.dictACFlg['flgacwindow'] = 0
-                        self.pushButtonWindow.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                        self.pushButtonWIN.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                        
                   else:
                         print('Error Value!')
+
+                  if self.dictACFlg['flgacwindow'] == 1:
+                        self.flgacwindow = True
+                  elif self.dictACFlg['flgacwindow'] == 0:
+                        self.flgacwindow = False
+                  else:
+                        self.flgacwindow = False
             else:
                   pass            
                 
       @Slot()            
-      def on_pushButtonFace_clicked(self):
+      def on_pushButtonFACE_clicked(self):
 
             if self.flgacrun:
-                  if self.dictACFlg['flgacface'] == 0:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacface:
                         self.dictACFlg['flgacface'] = 1
-                        self.pushButtonFace.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                        self.pushButtonFACE.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacface'] == 1:
+                        
+                  elif self.flgacface:
                         self.dictACFlg['flgacface'] = 0
-                        self.pushButtonFace.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                        self.pushButtonFACE.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                       
                   else:
                         print('Error Value!')
+
+                  
+                  if self.dictACFlg['flgacface'] == 1:
+                        self.flgacface = True
+                  elif self.dictACFlg['flgacface'] == 0:
+                        self.flgacface = False
+                  else:
+                        self.flgacface = False
             else:
                   pass
             
       @Slot()            
-      def on_pushButtonFoot_clicked(self):
+      def on_pushButtonFOOT_clicked(self):
 
            if self.flgacrun:
-                  if self.dictACFlg['flgacfoot'] == 0:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
+                  if not self.flgacfoot:
                         self.dictACFlg['flgacfoot'] = 1
-                        self.pushButtonFoot.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                        self.pushButtonFOOT.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
-                  elif self.dictACFlg['flgacfoot'] == 1:
+                        
+                  elif self.flgacfoot:
                         self.dictACFlg['flgacfoot'] = 0
-                        self.pushButtonFoot.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                        self.pushButtonFOOT.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                         self.flgbutton = 1
+                        
                   else:
                         print('Error Value!')
-           else:
-                  pass 
 
-##      @Slot()            
-##      def on_pushButtonLDef_clicked(self):
-##
-##           if self.flgacrun:
-##                  if self.dictACFlg['flgacldef'] == 0:
-##                        self.dictACFlg['flgacldef'] = 1
-##                  elif self.dictACFlg['flgacldef'] == 1:
-##                        self.dictACFlg['flgacldef'] = 0
-##                  else:
-##                        print('Error Value!')
-##           else:
-##                  pass
-##
-##      @Slot()            
-##      def on_pushButtonLAuto_clicked(self):
-##
-##            if self.flgacrun:
-##                  if self.dictACFlg['flgaclauto'] == 0:
-##                        self.dictACFlg['flgaclauto'] = 1
-##                  elif self.dictACFlg['flgaclauto'] == 1:
-##                        self.dictACFlg['flgaclauto'] = 0
-##                  else:
-##                        print('Error Value!')
-##            else:
-##                  pass
+                  if self.dictACFlg['flgacfoot'] == 1:
+                        self.flgacfoot = True
+                  elif self.dictACFlg['flgacfoot'] == 0:
+                        self.flgacfoot = False
+                  else:
+                        self.flgacfoot = False
+           else:
+                  pass
 
       @Slot()            
       def on_radioButtonDual_clicked(self):            
 
             if self.flgacrun:
+                  self.dictACFlg={'flgacon':3,
+                            'flgacauto':3,
+                            'flgacac':2,
+                            'flgacrec':3,
+                            'valacbl':7,
+                            'flgacdef':3,
+                            'flgacwindow':7,
+                            'flgacface':7,
+                            'flgacfoot':7,
+                            'valacltemp':47.5,
+                            'valacrtemp':47.5,
+                            'flgacdual':3}
                   if self.radioButtonDual.isChecked():
                         self.dictACFlg['flgacdual'] = 1
                         self.flgbutton = 1
@@ -362,26 +565,88 @@ class MainWin(QMainWindow,
             else:
                   pass
 
-##      def getdata(self,mycantrx):
-##            self.mycantrx = mycantrx
-####            self.dbfile = dbfile
-####            print(self.dbfile)
-####            print(self.canbox)
-##      
-##      def hsresult(self):
-##            self.thread.wait()
+      def getdata(self,mydict):
+            self.mysigdict = mydict
+            
+      def showtime(self):            
 
-      def showtime(self):
-
-            if self.flgbutton:                                    
-                  mylistmsg = self.mycantrx.inittxsig(self.dictACFlg,self.dictSigVal)
-                  mysiglist = self.mycantrx.initrxsig(self.dictACFlg)
-                  #print('aaaaa')
-                  for i in range(5):
-                        #print('bbbbb') 
-                        self.mycantrx.mymsgtx(mylistmsg)
-                        time.sleep(0.004)
+            if self.flgbutton:
+                  
+                  self.txthread.init(self.mycantrx,self.dictACFlg,self.dictSigVal)                  
+                  self.txthread.start()                  
                   self.flgbutton = 0
+                  #self.txthread.wait()
+
+            if self.flgacrun:
+                  self.rxthread.init(self.mycantrx,self.dictACFlg)
+                  self.rxthread.start()
+##                 mysiglist = self.mycantrx.initrxsig(self.dictACFlg)
+##                 mysigdict = self.mycantrx.mymsgrecv(mysiglist)
+                  #print(self.mysigdict)
+                  self.display(self.mysigdict)
+
+      def display(self,mysigdict):
+            if mysigdict != {}:
+                  if mysigdict['CCM_Off'] == 1:
+                        self.displayON.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  elif mysigdict['CCM_Off'] == 0:
+                        self.displayON.setStyleSheet("QPushButton{}")
+                  else:
+                        print('Cannot recieve signal--CCM_Off ')
+
+                  if mysigdict['CCM_AUTOSts'] == 1:
+                        self.displayAUTO.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  elif mysigdict['CCM_AUTOSts'] == 0:
+                        self.displayAUTO.setStyleSheet("QPushButton{}")
+                  else:
+                        print('Cannot recieve signal--CCM_AUTOSts ')
+
+                  if mysigdict['CCM_ACSts'] == 1:
+                        self.displayAC.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  elif mysigdict['CCM_ACSts'] == 0:
+                        self.displayAC.setStyleSheet("QPushButton{}")
+                  else:
+                        print('Cannot recieve signal--CCM_ACSts ')
+
+                  if mysigdict['CCM_CycleStatus'] == 0:
+                        self.dispalyREC.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  elif mysigdict['CCM_CycleStatus'] == 1:
+                        self.dispalyREC.setStyleSheet("QPushButton{}")
+                  else:
+                        print('Cannot recieve signal--CCM_CycleStatus ')
+
+                  if mysigdict['CCM_FrontDefrostSts'] == 1:
+                        self.displayDEF.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  elif mysigdict['CCM_FrontDefrostSts'] == 0:
+                        self.displayDEF.setStyleSheet("QPushButton{}")
+                  else:
+                        print('Cannot recieve signal--CCM_FrontDefrostSts ')
+
+                  if mysigdict['CCM_ModelDisplay'] == 4:
+                        self.displayWIN.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                        self.displayFOOT.setStyleSheet("QPushButton{}")
+                        self.displayFACE.setStyleSheet("QPushButton{}")
+                  elif mysigdict['CCM_ModelDisplay'] == 0:
+                        self.displayFOOT.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                        self.displayWIN.setStyleSheet("QPushButton{}")
+                        self.displayFACE.setStyleSheet("QPushButton{}")
+                  elif mysigdict['CCM_ModelDisplay'] == 2:
+                        self.displayFACE.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                        self.displayWIN.setStyleSheet("QPushButton{}")
+                        self.displayFOOT.setStyleSheet("QPushButton{}")
+                  elif mysigdict['CCM_ModelDisplay'] == 1:
+                        self.displayFACE.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                        self.displayWIN.setStyleSheet("QPushButton{}")
+                        self.displayFOOT.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  elif mysigdict['CCM_ModelDisplay'] == 3:
+                        self.displayWIN.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                        self.displayFACE.setStyleSheet("QPushButton{}")
+                        self.displayFOOT.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
+                  else:
+                        print('Cannot recieve signal--CCM_ModelDisplay ')            
+
+                  
+            
                                    
 ##            else:                  
 ##                  self.mycantrx.stopsendperiod()

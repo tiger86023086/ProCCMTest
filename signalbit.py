@@ -55,7 +55,7 @@ class canconvert():
              return mydata
 
      def decodemsg(self,msgid,msgdata):
-        mydictsig = self.mydb.decode_message(msgid,msgdata)
+        mydictsig = self.mydb.decode_message(msgid,msgdata,decode_choices=False)
         return mydictsig
     
      def idserach(self,listsig):
