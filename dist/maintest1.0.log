@@ -1,0 +1,127 @@
+Traceback (most recent call last):
+  File "maintest1.0.py", line 40, in <module>
+  File "cantxthread.pyc", line 32, in <module>
+  File "cantrx.pyc", line 26, in <module>
+  File "can\__init__.pyc", line 27, in <module>
+  File "can\io\__init__.pyc", line 7, in <module>
+  File "can\io\logger.pyc", line 10, in <module>
+  File "pkg_resources\__init__.pyc", line 73, in <module>
+  File "pkg_resources\extern\__init__.pyc", line 61, in load_module
+ImportError: The 'appdirs' package is required; normally this is bundled with this package so if you get this warning, consult the packager of your distribution.
+Traceback (most recent call last):
+  File "MainTest1.0.py", line 40, in <module>
+  File "cantxthread.pyc", line 32, in <module>
+  File "cantrx.pyc", line 26, in <module>
+  File "can\__init__.pyc", line 27, in <module>
+  File "can\io\__init__.pyc", line 7, in <module>
+  File "can\io\logger.pyc", line 10, in <module>
+  File "pkg_resources\__init__.pyc", line 73, in <module>
+  File "pkg_resources\extern\__init__.pyc", line 61, in load_module
+ImportError: The 'appdirs' package is required; normally this is bundled with this package so if you get this warning, consult the packager of your distribution.
+Traceback (most recent call last):
+  File "MainTest1.0.py", line 40, in <module>
+  File "cantxthread.pyc", line 32, in <module>
+  File "cantrx.pyc", line 26, in <module>
+  File "can\__init__.pyc", line 27, in <module>
+  File "can\io\__init__.pyc", line 7, in <module>
+  File "can\io\logger.pyc", line 10, in <module>
+  File "pkg_resources\__init__.pyc", line 76, in <module>
+  File "pkg_resources\extern\__init__.pyc", line 61, in load_module
+ImportError: The 'packaging.specifiers' package is required; normally this is bundled with this package so if you get this warning, consult the packager of your distribution.
+Traceback (most recent call last):
+  File "MainTest1.0.py", line 40, in <module>
+  File "cantxthread.pyc", line 32, in <module>
+  File "cantrx.pyc", line 26, in <module>
+  File "can\__init__.pyc", line 27, in <module>
+  File "can\io\__init__.pyc", line 7, in <module>
+  File "can\io\logger.pyc", line 10, in <module>
+  File "pkg_resources\__init__.pyc", line 76, in <module>
+  File "pkg_resources\extern\__init__.pyc", line 61, in load_module
+ImportError: The 'packaging.specifiers' package is required; normally this is bundled with this package so if you get this warning, consult the packager of your distribution.
+Traceback (most recent call last):
+  File "MainTest1.0.py", line 40, in <module>
+  File "cantxthread.pyc", line 32, in <module>
+  File "cantrx.pyc", line 26, in <module>
+  File "can\__init__.pyc", line 27, in <module>
+  File "can\io\__init__.pyc", line 7, in <module>
+  File "can\io\logger.pyc", line 10, in <module>
+  File "pkg_resources\__init__.pyc", line 77, in <module>
+  File "pkg_resources\extern\__init__.pyc", line 61, in load_module
+ImportError: The 'packaging.requirements' package is required; normally this is bundled with this package so if you get this warning, consult the packager of your distribution.
+Traceback (most recent call last):
+  File "can\interface.pyc", line 36, in _get_class_for_interface
+  File "importlib\__init__.pyc", line 127, in import_module
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'can.interfaces.canalystii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "cantrx.pyc", line 33, in initcan
+  File "can\interface.pyc", line 98, in __new__
+  File "can\interface.pyc", line 40, in _get_class_for_interface
+ImportError: Cannot import module can.interfaces.canalystii for CAN interface 'canalystii': No module named 'can.interfaces.canalystii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "can\interface.pyc", line 36, in _get_class_for_interface
+  File "importlib\__init__.pyc", line 127, in import_module
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'can.interfaces.canalystii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "myctrlcan.pyc", line 55, in __init__
+  File "cantrx.pyc", line 39, in initcan
+  File "can\interface.pyc", line 98, in __new__
+  File "can\interface.pyc", line 40, in _get_class_for_interface
+ImportError: Cannot import module can.interfaces.canalystii for CAN interface 'canalystii': No module named 'can.interfaces.canalystii'
+Traceback (most recent call last):
+  File "can\interface.pyc", line 36, in _get_class_for_interface
+  File "importlib\__init__.pyc", line 127, in import_module
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'can.interfaces.canalystii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "cantrx.pyc", line 33, in initcan
+  File "can\interface.pyc", line 98, in __new__
+  File "can\interface.pyc", line 40, in _get_class_for_interface
+ImportError: Cannot import module can.interfaces.canalystii for CAN interface 'canalystii': No module named 'can.interfaces.canalystii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "can\interface.pyc", line 36, in _get_class_for_interface
+  File "importlib\__init__.pyc", line 127, in import_module
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'can.interfaces.canalystii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "myctrlcan.pyc", line 55, in __init__
+  File "cantrx.pyc", line 39, in initcan
+  File "can\interface.pyc", line 98, in __new__
+  File "can\interface.pyc", line 40, in _get_class_for_interface
+ImportError: Cannot import module can.interfaces.canalystii for CAN interface 'canalystii': No module named 'can.interfaces.canalystii'
+Traceback (most recent call last):
+  File "dbthread.pyc", line 70, in DBCreate
+  File "matrixrd.pyc", line 44, in CanMatrixDb
+FileNotFoundError: [Errno 2] No such file or directory: 'CanType.ini'
+Traceback (most recent call last):
+  File "dbthread.pyc", line 70, in DBCreate
+  File "matrixrd.pyc", line 97, in CanMatrixDb
+  File "codecs.pyc", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa1 in position 7037: invalid start byte

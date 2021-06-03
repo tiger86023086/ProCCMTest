@@ -1,0 +1,1295 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CMP PTC CCM SCM PLG AVAS BCM GW
+
+
+BO_ 1024 GW_400: 8 GW
+ SG_ NMGW_SourceID : 7|8@0+ (1,0) [0|255] ""  CCM
+ SG_ NMGW_RepeatReq : 8|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_Actwake : 12|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_RepeatFromSleep : 16|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_RepeatFromPrepare : 17|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_RepeatFromNormal : 18|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_RepeatFromReady : 19|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_NormalFromRepeat : 20|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_NormalFromReady : 21|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_WakeSource : 28|5@0+ (1,0) [0|31] ""  CCM
+ SG_ NMGW_ActiveSource1 : 32|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_ActiveSource2 : 33|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_ActiveSource3 : 34|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_ActiveSource4 : 35|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMGW_WakeSource_CAN : 58|3@0+ (1,0) [0|6] ""  CCM
+
+BO_ 1040 BCM_410: 8 BCM
+ SG_ NMBCM_SourceID : 7|8@0+ (1,0) [0|255] ""  CCM
+ SG_ NMBCM_RepeatReq : 8|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_Actwake : 12|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_RepeatFromSleep : 16|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_RepeatFromPrepare : 17|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_RepeatFromNormal : 18|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_RepeatFromReady : 19|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_NormalFromRepeat : 20|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_NormalFromReady : 21|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_WakeSource : 28|5@0+ (1,0) [0|31] ""  CCM
+ SG_ NMBCM_ActiveSource1 : 32|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource2 : 33|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource3 : 34|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource4 : 35|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource5 : 36|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource6 : 37|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource7 : 38|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource8 : 39|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource9 : 40|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource10 : 41|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource11 : 42|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource12 : 43|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMBCM_ActiveSource13 : 44|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 1041 CCM_411: 8 CCM
+ SG_ NMCCM_SourceID : 7|8@0+ (1,0) [0|255] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_RepeatReq : 8|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_Actwake : 12|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_RepeatFromSleep : 16|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_RepeatFromPrepare : 17|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_RepeatFromNormal : 18|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_RepeatFromReady : 19|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_NormalFromRepeat : 20|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_NormalFromReady : 21|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_WakeSource : 28|5@0+ (1,0) [0|31] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_ActiveSource1 : 32|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+ SG_ NMCCM_ActiveSource2 : 33|1@0+ (1,0) [0|1] ""  SCM,PLG,BCM,GW
+
+BO_ 1042 SCM_412: 8 SCM
+ SG_ NMSCM_SourceID : 7|8@0+ (1,0) [0|255] ""  CCM
+ SG_ NMSCM_RepeatReq : 8|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_Actwake : 12|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_RepeatFromSleep : 16|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_RepeatFromPrepare : 17|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_RepeatFromNormal : 18|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_RepeatFromReady : 19|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_NormalFromRepeat : 20|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_NormalFromReady : 21|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_WakeSource : 28|5@0+ (1,0) [0|31] ""  CCM
+ SG_ NMSCM_ActiveSource1 : 32|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_ActiveSource2 : 33|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMSCM_ActiveSource3 : 34|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 1043 PLG_413: 8 PLG
+ SG_ NMPLG_SourceID : 7|8@0+ (1,0) [0|255] ""  CCM
+ SG_ NMPLG_RepeatReq : 8|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_Actwake : 12|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_RepeatFromSleep : 16|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_RepeatFromPrepare : 17|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_RepeatFromNormal : 18|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_RepeatFromReady : 19|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_NormalFromRepeat : 20|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_NormalFromReady : 21|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_WakeSource : 28|5@0+ (1,0) [0|31] ""  CCM
+ SG_ NMPLG_ActiveSource1 : 32|1@0+ (1,0) [0|1] ""  CCM
+ SG_ NMPLG_ActiveSource2 : 33|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 157 BMS_09D: 8 GW
+ SG_ BMS_HVConnectStt : 7|2@0+ (1,0) [0|3] ""  CCM
+
+BO_ 291 ESP_123: 8 GW
+ SG_ ESP_VehicleSpeedValid : 9|1@0+ (1,0) [0|1] ""  CCM
+ SG_ ESP_VehicleSpeed : 7|13@0+ (0.05625,0) [0|240] "km/h"  CCM
+
+BO_ 298 IP_12A: 8 GW
+ SG_ IP_TotalOdometer : 7|24@0+ (0.1,0) [0|1677721.4] "km"  CCM
+ SG_ IP_OdometerSts : 47|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 381 BCM_17D: 8 BCM
+ SG_ BCM_PwrDistributionSts : 2|3@0+ (1,0) [0|7] ""  CCM
+
+BO_ 653 TBOX_28D: 8 GW
+ SG_ TBOX_CCMStartSet : 1|2@0+ (1,0) [0|3] ""  CCM
+ SG_ TBOX_CCMTempSet : 7|6@0+ (0.5,16) [16|32] ""  CCM
+ SG_ TBOX_BlowerSpeedSet : 11|4@0+ (1,0) [0|7] ""  CCM
+ SG_ Tbox_ModeSet : 14|3@0+ (1,0) [0|7] ""  CCM
+ SG_ TBOX_AutoModeSet : 17|2@0+ (1,0) [0|3] ""  CCM
+ SG_ TBOX_ACModeSet : 19|2@0+ (1,0) [0|3] ""  CCM
+
+BO_ 677 VCU_2A5: 8 GW
+ SG_ VCU_PreThemalEna : 1|2@0+ (1,0) [0|3] ""  CCM
+ SG_ VCU_ElecModFlg : 4|3@0+ (1,0) [0|7] ""  CCM
+ SG_ VCU_COMPEnbFlg : 6|2@0+ (1,0) [0|3] ""  CCM
+ SG_ VCU_CoolingFanAval : 7|1@0+ (1,0) [0|1] ""  CCM
+ SG_ VCU_PTCEnbl : 15|2@0+ (1,0) [0|3] ""  CCM
+ SG_ VCU_CompPwrCmmd : 13|13@0+ (1,0) [0|8000] "W"  CCM
+ SG_ VCU_PTCPwrCmmd : 16|13@0+ (1,0) [0|8000] "W"  CCM
+ SG_ VCU_AC_FanDutyRatio : 35|8@0+ (1,0) [0|100] "%"  CCM
+ SG_ VCU_RollingCounter_2A5 : 51|4@0+ (1,0) [0|15] ""  CCM
+ SG_ VCU_Checksum_2A5 : 63|8@0+ (1,0) [0|255] ""  CCM
+
+BO_ 679 VCU_2A7: 8 GW
+ SG_ VCU_AGSFltStatus : 17|1@0+ (1,0) [0|1] ""  CCM
+ SG_ VCU_AGSActPosition : 39|8@0+ (1,0) [0|100] "%"  CCM
+ SG_ VCU_ThermalMode : 47|4@0+ (1,0) [0|10] ""  CCM
+
+BO_ 693 PTC_2B5: 8 PTC
+ SG_ PTC_ActualPwr : 7|16@0+ (1,0) [0|65535] "W "  CCM
+ SG_ PTC_OverHeat : 16|1@0+ (1,0) [0|1] ""  CCM
+ SG_ PTC_OverCurrent : 17|1@0+ (1,0) [0|1] ""  CCM
+ SG_ PTC_OverVolt : 18|1@0+ (1,0) [0|1] ""  CCM
+ SG_ PTC_UnderVolt : 19|1@0+ (1,0) [0|1] ""  CCM
+ SG_ PTC_IGBTSts : 23|4@0+ (1,0) [0|15] ""  CCM
+ SG_ PTC_LGBTOverHeat : 25|1@0+ (1,0) [0|1] ""  CCM
+ SG_ PTC_RollingCounter_2B5 : 51|4@0+ (1,0) [0|15] ""  CCM
+ SG_ PTC_Checksum_2B5 : 63|8@0+ (1,0) [0|255] ""  CCM
+
+BO_ 695 PTC_2B7: 8 PTC
+ SG_ PTC_current : 6|7@0+ (0.5,0) [0|60] "A "  CCM
+ SG_ PTC_TempOUT : 15|8@0+ (1,-40) [-40|125] "℃"  CCM
+ SG_ PTC_TempIGBT : 23|8@0+ (1,-40) [-40|125] "℃"  CCM
+ SG_ PTC_ConVolt : 31|16@0+ (1,0) [0|1000] "V"  CCM
+ SG_ PTC_RollingCounter_2B7 : 51|4@0+ (1,0) [0|15] ""  CCM
+ SG_ PTC_Checksum_2B7 : 63|8@0+ (1,0) [0|255] ""  CCM
+
+BO_ 700 GW_2BC: 8 GW
+ SG_ BMS_DCChgMode : 2|3@0+ (1,0) [0|7] ""  CCM
+ SG_ BMS_ACChgMode : 5|3@0+ (1,0) [0|7] ""  CCM
+ SG_ OBC_Status : 11|4@0+ (1,0) [0|15] ""  CCM
+ SG_ BMS_PreThemalReq : 28|2@0+ (1,0) [0|3] ""  CCM
+ SG_ BMS_PreThemalMode : 31|3@0+ (1,0) [0|7] ""  CCM
+ SG_ VCU_DriveCoolantTemp : 39|8@0+ (1,-40) [-40|125] "℃"  CCM
+
+BO_ 704 BMS_2C0: 8 GW
+ SG_ BMS_CoolantTempIn : 7|8@0+ (1,-40) [-40|125] "℃"  CCM
+ SG_ BMS_CoolantTempOut : 15|8@0+ (1,-40) [-40|125] "℃"  CCM
+ SG_ BMS_CoolPowerReq : 23|16@0+ (0.1,0) [0|6553.4] "W"  CCM
+ SG_ BMS_HeatPowerReq : 39|16@0+ (0.1,0) [0|6553.4] "W"  CCM
+ SG_ BMS_RollingCounter_2C0 : 51|4@0+ (1,0) [0|15] ""  CCM
+ SG_ BMS_CoolingReq : 53|2@0+ (1,0) [0|3] ""  CCM
+ SG_ BMS_Heatreq : 55|2@0+ (1,0) [0|3] ""  CCM
+ SG_ BMS_Checksum_2C0 : 63|8@0+ (1,0) [0|255] ""  CCM
+
+BO_ 707 BMS_2C3: 8 GW
+ SG_ BMS_Cool_TempTarget : 7|8@0+ (1,-40) [-40|210] ""  CCM
+ SG_ BMS_Heat_TempTarget : 15|8@0+ (1,-40) [-40|210] ""  CCM
+ SG_ BMS_Cool_TempDiff : 39|8@0+ (1,0) [0|250] ""  CCM
+ SG_ BMS_Heat_TempDiff : 47|8@0+ (1,0) [0|250] ""  CCM
+
+BO_ 719 BMS_2CF: 8 GW
+ SG_ BMS_BattMaxTemp : 47|8@0+ (1,-40) [-40|125] "℃"  CCM
+ SG_ BMS_BattMinTemp : 55|8@0+ (1,-40) [-40|125] "℃"  CCM
+
+BO_ 722 BCM_2D2: 8 BCM
+ SG_ BCM_RemoteControlSt : 52|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 727 GW_2D7: 8 GW
+ SG_ TPS_CCMDrvTempSet : 5|6@0+ (0.5,16) [16|50] "°"  CCM
+ SG_ TPS_CCMFrntPassTempSet : 13|6@0+ (0.5,16) [16|50] "°"  CCM
+ SG_ TPS_BlowerLvlSet : 23|3@0+ (1,0) [0|7] ""  CCM
+
+BO_ 734 COMP_2DE: 8 CMP
+ SG_ EAC_Temp : 7|8@0+ (1,-40) [-40|140] "℃"  CCM
+ SG_ EAC_TempSnsrFalt : 12|1@0+ (1,0) [0|1] ""  CCM
+ SG_ EAC_DrvVoltFalt : 13|1@0+ (1,0) [0|1] ""  CCM
+ SG_ EAC_OvLoadFalt : 14|1@0+ (1,0) [0|1] ""  CCM
+ SG_ EAC_MotorLackFalt : 15|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 741 COMP_2E5: 8 CMP
+ SG_ COMP_ActualPwr : 20|13@0+ (1,0) [0|6000] "w"  CCM
+ SG_ COMP_IPM_HWFLt : 33|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_ComLost : 36|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_IPM_TempOverFlt : 46|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_VoltLessErr : 49|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_VoltOverErr : 52|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_CurOverProtect : 55|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_Init : 56|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_Sta : 59|2@0+ (1,0) [0|3] ""  CCM
+ SG_ COMP_CtrlCircFlt : 62|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 746 COMP_2EA: 8 CMP
+ SG_ EAC_MotCrt : 7|8@0+ (0.2,0) [0|51] "A"  CCM
+ SG_ COMP_StatorSpd : 13|14@0+ (1,0) [0|8500] "rpm"  CCM
+ SG_ COMP_ConCur : 31|16@0+ (0.02,0) [0|1310.7] "A"  CCM
+ SG_ COMP_ConVolt : 47|16@0+ (0.02,0) [0|1310.7] "V"  CCM
+ SG_ COMP_VoltVaild : 56|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_CurVaild : 58|1@0+ (1,0) [0|1] ""  CCM
+ SG_ COMP_SpdVaild : 61|1@0+ (1,0) [0|1] ""  CCM
+
+BO_ 752 CCM_2F0: 8 CCM
+ SG_ CCM_SpdEnable : 7|1@0+ (1,0) [0|1] ""  CMP
+ SG_ CCM_SpdCmd : 6|15@0+ (0.5,0) [0|8300] "rpm"  CMP,GW
+ SG_ CCM_Display : 33|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_Off : 34|1@0+ (1,0) [0|1] ""  BCM,GW
+ SG_ CCM_PTCPowerReq : 31|13@0+ (1,0) [0|8000] "W "  PTC
+ SG_ CCM_EvapSensorSCOrOC : 43|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_PressureAbnormal : 47|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_Pressure : 41|10@0+ (3.52,0) [0|3600.96] "kPA"  GW
+ SG_ CCM_EvapTemp : 63|8@0+ (0.5,-40) [-40|85] "°C"  GW
+
+BO_ 753 CCM_2F1: 8 CCM
+ SG_ CCM_PreHeatWorkSt : 0|1@0+ (1,0) [0|1] ""  GW
+ SG_ CCM_PreCoolWorkSt : 1|1@0+ (1,0) [0|1] ""  GW
+ SG_ CCM_ACVaild : 3|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_InsideWorkMode : 5|2@0+ (1,0) [0|3] ""  BCM,GW
+ SG_ CCM_ST_AGS : 6|1@0+ (1,0) [0|1] ""  GW
+ SG_ CCM_3_ValveStatus : 14|2@0+ (1,0) [0|2] ""  GW
+ SG_ CCM_AcActPower : 12|13@0+ (1,0) [0|6000] "W "  GW
+ SG_ CCM_4_ValveStatus : 30|2@0+ (1,0) [0|2] ""  GW
+ SG_ CCM_CcmBmsReqAcPower : 28|13@0+ (1,0) [0|6000] "W "  GW
+ SG_ CCM_HVACValveStatus : 46|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_CcmBmsReqPtcPower : 44|13@0+ (1,0) [0|8000] "W "  GW
+ SG_ CCM_CoolFanDuty : 63|8@0+ (1,0) [0|100] "%"  GW
+
+BO_ 755 CCM_2F3: 8 CCM
+ SG_ CCM_PtcActPwr : 7|16@0+ (1,0) [0|8000] "W "  GW
+ SG_ CCM_PTCConVolt : 23|16@0+ (1,0) [0|1000] "V"  GW
+ SG_ CCM_PTCVaild : 33|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_PTCWorkPerm : 34|1@0+ (1,0) [0|1] ""  PTC,GW
+ SG_ CCM_FrontDefrostSts : 35|1@0+ (1,0) [0|1] ""  GW
+ SG_ CCM_ThermalMode : 39|3@0+ (1,0) [0|6] ""  GW
+ SG_ CCM_PTCcurrent : 46|7@0+ (0.5,0) [0|60] "A"  GW
+ SG_ CCM_RollingCounter_2F3 : 51|4@0+ (1,0) [0|15] ""  GW
+ SG_ CCM_Checksum_2F3 : 63|8@0+ (1,0) [0|255] ""  GW
+
+BO_ 832 CCM_340: 8 CCM
+ SG_ CCM_ACSts : 0|1@0+ (1,0) [0|1] ""  GW
+ SG_ CCM_AUTOSts : 1|1@0+ (1,0) [0|1] ""  GW
+ SG_ CCM_ModelDisplay : 5|3@0+ (1,0) [0|7] ""  GW
+ SG_ CCM_CycleStatus : 6|1@0+ (1,0) [0|1] ""  GW
+ SG_ AC_RemoteControlSt : 8|1@0+ (1,0) [0|1] ""  BCM,GW
+ SG_ CCM_FanGearDisplay : 14|3@0+ (1,0) [0|7] ""  GW
+ SG_ CCM_DrvMdResp : 17|2@0+ (1,0) [0|2] ""  GW
+ SG_ CCM_FLTempSts : 23|6@0+ (0.5,16) [16|32] ""  GW
+ SG_ CCM_SYNCSts : 25|2@0+ (1,0) [0|3] ""  GW
+ SG_ CCM_FRTempSts : 31|6@0+ (0.5,16) [16|32] ""  GW
+ SG_ CCM_OutsideTemp : 39|9@0+ (0.5,-80) [-80|150] ""  SCM,PLG,BCM,GW
+ SG_ CCM_InsideTemp : 40|9@0+ (0.5,-80) [-80|150] "°C"  SCM,GW
+
+BO_ 837 CCM_345: 8 CCM
+ SG_ CCM_RefrigLowPress : 7|9@0+ (5,0) [0|2555] "kPaA" Vector__XXX
+ SG_ CCM_RefrigPressWCCOut : 14|9@0+ (5,0) [0|2555] "kPaA" Vector__XXX
+ SG_ CCM_RefrigPressOhexOut : 21|9@0+ (5,0) [0|2555] "kPaA" Vector__XXX
+ SG_ CCM_RefrigSuctionTemp : 39|8@0+ (1,-40) [-40|215] "℃" Vector__XXX
+ SG_ CCM_RefrigDischargTemp : 47|8@0+ (1,-40) [-40|215] "℃" Vector__XXX
+ SG_ CCM_RefrigEvapOutTemp : 55|8@0+ (1,-40) [-40|215] "℃" Vector__XXX
+ SG_ CCM_RefrigChillerOutTemp : 63|8@0+ (1,-40) [-40|215] "℃" Vector__XXX
+
+BO_ 838 CCM_346: 8 CCM
+ SG_ CCM_RefrigTempWCCOut : 7|8@0+ (1,-40) [-40|215] "℃" Vector__XXX
+ SG_ CCM_RefrigTempOhexOut : 15|8@0+ (1,-40) [-40|215] "℃" Vector__XXX
+ SG_ CCM_EXVEvapPosPercentFB : 22|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_EXVEvapEn : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_EXVChillerPosPercentFB : 30|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_EXVChillerEn : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_ERVOhexEXVPosPercentFB : 38|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_ERVOhexEXVEn : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_EXVEvapDTC : 41|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_EXVChillerDTC : 43|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_ERVOhexEXVDTC : 45|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_ERVOhexSVReq : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_ERVOhexSVErrSts : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_SOVReq : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_SOVErrSts : 49|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_Valve3WCabinDTC : 51|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_Valve3WCabinPosPercentFB : 62|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_Valve3WCabinEn : 63|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 839 CCM_347: 8 CCM
+ SG_ CCM_Valve3WeAxlePosPercentFB : 6|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_Valve3WeAxleEn : 7|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_Valve3WeAxleDTC : 9|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_Valve4WPosPercentFB : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_Valve4WEn : 11|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_Valve4WDTC : 13|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_PumpBattDTC : 15|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CCM_PumpCabinSpdReq : 22|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_PumpCabinRunEn : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_PumpBattSpdReq : 30|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CCM_PumpBattRunEn : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CCM_PumpCabinDTC : 33|2@0+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 865 IVI_361: 8 GW
+ SG_ IVI_CCMACReq : 1|2@0+ (1,0) [0|3] ""  CCM
+ SG_ IVI_CCMOnOffReq : 3|2@0+ (1,0) [0|3] ""  CCM
+ SG_ IVI_BlowerLvlSet : 6|3@0+ (1,0) [0|7] ""  CCM
+ SG_ IVI_ModeSet : 10|3@0+ (1,0) [0|7] ""  CCM
+ SG_ IVI_CCMFrontDefrostHeatCtl : 12|2@0+ (1,0) [0|3] ""  CCM
+ SG_ IVI_CCMCycleMode : 14|2@0+ (1,0) [0|3] ""  CCM
+ SG_ IVI_CCMCtrlMode : 17|2@0+ (1,0) [0|3] ""  CCM
+ SG_ IVI_CCMFrntPassTempSet : 23|6@0+ (0.5,16) [16|50] ""  CCM
+ SG_ IVI_CCMDrvTempSet : 29|6@0+ (0.5,16) [16|50] ""  CCM
+ SG_ IVI_CCMDrvMdSet : 35|2@0+ (1,0) [0|2] ""  CCM
+ SG_ IVI_SYNCSet : 39|2@0+ (1,0) [0|3] ""  CCM
+
+BO_ 895 IVI_37F: 8 GW
+ SG_ IVI_YearSet : 5|6@0+ (1,2018) [2018|2068] ""  CCM
+ SG_ IVI_MonthSet : 11|4@0+ (1,0) [1|12] ""  CCM
+ SG_ IVI_DaySet : 20|5@0+ (1,0) [1|31] ""  CCM
+ SG_ IVI_HourSet : 28|5@0+ (1,0) [0|23] ""  CCM
+ SG_ IVI_MinuteSet : 37|6@0+ (1,0) [0|59] ""  CCM
+ SG_ IVI_SecondSet : 45|6@0+ (1,0) [0|59] ""  CCM
+
+BO_ 938 GW_3AA: 8 GW
+ SG_ GW_VIN_Value_1 : 7|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VIN_Value_2 : 15|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VIN_Value_3 : 23|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VIN_Value_4 : 31|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VIN_Value_5 : 39|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VIN_Value_6 : 47|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VIN_Value_7 : 55|8@0+ (1,0) [0|255] ""  CCM
+ SG_ GW_VINFrameNumber : 63|8@0+ (1,0) [0|255] ""  CCM
+
+
+
+CM_ " ";
+CM_ SG_ 1024 NMGW_SourceID "ECU Address";
+CM_ SG_ 1024 NMGW_RepeatReq "Repeat Message State Request";
+CM_ SG_ 1024 NMGW_Actwake "Active Wake Bit";
+CM_ SG_ 1024 NMGW_RepeatFromSleep "Repeat Message State From Sleep state";
+CM_ SG_ 1024 NMGW_RepeatFromPrepare "Repeat Message State From Prepare Sleep state";
+CM_ SG_ 1024 NMGW_RepeatFromNormal "Repeat Message State From Normal Operation state";
+CM_ SG_ 1024 NMGW_RepeatFromReady "Repeat Message State From Ready Sleep state";
+CM_ SG_ 1024 NMGW_NormalFromRepeat "Normal Operation state From Repeat Message State ";
+CM_ SG_ 1024 NMGW_NormalFromReady "Normal Operation state From Ready Sleep state";
+CM_ SG_ 1024 NMGW_WakeSource "Wake Source";
+CM_ SG_ 1024 NMGW_ActiveSource1 "The NM active sorce is KL15";
+CM_ SG_ 1024 NMGW_ActiveSource2 "The NM active sorce is Diagnosis";
+CM_ SG_ 1024 NMGW_ActiveSource3 "The NM active sorce is no Timeout";
+CM_ SG_ 1024 NMGW_ActiveSource4 "The NM active sorce is active line";
+CM_ SG_ 1024 NMGW_WakeSource_CAN "CAN name that wake up GW";
+CM_ SG_ 1040 NMBCM_SourceID "ECU_Address";
+CM_ SG_ 1040 NMBCM_RepeatReq "Repeat_Message_State_Request";
+CM_ SG_ 1040 NMBCM_Actwake "Active_Wake_Bit";
+CM_ SG_ 1040 NMBCM_RepeatFromSleep "Repeat_Message_State_From_Sleep_state";
+CM_ SG_ 1040 NMBCM_RepeatFromPrepare "Repeat_Message_State_From_Prepare_Sleep_state";
+CM_ SG_ 1040 NMBCM_RepeatFromNormal "Repeat_Message_State_From_Normal_Operation_state";
+CM_ SG_ 1040 NMBCM_RepeatFromReady "Repeat_Message_State_From_Ready_Sleep_state";
+CM_ SG_ 1040 NMBCM_NormalFromRepeat "Normal_Operation_state_From_Repeat_Message_State";
+CM_ SG_ 1040 NMBCM_NormalFromReady "Normal_Operation_state_From_Ready_Sleep_state";
+CM_ SG_ 1040 NMBCM_WakeSource "Wake_Source";
+CM_ SG_ 1040 NMBCM_ActiveSource1 "The_NM_active_sorce_is_KL15";
+CM_ SG_ 1040 NMBCM_ActiveSource2 "The_NM_active_sorce_is_Diagnosis";
+CM_ SG_ 1040 NMBCM_ActiveSource3 "Position lamp switch is ON";
+CM_ SG_ 1040 NMBCM_ActiveSource4 "照我回家功能被触发";
+CM_ SG_ 1040 NMBCM_ActiveSource5 "危险报警灯功能被触发后";
+CM_ SG_ 1040 NMBCM_ActiveSource6 "节电输出有效Power-saving output valid";
+CM_ SG_ 1040 NMBCM_ActiveSource7 "报警触发状态Alarm triggering state";
+CM_ SG_ 1040 NMBCM_ActiveSource8 "后备箱开启 trunk  is ON";
+CM_ SG_ 1040 NMBCM_ActiveSource9 "刹车灯开启 brake lamp is ON";
+CM_ SG_ 1040 NMBCM_ActiveSource10 "VCU_ElecModFlg=0x07（other HV ON）";
+CM_ SG_ 1040 NMBCM_ActiveSource11 "脚踢尾门解锁";
+CM_ SG_ 1040 NMBCM_ActiveSource12 "BCM_IntelligentChargeReq=1";
+CM_ SG_ 1040 NMBCM_ActiveSource13 "充电口盖打开计时3min";
+CM_ SG_ 1041 NMCCM_SourceID "ECU Address";
+CM_ SG_ 1041 NMCCM_RepeatReq "Repeat Message State Request";
+CM_ SG_ 1041 NMCCM_Actwake "Active Wake Bit";
+CM_ SG_ 1041 NMCCM_RepeatFromSleep "Repeat Message State From Sleep state";
+CM_ SG_ 1041 NMCCM_RepeatFromPrepare "Repeat Message State From Prepare Sleep state";
+CM_ SG_ 1041 NMCCM_RepeatFromNormal "Repeat Message State From Normal Operation state";
+CM_ SG_ 1041 NMCCM_RepeatFromReady "Repeat Message State From Ready Sleep state";
+CM_ SG_ 1041 NMCCM_NormalFromRepeat "Normal Operation state From Repeat Message State ";
+CM_ SG_ 1041 NMCCM_NormalFromReady "Normal Operation state From Ready Sleep state";
+CM_ SG_ 1041 NMCCM_WakeSource "Wake Source";
+CM_ SG_ 1041 NMCCM_ActiveSource1 "The NM active sorce is KL15";
+CM_ SG_ 1041 NMCCM_ActiveSource2 "The NM active sorce is Diagnosis";
+CM_ SG_ 1042 NMSCM_SourceID "ECU_Address";
+CM_ SG_ 1042 NMSCM_RepeatReq "Repeat_Message_State_Request";
+CM_ SG_ 1042 NMSCM_Actwake "Active_Wake_Bit";
+CM_ SG_ 1042 NMSCM_RepeatFromSleep "Repeat_Message_State_From_Sleep_state";
+CM_ SG_ 1042 NMSCM_RepeatFromPrepare "Repeat_Message_State_From_Prepare_Sleep_state";
+CM_ SG_ 1042 NMSCM_RepeatFromNormal "Repeat_Message_State_From_Normal_Operation_state";
+CM_ SG_ 1042 NMSCM_RepeatFromReady "Repeat_Message_State_From_Ready_Sleep_state";
+CM_ SG_ 1042 NMSCM_NormalFromRepeat "Normal_Operation_state_From_Repeat_Message_State";
+CM_ SG_ 1042 NMSCM_NormalFromReady "Normal_Operation_state_From_Ready_Sleep_state";
+CM_ SG_ 1042 NMSCM_WakeSource "Wake_Source";
+CM_ SG_ 1042 NMSCM_ActiveSource1 "The_NM_active_sorce_is_KL15";
+CM_ SG_ 1042 NMSCM_ActiveSource2 "The_NM_active_sorce_is_Diagnosis";
+CM_ SG_ 1042 NMSCM_ActiveSource3 "座椅开关";
+CM_ SG_ 1043 NMPLG_SourceID "ECU Address";
+CM_ SG_ 1043 NMPLG_RepeatReq "Repeat Message State Request";
+CM_ SG_ 1043 NMPLG_Actwake "Active Wake Bit";
+CM_ SG_ 1043 NMPLG_RepeatFromSleep "Repeat Message State From Sleep state";
+CM_ SG_ 1043 NMPLG_RepeatFromPrepare "Repeat Message State From Prepare Sleep state";
+CM_ SG_ 1043 NMPLG_RepeatFromNormal "Repeat Message State From Normal Operation state";
+CM_ SG_ 1043 NMPLG_RepeatFromReady "Repeat Message State From Ready Sleep state";
+CM_ SG_ 1043 NMPLG_NormalFromRepeat "Normal Operation state From Repeat Message State";
+CM_ SG_ 1043 NMPLG_NormalFromReady "Normal Operation state From Ready Sleep state";
+CM_ SG_ 1043 NMPLG_WakeSource "Wake Source";
+CM_ SG_ 1043 NMPLG_ActiveSource1 "The NM active sorce is KL15";
+CM_ SG_ 1043 NMPLG_ActiveSource2 "The NM active sorce is Diagnosis";
+CM_ SG_ 157 BMS_HVConnectStt "BMS高压连接状态";
+CM_ SG_ 291 ESP_VehicleSpeedValid "The_vehicle_speed_valid";
+CM_ SG_ 291 ESP_VehicleSpeed "The_vehicle_speed_data";
+CM_ SG_ 298 IP_TotalOdometer "Total Odometer
+累计里程";
+CM_ SG_ 298 IP_OdometerSts "Total Odometer sts
+累计里程有效标志位";
+CM_ SG_ 381 BCM_PwrDistributionSts "电源模式";
+CM_ SG_ 653 TBOX_CCMStartSet "远程CCM开启关闭命令";
+CM_ SG_ 653 TBOX_CCMTempSet "远程设置温度";
+CM_ SG_ 653 TBOX_BlowerSpeedSet "远程设置CCM鼓风机风量";
+CM_ SG_ 653 Tbox_ModeSet "远程设置出风模式";
+CM_ SG_ 653 TBOX_AutoModeSet "远程设置自动模式";
+CM_ SG_ 653 TBOX_ACModeSet "远程设置AC状态";
+CM_ SG_ 677 VCU_PreThemalEna "预加热使能信号";
+CM_ SG_ 677 VCU_ElecModFlg "Vehicle Power mode 车辆电模式";
+CM_ SG_ 677 VCU_COMPEnbFlg "COMP work enable flag 电压缩机工作允许使能";
+CM_ SG_ 677 VCU_CoolingFanAval "风扇故障标志位";
+CM_ SG_ 677 VCU_PTCEnbl "PTC work enable flag PTC工作允许使能";
+CM_ SG_ 677 VCU_CompPwrCmmd "压缩机需求功率允许值";
+CM_ SG_ 677 VCU_PTCPwrCmmd "PTC需求功率允许值";
+CM_ SG_ 677 VCU_AC_FanDutyRatio "当前风扇占空比反馈";
+CM_ SG_ 677 VCU_RollingCounter_2A5 "VCU_2A5报文计数器";
+CM_ SG_ 677 VCU_Checksum_2A5 "VCU_2A5校验和
+The checksum is build based on SAE J1850 for byte 0 to byte 6.
+Polynom: x8 + x4 + x3 + x2 + 1 (0x1D)";
+CM_ SG_ 679 VCU_AGSFltStatus "AGS故障状态";
+CM_ SG_ 679 VCU_AGSActPosition "AGS开度";
+CM_ SG_ 679 VCU_ThermalMode "电机热回收模式
+Driver heat power cycle mode";
+CM_ SG_ 693 PTC_ActualPwr "PTC actual power ";
+CM_ SG_ 693 PTC_OverHeat "Over heat";
+CM_ SG_ 693 PTC_OverCurrent "Over current";
+CM_ SG_ 693 PTC_OverVolt "Over voltage";
+CM_ SG_ 693 PTC_UnderVolt "Under voltage";
+CM_ SG_ 693 PTC_IGBTSts "IGBT_Status";
+CM_ SG_ 693 PTC_LGBTOverHeat "Igbt_Over_Heat";
+CM_ SG_ 693 PTC_RollingCounter_2B5 "Rolling Counter";
+CM_ SG_ 693 PTC_Checksum_2B5 "CRC8
+The checksum is build based on SAE J1850 for byte 0 to byte 6.
+Polynom: x8 + x4 + x3 + x2 + 1 (0x1D)";
+CM_ SG_ 695 PTC_current "the current of PTC ";
+CM_ SG_ 695 PTC_TempOUT "The temperature of OUT";
+CM_ SG_ 695 PTC_TempIGBT "The temperature of IGBT";
+CM_ SG_ 695 PTC_ConVolt "PTC高压直流母线电压";
+CM_ SG_ 695 PTC_RollingCounter_2B7 "Rolling Counter";
+CM_ SG_ 695 PTC_Checksum_2B7 "CRC8
+The checksum is build based on SAE J1850 for byte 0 to byte 6.
+Polynom: x8 + x4 + x3 + x2 + 1 (0x1D)";
+CM_ SG_ 700 BMS_DCChgMode "快充模式";
+CM_ SG_ 700 BMS_ACChgMode "慢充模式";
+CM_ SG_ 700 OBC_Status "OBC status
+充电机状态";
+CM_ SG_ 700 BMS_PreThemalReq "BMS预加热/冷却信号请求";
+CM_ SG_ 700 BMS_PreThemalMode "BMS预加热/冷却模式";
+CM_ SG_ 700 VCU_DriveCoolantTemp "驱动回路冷却水温度";
+CM_ SG_ 704 BMS_CoolantTempIn "进水口温度";
+CM_ SG_ 704 BMS_CoolantTempOut "出水口温度";
+CM_ SG_ 704 BMS_CoolPowerReq "BMS冷却热功率请求";
+CM_ SG_ 704 BMS_HeatPowerReq "BMS加热热功率请求";
+CM_ SG_ 704 BMS_RollingCounter_2C0 "报文计数器";
+CM_ SG_ 704 BMS_CoolingReq "电池冷却请求";
+CM_ SG_ 704 BMS_Heatreq "电池加热请求";
+CM_ SG_ 704 BMS_Checksum_2C0 "校验和
+The checksum is build based on SAE J1850 for byte 0 to byte 6.
+Polynom: x8 + x4 + x3 + x2 + 1 (0x1D)";
+CM_ SG_ 707 BMS_Cool_TempTarget "冷却电池电芯目标温度
+BMS targent cooling temperture ";
+CM_ SG_ 707 BMS_Heat_TempTarget "加热电池电芯目标温度
+BMS targent harting temperture ";
+CM_ SG_ 707 BMS_Cool_TempDiff "冷却进水口目标温度与电芯温度差值";
+CM_ SG_ 707 BMS_Heat_TempDiff "加热进水口目标温度与电芯温度差值";
+CM_ SG_ 719 BMS_BattMaxTemp "电池最高温度";
+CM_ SG_ 719 BMS_BattMinTemp "电池最低温度";
+CM_ SG_ 722 BCM_RemoteControlSt "BCM远程控制状态位";
+CM_ SG_ 727 TPS_CCMDrvTempSet "驾驶侧温度设置按键";
+CM_ SG_ 727 TPS_CCMFrntPassTempSet "副驾驶温度设置按键";
+CM_ SG_ 727 TPS_BlowerLvlSet "吹风量级别_设置";
+CM_ SG_ 734 EAC_Temp "Inverter temperature";
+CM_ SG_ 734 EAC_TempSnsrFalt "Temperature sensor fault";
+CM_ SG_ 734 EAC_DrvVoltFalt "Drive voltage fault";
+CM_ SG_ 734 EAC_OvLoadFalt "Overload fault";
+CM_ SG_ 734 EAC_MotorLackFalt "Phase loss fault";
+CM_ SG_ 741 COMP_ActualPwr "COMP actual power ";
+CM_ SG_ 741 COMP_IPM_HWFLt "压缩机IPM硬件故障检出状态";
+CM_ SG_ 741 COMP_ComLost "压缩机CAN通信丢失故障检出状态";
+CM_ SG_ 741 COMP_IPM_TempOverFlt "压缩机IPM温度过高故障检出状态";
+CM_ SG_ 741 COMP_VoltLessErr "高电压直流母线上电压过低故障检出状态";
+CM_ SG_ 741 COMP_VoltOverErr "高电压直流母线上电压过高故障检出状态";
+CM_ SG_ 741 COMP_CurOverProtect "压缩机过流保护故障检出状态";
+CM_ SG_ 741 COMP_Init "压缩机初始化状态";
+CM_ SG_ 741 COMP_Sta "压缩机当前状态";
+CM_ SG_ 741 COMP_CtrlCircFlt "压缩机控制器故障检出状态";
+CM_ SG_ 746 EAC_MotCrt "相电流值
+phase current value";
+CM_ SG_ 746 COMP_StatorSpd "压缩机上报转速";
+CM_ SG_ 746 COMP_ConCur "压缩机上报高压直流母线电流";
+CM_ SG_ 746 COMP_ConVolt "压缩机上报高压直流母线电压";
+CM_ SG_ 746 COMP_VoltVaild "压缩机上报高压直流母线电压的有效性";
+CM_ SG_ 746 COMP_CurVaild "压缩机上报高压直流母线电流的有效性";
+CM_ SG_ 746 COMP_SpdVaild "压缩机上报转速的有效性";
+CM_ SG_ 752 CCM_SpdEnable "压缩机的使能指令";
+CM_ SG_ 752 CCM_SpdCmd "压缩机的目标转速
+备注：压缩机有效动作转速为1000rpm-8300rpm
+目标转速1000rpm以下时，目标转速按照1000rpm来动作，目标转速超过8300rpm时，目标转速按照8300rpm来动作";
+CM_ SG_ 752 CCM_Display "空调界面显示";
+CM_ SG_ 752 CCM_Off "空调关闭/打开";
+CM_ SG_ 752 CCM_PTCPowerReq "请求PTC功率";
+CM_ SG_ 752 CCM_EvapSensorSCOrOC "蒸发温度传感器故障";
+CM_ SG_ 752 CCM_PressureAbnormal "高低压压力开关故障";
+CM_ SG_ 752 CCM_Pressure "压力信号";
+CM_ SG_ 752 CCM_EvapTemp "蒸发温度";
+CM_ SG_ 753 CCM_PreHeatWorkSt "CCM加热开启状态（电池预加热）";
+CM_ SG_ 753 CCM_PreCoolWorkSt "CCM冷却开启状态（电池预冷却）";
+CM_ SG_ 753 CCM_ACVaild "AC冷却失效（针对CCM和BMS）";
+CM_ SG_ 753 CCM_InsideWorkMode "the work mode of AC in the car";
+CM_ SG_ 753 CCM_ST_AGS "进气格栅开关";
+CM_ SG_ 753 CCM_3_ValveStatus "三通水阀状态
+three-way valve state";
+CM_ SG_ 753 CCM_AcActPower "压缩机功率实际值";
+CM_ SG_ 753 CCM_4_ValveStatus "四通水阀状态
+four-way valve state";
+CM_ SG_ 753 CCM_CcmBmsReqAcPower "CCM和BMS请求所需AC电工功率";
+CM_ SG_ 753 CCM_HVACValveStatus "HVAC路三通水阀
+three-way valve state for HVAC route ";
+CM_ SG_ 753 CCM_CcmBmsReqPtcPower "CCM和BMS请求制热所需PTC电工功率";
+CM_ SG_ 753 CCM_CoolFanDuty "空调请求冷凝风扇占空比";
+CM_ SG_ 755 CCM_PtcActPwr "PTC功率实际值";
+CM_ SG_ 755 CCM_PTCConVolt "PTC高压直流母线电压";
+CM_ SG_ 755 CCM_PTCVaild "PTC加热失效（针对CCM和BMS）";
+CM_ SG_ 755 CCM_PTCWorkPerm "PTC  Working  Permission";
+CM_ SG_ 755 CCM_FrontDefrostSts "前除霜状态";
+CM_ SG_ 755 CCM_ThermalMode "热模式
+Refrigerant thermal mode";
+CM_ SG_ 755 CCM_PTCcurrent "the current of PTC ";
+CM_ SG_ 755 CCM_RollingCounter_2F3 "报文计数器";
+CM_ SG_ 755 CCM_Checksum_2F3 "CRC8
+The checksum is build based on SAE J1850 for byte 0 to byte 6.
+Polynom: x8 + x4 + x3 + x2 + 1 (0x1D)";
+CM_ SG_ 832 CCM_ACSts "制冷_状态";
+CM_ SG_ 832 CCM_AUTOSts "自动空调_状态";
+CM_ SG_ 832 CCM_ModelDisplay "吹风模式显示";
+CM_ SG_ 832 CCM_CycleStatus "内外循环状态";
+CM_ SG_ 832 AC_RemoteControlSt "AC Remote Control state";
+CM_ SG_ 832 CCM_FanGearDisplay "鼓风机风速显示";
+CM_ SG_ 832 CCM_DrvMdResp "CCM驾驶模式反馈的信号";
+CM_ SG_ 832 CCM_FLTempSts "左前温度显示";
+CM_ SG_ 832 CCM_SYNCSts "双区_状态";
+CM_ SG_ 832 CCM_FRTempSts "右前温度显示";
+CM_ SG_ 832 CCM_OutsideTemp "室外温度";
+CM_ SG_ 832 CCM_InsideTemp "车内温度";
+CM_ SG_ 837 CCM_RefrigLowPress "压缩机吸气低压压力
+Compressor suction low pressure";
+CM_ SG_ 837 CCM_RefrigPressWCCOut "水冷出口制冷剂高压压力
+WCC out high pressure";
+CM_ SG_ 837 CCM_RefrigPressOhexOut "外换出口高压压力
+Condenser out high pressure";
+CM_ SG_ 837 CCM_RefrigSuctionTemp "压缩机吸气低压温度
+Compressor suction low temperature";
+CM_ SG_ 837 CCM_RefrigDischargTemp "压缩机排气高压温度
+Compressor discharge high temperature";
+CM_ SG_ 837 CCM_RefrigEvapOutTemp "蒸发器出口制冷剂温度
+Evaporator out refrigerant temperature";
+CM_ SG_ 837 CCM_RefrigChillerOutTemp "电池板换出口制冷剂温度
+Battery chiller out refrigerant temperature";
+CM_ SG_ 838 CCM_RefrigTempWCCOut "水冷出口制冷剂高压温度
+WCC out refrigerant high temperature";
+CM_ SG_ 838 CCM_RefrigTempOhexOut "外换出口制冷剂高压温度
+Condenser out refrigerant high temperature";
+CM_ SG_ 838 CCM_EXVEvapPosPercentFB "蒸发器电子膨胀阀开度
+Open persent position feedback of the evaporator EXV.";
+CM_ SG_ 838 CCM_EXVEvapEn "蒸发器电子膨胀阀使能
+Enable status of the evaporator EXV.";
+CM_ SG_ 838 CCM_EXVChillerPosPercentFB "电池板换电子膨胀阀开度
+Open persent position feedback of the battery chiller EXV.";
+CM_ SG_ 838 CCM_EXVChillerEn "电池板换电子膨胀阀使能
+Enable status of the battery chiller EXV.";
+CM_ SG_ 838 CCM_ERVOhexEXVPosPercentFB "外换电子膨胀阀开度
+Open persent position feedback of the Ohex EXV.";
+CM_ SG_ 838 CCM_ERVOhexEXVEn "外换电子膨胀阀使能
+Enable status of the Ohex EXV.";
+CM_ SG_ 838 CCM_EXVEvapDTC "蒸发器电子膨胀阀故障码
+Evaporator EXV diagnostic error code";
+CM_ SG_ 838 CCM_EXVChillerDTC "电池板换电子膨胀阀故障码
+Battery chiller EXV diagnostic error code";
+CM_ SG_ 838 CCM_ERVOhexEXVDTC "外换电子膨胀阀故障码
+Ohex EXV diagnostic error code";
+CM_ SG_ 838 CCM_ERVOhexSVReq "外换组合阀截止阀开关请求
+Ohex ERV-SV open request";
+CM_ SG_ 838 CCM_ERVOhexSVErrSts "外换组合阀截止阀错误状态
+Ohex ERV-SV error status";
+CM_ SG_ 838 CCM_SOVReq "制热用蒸发器前截止阀打开请求
+SOV open request";
+CM_ SG_ 838 CCM_SOVErrSts "制热用蒸发器前截止阀错误状态
+SOV error status";
+CM_ SG_ 838 CCM_Valve3WCabinDTC "车厢三通水阀故障码
+Diagnostic error code of the 3-W water valve.";
+CM_ SG_ 838 CCM_Valve3WCabinPosPercentFB "车厢三通水阀开度
+Open persent position feedback of the cabin 3-W water valve.";
+CM_ SG_ 838 CCM_Valve3WCabinEn "车厢三通水阀使能
+Enable status of the 3-W water valve.";
+CM_ SG_ 839 CCM_Valve3WeAxlePosPercentFB "电机三通水阀开度
+Open persent position feedback of the eAxle 3-W water valve.";
+CM_ SG_ 839 CCM_Valve3WeAxleEn "电机三通水阀使能
+Enable status of the eAxle 3-W water valve.";
+CM_ SG_ 839 CCM_Valve3WeAxleDTC "电机三通水阀故障码
+Diagnostic error code of the eAxle 3-W water valve.";
+CM_ SG_ 839 CCM_Valve4WPosPercentFB "四通水阀开度状态反馈
+Open status feedback of the 4-W water vavle";
+CM_ SG_ 839 CCM_Valve4WEn "四通水阀使能
+Enable status of the 4-W water valve.";
+CM_ SG_ 839 CCM_Valve4WDTC "四通水阀故障码
+Diagnostic error code of the 4-W water valve.";
+CM_ SG_ 839 CCM_PumpBattDTC "电池水泵故障码
+Battery pump diagnostic error code";
+CM_ SG_ 839 CCM_PumpCabinSpdReq "车厢水泵请求转速
+Cabin pump speed request";
+CM_ SG_ 839 CCM_PumpCabinRunEn "车厢水泵使能
+Cabin pump run enbale";
+CM_ SG_ 839 CCM_PumpBattSpdReq "电池水泵请求转速
+Battery pump speed request";
+CM_ SG_ 839 CCM_PumpBattRunEn "电池水泵使能
+Battery pump run enbale";
+CM_ SG_ 839 CCM_PumpCabinDTC "车厢水泵故障码
+Cabin pump diagnostic error code";
+CM_ SG_ 865 IVI_CCMACReq "空调AC请求";
+CM_ SG_ 865 IVI_CCMOnOffReq "空调系统开关请求";
+CM_ SG_ 865 IVI_BlowerLvlSet "吹风量级别_设置";
+CM_ SG_ 865 IVI_ModeSet "吹风模式_设置";
+CM_ SG_ 865 IVI_CCMFrontDefrostHeatCtl "前除霜";
+CM_ SG_ 865 IVI_CCMCycleMode "空调循环模式";
+CM_ SG_ 865 IVI_CCMCtrlMode "空调AUTO模式请求";
+CM_ SG_ 865 IVI_CCMFrntPassTempSet "副驾驶温度设置按键";
+CM_ SG_ 865 IVI_CCMDrvTempSet "驾驶侧温度设置按键";
+CM_ SG_ 865 IVI_CCMDrvMdSet "CCM驾驶模式设置";
+CM_ SG_ 865 IVI_SYNCSet "双区_设置";
+CM_ SG_ 895 IVI_YearSet "年";
+CM_ SG_ 895 IVI_MonthSet "月";
+CM_ SG_ 895 IVI_DaySet "日";
+CM_ SG_ 895 IVI_HourSet "时";
+CM_ SG_ 895 IVI_MinuteSet "分";
+CM_ SG_ 895 IVI_SecondSet "秒";
+CM_ SG_ 938 GW_VIN_Value_1 "VIN码:用于传输VIN码数据 7N+1";
+CM_ SG_ 938 GW_VIN_Value_2 "VIN码:用于传输VIN码数据 7N+2";
+CM_ SG_ 938 GW_VIN_Value_3 "VIN码:用于传输VIN码数据 7N+3";
+CM_ SG_ 938 GW_VIN_Value_4 "VIN码:用于传输VIN码数据 7N+4";
+CM_ SG_ 938 GW_VIN_Value_5 "VIN码:用于传输VIN码数据 7N+5";
+CM_ SG_ 938 GW_VIN_Value_6 "VIN码:用于传输VIN码数据 7N+6";
+CM_ SG_ 938 GW_VIN_Value_7 "VIN码:用于传输VIN码数据 7N+7";
+CM_ SG_ 938 GW_VINFrameNumber "VIN帧序号:用于标记发送报文帧序号N";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 0;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","Event","IfActive","Cyclic&Event","Cyclic&IfActive ","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 65535;
+BA_DEF_ BO_  "NmMessage" ENUM  "No","Yes";
+BA_DEF_ BO_  "CANFD_BRS" ENUM  "0","1";
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NmStationAddress" HEX 0 255;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ SG_  "GenSigInactiveValue" HEX 0 4294967295;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","IfActive","On change with repetition","On write with repetition","If active with repetition","NoSignalSendType";
+BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+BA_DEF_ SG_  "GenSigInvalidValue" HEX 0 4294967295;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NmMessage" "No";
+BA_DEF_DEF_  "CANFD_BRS" "0";
+BA_DEF_DEF_  "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_  "DBName" "CAN";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigInvalidValue" 0;
+BA_ "BusType" "CAN";
+BA_ "DBName" "CAN";
+BA_ "GenMsgSendType" BO_ 1024 1;
+BA_ "NmMessage" BO_ 1024 1;
+BA_ "GenMsgSendType" BO_ 1040 1;
+BA_ "NmMessage" BO_ 1040 1;
+BA_ "GenMsgSendType" BO_ 1041 1;
+BA_ "NmMessage" BO_ 1041 1;
+BA_ "GenMsgSendType" BO_ 1042 1;
+BA_ "NmMessage" BO_ 1042 1;
+BA_ "GenMsgSendType" BO_ 1043 1;
+BA_ "NmMessage" BO_ 1043 1;
+BA_ "GenMsgCycleTime" BO_ 157 10;
+BA_ "GenMsgCycleTime" BO_ 291 10;
+BA_ "GenMsgCycleTime" BO_ 298 20;
+BA_ "GenMsgCycleTime" BO_ 381 20;
+BA_ "GenMsgCycleTime" BO_ 653 500;
+BA_ "GenMsgCycleTimeFast" BO_ 653 20;
+BA_ "GenMsgNrOfRepetition" BO_ 653 5;
+BA_ "GenMsgSendType" BO_ 653 3;
+BA_ "GenMsgCycleTime" BO_ 677 100;
+BA_ "GenMsgCycleTime" BO_ 679 100;
+BA_ "GenMsgCycleTime" BO_ 693 100;
+BA_ "GenMsgCycleTime" BO_ 695 100;
+BA_ "GenMsgCycleTime" BO_ 700 100;
+BA_ "GenMsgCycleTime" BO_ 704 100;
+BA_ "GenMsgCycleTime" BO_ 707 100;
+BA_ "GenMsgCycleTime" BO_ 719 100;
+BA_ "GenMsgCycleTime" BO_ 722 100;
+BA_ "GenMsgCycleTime" BO_ 727 100;
+BA_ "GenMsgCycleTime" BO_ 734 100;
+BA_ "GenMsgCycleTime" BO_ 741 100;
+BA_ "GenMsgCycleTime" BO_ 746 100;
+BA_ "GenMsgCycleTime" BO_ 752 100;
+BA_ "GenMsgCycleTime" BO_ 753 100;
+BA_ "GenMsgCycleTime" BO_ 755 100;
+BA_ "GenMsgCycleTime" BO_ 832 500;
+BA_ "GenMsgCycleTime" BO_ 837 100;
+BA_ "GenMsgCycleTime" BO_ 838 100;
+BA_ "GenMsgCycleTime" BO_ 839 100;
+BA_ "GenMsgCycleTime" BO_ 865 500;
+BA_ "GenMsgCycleTimeFast" BO_ 865 20;
+BA_ "GenMsgNrOfRepetition" BO_ 865 5;
+BA_ "GenMsgSendType" BO_ 865 3;
+BA_ "GenMsgCycleTime" BO_ 895 500;
+BA_ "GenMsgCycleTime" BO_ 938 1000;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_SourceID 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_RepeatReq 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_Actwake 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_RepeatFromSleep 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_RepeatFromPrepare 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_RepeatFromNormal 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_RepeatFromReady 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_NormalFromRepeat 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_NormalFromReady 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_WakeSource 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_ActiveSource1 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_ActiveSource2 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_ActiveSource3 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_ActiveSource4 0;
+BA_ "GenSigStartValue" SG_ 1024 NMGW_WakeSource_CAN 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_SourceID 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_RepeatReq 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_Actwake 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_RepeatFromSleep 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_RepeatFromPrepare 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_RepeatFromNormal 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_RepeatFromReady 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_NormalFromRepeat 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_NormalFromReady 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_WakeSource 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource1 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource2 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource3 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource4 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource5 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource6 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource7 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource8 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource9 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource10 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource11 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource12 0;
+BA_ "GenSigStartValue" SG_ 1040 NMBCM_ActiveSource13 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_SourceID 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_RepeatReq 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_Actwake 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_RepeatFromSleep 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_RepeatFromPrepare 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_RepeatFromNormal 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_RepeatFromReady 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_NormalFromRepeat 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_NormalFromReady 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_WakeSource 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_ActiveSource1 0;
+BA_ "GenSigStartValue" SG_ 1041 NMCCM_ActiveSource2 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_SourceID 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_RepeatReq 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_Actwake 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_RepeatFromSleep 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_RepeatFromPrepare 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_RepeatFromNormal 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_RepeatFromReady 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_NormalFromRepeat 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_NormalFromReady 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_WakeSource 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_ActiveSource1 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_ActiveSource2 0;
+BA_ "GenSigStartValue" SG_ 1042 NMSCM_ActiveSource3 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_SourceID 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_RepeatReq 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_Actwake 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_RepeatFromSleep 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_RepeatFromPrepare 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_RepeatFromNormal 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_RepeatFromReady 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_NormalFromRepeat 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_NormalFromReady 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_WakeSource 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_ActiveSource1 0;
+BA_ "GenSigStartValue" SG_ 1043 NMPLG_ActiveSource2 0;
+BA_ "GenSigStartValue" SG_ 157 BMS_HVConnectStt 0;
+BA_ "GenSigInvalidValue" SG_ 157 BMS_HVConnectStt 3;
+BA_ "GenSigStartValue" SG_ 291 ESP_VehicleSpeedValid 0;
+BA_ "GenSigStartValue" SG_ 291 ESP_VehicleSpeed 0;
+BA_ "GenSigInvalidValue" SG_ 291 ESP_VehicleSpeed 8191;
+BA_ "GenSigStartValue" SG_ 298 IP_TotalOdometer 0;
+BA_ "GenSigInvalidValue" SG_ 298 IP_TotalOdometer 16777215;
+BA_ "GenSigStartValue" SG_ 298 IP_OdometerSts 0;
+BA_ "GenSigStartValue" SG_ 381 BCM_PwrDistributionSts 0;
+BA_ "GenSigSendType" SG_ 653 TBOX_CCMStartSet 3;
+BA_ "GenSigStartValue" SG_ 653 TBOX_CCMStartSet 2;
+BA_ "GenSigSendType" SG_ 653 TBOX_CCMTempSet 3;
+BA_ "GenSigStartValue" SG_ 653 TBOX_CCMTempSet 63;
+BA_ "GenSigSendType" SG_ 653 TBOX_BlowerSpeedSet 3;
+BA_ "GenSigStartValue" SG_ 653 TBOX_BlowerSpeedSet 7;
+BA_ "GenSigSendType" SG_ 653 Tbox_ModeSet 3;
+BA_ "GenSigStartValue" SG_ 653 Tbox_ModeSet 7;
+BA_ "GenSigSendType" SG_ 653 TBOX_AutoModeSet 3;
+BA_ "GenSigStartValue" SG_ 653 TBOX_AutoModeSet 3;
+BA_ "GenSigSendType" SG_ 653 TBOX_ACModeSet 3;
+BA_ "GenSigStartValue" SG_ 653 TBOX_ACModeSet 2;
+BA_ "GenSigStartValue" SG_ 677 VCU_PreThemalEna 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_ElecModFlg 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_COMPEnbFlg 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_CoolingFanAval 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_PTCEnbl 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_CompPwrCmmd 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_PTCPwrCmmd 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_AC_FanDutyRatio 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_RollingCounter_2A5 0;
+BA_ "GenSigStartValue" SG_ 677 VCU_Checksum_2A5 0;
+BA_ "GenSigSendType" SG_ 679 VCU_AGSFltStatus 0;
+BA_ "GenSigStartValue" SG_ 679 VCU_AGSFltStatus 0;
+BA_ "GenSigSendType" SG_ 679 VCU_AGSActPosition 0;
+BA_ "GenSigStartValue" SG_ 679 VCU_AGSActPosition 0;
+BA_ "GenSigStartValue" SG_ 679 VCU_ThermalMode 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_ActualPwr 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_OverHeat 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_OverCurrent 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_OverVolt 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_UnderVolt 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_IGBTSts 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_LGBTOverHeat 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_RollingCounter_2B5 0;
+BA_ "GenSigStartValue" SG_ 693 PTC_Checksum_2B5 0;
+BA_ "GenSigStartValue" SG_ 695 PTC_current 0;
+BA_ "GenSigInvalidValue" SG_ 695 PTC_current 127;
+BA_ "GenSigStartValue" SG_ 695 PTC_TempOUT 40;
+BA_ "GenSigInvalidValue" SG_ 695 PTC_TempOUT 255;
+BA_ "GenSigStartValue" SG_ 695 PTC_TempIGBT 40;
+BA_ "GenSigInvalidValue" SG_ 695 PTC_TempIGBT 255;
+BA_ "GenSigStartValue" SG_ 695 PTC_ConVolt 0;
+BA_ "GenSigInvalidValue" SG_ 695 PTC_ConVolt 65535;
+BA_ "GenSigStartValue" SG_ 695 PTC_RollingCounter_2B7 0;
+BA_ "GenSigStartValue" SG_ 695 PTC_Checksum_2B7 0;
+BA_ "GenSigStartValue" SG_ 700 BMS_DCChgMode 0;
+BA_ "GenSigStartValue" SG_ 700 BMS_ACChgMode 0;
+BA_ "GenSigStartValue" SG_ 700 OBC_Status 0;
+BA_ "GenSigStartValue" SG_ 700 BMS_PreThemalReq 0;
+BA_ "GenSigStartValue" SG_ 700 BMS_PreThemalMode 0;
+BA_ "GenSigStartValue" SG_ 700 VCU_DriveCoolantTemp 40;
+BA_ "GenSigInvalidValue" SG_ 700 VCU_DriveCoolantTemp 255;
+BA_ "GenSigStartValue" SG_ 704 BMS_CoolantTempIn 40;
+BA_ "GenSigInvalidValue" SG_ 704 BMS_CoolantTempIn 255;
+BA_ "GenSigStartValue" SG_ 704 BMS_CoolantTempOut 40;
+BA_ "GenSigInvalidValue" SG_ 704 BMS_CoolantTempOut 255;
+BA_ "GenSigStartValue" SG_ 704 BMS_CoolPowerReq 0;
+BA_ "GenSigInvalidValue" SG_ 704 BMS_CoolPowerReq 65535;
+BA_ "GenSigStartValue" SG_ 704 BMS_HeatPowerReq 0;
+BA_ "GenSigInvalidValue" SG_ 704 BMS_HeatPowerReq 65535;
+BA_ "GenSigStartValue" SG_ 704 BMS_RollingCounter_2C0 0;
+BA_ "GenSigStartValue" SG_ 704 BMS_CoolingReq 0;
+BA_ "GenSigStartValue" SG_ 704 BMS_Heatreq 0;
+BA_ "GenSigStartValue" SG_ 704 BMS_Checksum_2C0 0;
+BA_ "GenSigStartValue" SG_ 707 BMS_Cool_TempTarget 40;
+BA_ "GenSigInvalidValue" SG_ 707 BMS_Cool_TempTarget 255;
+BA_ "GenSigStartValue" SG_ 707 BMS_Heat_TempTarget 40;
+BA_ "GenSigInvalidValue" SG_ 707 BMS_Heat_TempTarget 255;
+BA_ "GenSigStartValue" SG_ 707 BMS_Cool_TempDiff 0;
+BA_ "GenSigInvalidValue" SG_ 707 BMS_Cool_TempDiff 255;
+BA_ "GenSigStartValue" SG_ 707 BMS_Heat_TempDiff 0;
+BA_ "GenSigInvalidValue" SG_ 707 BMS_Heat_TempDiff 255;
+BA_ "GenSigStartValue" SG_ 719 BMS_BattMaxTemp 40;
+BA_ "GenSigInvalidValue" SG_ 719 BMS_BattMaxTemp 255;
+BA_ "GenSigStartValue" SG_ 719 BMS_BattMinTemp 40;
+BA_ "GenSigInvalidValue" SG_ 719 BMS_BattMinTemp 255;
+BA_ "GenSigStartValue" SG_ 722 BCM_RemoteControlSt 0;
+BA_ "GenSigStartValue" SG_ 727 TPS_CCMDrvTempSet 63;
+BA_ "GenSigStartValue" SG_ 727 TPS_CCMFrntPassTempSet 63;
+BA_ "GenSigStartValue" SG_ 727 TPS_BlowerLvlSet 7;
+BA_ "GenSigStartValue" SG_ 734 EAC_Temp 40;
+BA_ "GenSigStartValue" SG_ 734 EAC_TempSnsrFalt 0;
+BA_ "GenSigStartValue" SG_ 734 EAC_DrvVoltFalt 0;
+BA_ "GenSigStartValue" SG_ 734 EAC_OvLoadFalt 0;
+BA_ "GenSigStartValue" SG_ 734 EAC_MotorLackFalt 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_ActualPwr 0;
+BA_ "GenSigInvalidValue" SG_ 741 COMP_ActualPwr 8191;
+BA_ "GenSigStartValue" SG_ 741 COMP_IPM_HWFLt 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_ComLost 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_IPM_TempOverFlt 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_VoltLessErr 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_VoltOverErr 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_CurOverProtect 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_Init 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_Sta 0;
+BA_ "GenSigStartValue" SG_ 741 COMP_CtrlCircFlt 0;
+BA_ "GenSigStartValue" SG_ 746 EAC_MotCrt 0;
+BA_ "GenSigStartValue" SG_ 746 COMP_StatorSpd 0;
+BA_ "GenSigInvalidValue" SG_ 746 COMP_StatorSpd 16383;
+BA_ "GenSigStartValue" SG_ 746 COMP_ConCur 0;
+BA_ "GenSigStartValue" SG_ 746 COMP_ConVolt 0;
+BA_ "GenSigStartValue" SG_ 746 COMP_VoltVaild 0;
+BA_ "GenSigStartValue" SG_ 746 COMP_CurVaild 0;
+BA_ "GenSigStartValue" SG_ 746 COMP_SpdVaild 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_SpdEnable 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_SpdCmd 0;
+BA_ "GenSigInvalidValue" SG_ 752 CCM_SpdCmd 32767;
+BA_ "GenSigStartValue" SG_ 752 CCM_Display 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_Off 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_PTCPowerReq 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_EvapSensorSCOrOC 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_PressureAbnormal 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_Pressure 0;
+BA_ "GenSigStartValue" SG_ 752 CCM_EvapTemp 80;
+BA_ "GenSigStartValue" SG_ 753 CCM_PreHeatWorkSt 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_PreCoolWorkSt 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_ACVaild 0;
+BA_ "GenSigSendType" SG_ 753 CCM_InsideWorkMode 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_InsideWorkMode 0;
+BA_ "GenSigSendType" SG_ 753 CCM_ST_AGS 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_ST_AGS 1;
+BA_ "GenSigStartValue" SG_ 753 CCM_3_ValveStatus 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_AcActPower 0;
+BA_ "GenSigInvalidValue" SG_ 753 CCM_AcActPower 8191;
+BA_ "GenSigStartValue" SG_ 753 CCM_4_ValveStatus 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_CcmBmsReqAcPower 0;
+BA_ "GenSigInvalidValue" SG_ 753 CCM_CcmBmsReqAcPower 8191;
+BA_ "GenSigStartValue" SG_ 753 CCM_HVACValveStatus 0;
+BA_ "GenSigStartValue" SG_ 753 CCM_CcmBmsReqPtcPower 0;
+BA_ "GenSigInvalidValue" SG_ 753 CCM_CcmBmsReqPtcPower 8191;
+BA_ "GenSigStartValue" SG_ 753 CCM_CoolFanDuty 0;
+BA_ "GenSigInvalidValue" SG_ 753 CCM_CoolFanDuty 255;
+BA_ "GenSigStartValue" SG_ 755 CCM_PtcActPwr 0;
+BA_ "GenSigInvalidValue" SG_ 755 CCM_PtcActPwr 8191;
+BA_ "GenSigStartValue" SG_ 755 CCM_PTCConVolt 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_PTCVaild 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_PTCWorkPerm 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_FrontDefrostSts 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_ThermalMode 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_PTCcurrent 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_RollingCounter_2F3 0;
+BA_ "GenSigStartValue" SG_ 755 CCM_Checksum_2F3 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_ACSts 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_AUTOSts 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_ModelDisplay 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_CycleStatus 0;
+BA_ "GenSigStartValue" SG_ 832 AC_RemoteControlSt 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_FanGearDisplay 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_DrvMdResp 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_FLTempSts 12;
+BA_ "GenSigStartValue" SG_ 832 CCM_SYNCSts 0;
+BA_ "GenSigStartValue" SG_ 832 CCM_FRTempSts 12;
+BA_ "GenSigStartValue" SG_ 832 CCM_OutsideTemp 200;
+BA_ "GenSigInvalidValue" SG_ 832 CCM_OutsideTemp 511;
+BA_ "GenSigStartValue" SG_ 832 CCM_InsideTemp 160;
+BA_ "GenSigInvalidValue" SG_ 832 CCM_InsideTemp 511;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigLowPress 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigLowPress 0;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigPressWCCOut 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigPressWCCOut 0;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigPressOhexOut 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigPressOhexOut 0;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigSuctionTemp 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigSuctionTemp 0;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigDischargTemp 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigDischargTemp 0;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigEvapOutTemp 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigEvapOutTemp 0;
+BA_ "GenSigStartValue" SG_ 837 CCM_RefrigChillerOutTemp 0;
+BA_ "GenSigInvalidValue" SG_ 837 CCM_RefrigChillerOutTemp 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_RefrigTempWCCOut 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_RefrigTempWCCOut 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_RefrigTempOhexOut 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_RefrigTempOhexOut 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_EXVEvapPosPercentFB 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_EXVEvapPosPercentFB 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_EXVEvapEn 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_EXVEvapEn 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_EXVChillerPosPercentFB 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_EXVChillerPosPercentFB 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_EXVChillerEn 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_EXVChillerEn 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_ERVOhexEXVPosPercentFB 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_ERVOhexEXVPosPercentFB 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_ERVOhexEXVEn 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_ERVOhexEXVEn 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_EXVEvapDTC 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_EXVEvapDTC 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_EXVChillerDTC 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_EXVChillerDTC 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_ERVOhexEXVDTC 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_ERVOhexEXVDTC 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_ERVOhexSVReq 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_ERVOhexSVReq 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_ERVOhexSVErrSts 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_ERVOhexSVErrSts 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_SOVReq 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_SOVReq 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_SOVErrSts 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_SOVErrSts 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_Valve3WCabinDTC 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_Valve3WCabinDTC 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_Valve3WCabinPosPercentFB 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_Valve3WCabinPosPercentFB 0;
+BA_ "GenSigStartValue" SG_ 838 CCM_Valve3WCabinEn 0;
+BA_ "GenSigInvalidValue" SG_ 838 CCM_Valve3WCabinEn 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_Valve3WeAxlePosPercentFB 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_Valve3WeAxlePosPercentFB 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_Valve3WeAxleEn 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_Valve3WeAxleEn 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_Valve3WeAxleDTC 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_Valve3WeAxleDTC 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_Valve4WPosPercentFB 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_Valve4WPosPercentFB 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_Valve4WEn 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_Valve4WEn 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_Valve4WDTC 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_Valve4WDTC 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_PumpBattDTC 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_PumpBattDTC 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_PumpCabinSpdReq 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_PumpCabinSpdReq 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_PumpCabinRunEn 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_PumpCabinRunEn 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_PumpBattSpdReq 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_PumpBattSpdReq 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_PumpBattRunEn 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_PumpBattRunEn 0;
+BA_ "GenSigStartValue" SG_ 839 CCM_PumpCabinDTC 0;
+BA_ "GenSigInvalidValue" SG_ 839 CCM_PumpCabinDTC 0;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMACReq 2;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMOnOffReq 2;
+BA_ "GenSigStartValue" SG_ 865 IVI_BlowerLvlSet 7;
+BA_ "GenSigStartValue" SG_ 865 IVI_ModeSet 7;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMFrontDefrostHeatCtl 3;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMCycleMode 3;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMCtrlMode 3;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMFrntPassTempSet 63;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMDrvTempSet 63;
+BA_ "GenSigStartValue" SG_ 865 IVI_CCMDrvMdSet 0;
+BA_ "GenSigStartValue" SG_ 865 IVI_SYNCSet 3;
+BA_ "GenSigStartValue" SG_ 895 IVI_YearSet 0;
+BA_ "GenSigStartValue" SG_ 895 IVI_MonthSet 1;
+BA_ "GenSigStartValue" SG_ 895 IVI_DaySet 1;
+BA_ "GenSigStartValue" SG_ 895 IVI_HourSet 0;
+BA_ "GenSigStartValue" SG_ 895 IVI_MinuteSet 0;
+BA_ "GenSigStartValue" SG_ 895 IVI_SecondSet 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_1 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_2 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_3 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_4 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_5 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_6 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VIN_Value_7 0;
+BA_ "GenSigStartValue" SG_ 938 GW_VINFrameNumber 0;
+VAL_ 1024 NMGW_RepeatReq 0 "No requset" 1 "Repeat Message State Request" ;
+VAL_ 1024 NMGW_Actwake 0 "Node has not woken up the network (passive wakeup)" 1 "Node has woken up the network (active Wakeup)" ;
+VAL_ 1024 NMGW_RepeatFromSleep 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_RepeatFromPrepare 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_RepeatFromNormal 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_RepeatFromReady 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_NormalFromRepeat 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_NormalFromReady 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_WakeSource 1 "Can wakeup" 2 "KL l5" 3 "Diagonse" ;
+VAL_ 1024 NMGW_ActiveSource1 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_ActiveSource2 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_ActiveSource3 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_ActiveSource4 0 "not occur" 1 "occur" ;
+VAL_ 1024 NMGW_WakeSource_CAN 0 "Diagnose CAN" 1 "body CAN" 2 "PT CAN" 3 "Chassis CAN" 4 "ADAS CAN" 5 "INFO CAN" 6 "TBOX CAN" ;
+VAL_ 1040 NMBCM_RepeatReq 0 "Norequset" 1 "RepeatMessageStateRequest" ;
+VAL_ 1040 NMBCM_Actwake 0 "Nodehasnotwokenupthenetworkpassivewakeup" 1 "NodehaswokenupthenetworkactiveWakeup" ;
+VAL_ 1040 NMBCM_RepeatFromSleep 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_RepeatFromPrepare 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_RepeatFromNormal 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_RepeatFromReady 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_NormalFromRepeat 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_NormalFromReady 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_WakeSource 0 "Reseve" 1 "Canwakeup" 2 "KLl5" 3 "刹车踏板输入" 4 "中控解/闭锁开关" 5 "大灯组合开关" 6 "中控尾门开关" 7 "左前门门碰开关" 8 "右前门门碰开关" 9 "左后门门碰开关" 10 "右后门门碰开关" 11 "前舱盖门碰开关" 12 "后备箱门碰开关" 13 "充电口盖门碰开关" 14 "左前门锁反馈" 15 "脚踢尾门解锁信号" 16 "双跳开关" 17 "左前门把手解/闭锁" 18 "右前门把手解/闭锁" 19 "后备箱外部开关" 20 "SSB开关信号" 21 "钥匙遥控信号" 22 "LIN3从节点唤醒IBS/RLS" ;
+VAL_ 1040 NMBCM_ActiveSource1 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource2 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource3 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource4 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource5 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource6 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource7 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource8 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource9 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource10 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource11 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource12 0 "notoccur" 1 "occur" ;
+VAL_ 1040 NMBCM_ActiveSource13 0 "notoccur" 1 "occur" ;
+VAL_ 1041 NMCCM_RepeatReq 0 "No requset" 1 "Repeat Message State Request" ;
+VAL_ 1041 NMCCM_Actwake 0 "Node has not woken up the network (passive wakeup)" 1 "Node has woken up the network (active Wakeup)" ;
+VAL_ 1041 NMCCM_RepeatFromSleep 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_RepeatFromPrepare 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_RepeatFromNormal 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_RepeatFromReady 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_NormalFromRepeat 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_NormalFromReady 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_WakeSource 0 "Reserve" 1 "Can wakeup" 2 "KL l5" ;
+VAL_ 1041 NMCCM_ActiveSource1 0 "not occur" 1 "occur" ;
+VAL_ 1041 NMCCM_ActiveSource2 0 "not occur" 1 "occur" ;
+VAL_ 1042 NMSCM_RepeatReq 0 "Norequset" 1 "RepeatMessageStateRequest" ;
+VAL_ 1042 NMSCM_Actwake 0 "Nodehasnotwokenupthenetworkpassivewakeup" 1 "NodehaswokenupthenetworkactiveWakeup" ;
+VAL_ 1042 NMSCM_RepeatFromSleep 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_RepeatFromPrepare 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_RepeatFromNormal 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_RepeatFromReady 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_NormalFromRepeat 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_NormalFromReady 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_WakeSource 0 "座椅调节开关" 1 "Canwakeup" 2 "KLl5" ;
+VAL_ 1042 NMSCM_ActiveSource1 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_ActiveSource2 0 "notoccur" 1 "occur" ;
+VAL_ 1042 NMSCM_ActiveSource3 0 "notoccur" 1 "occur" ;
+VAL_ 1043 NMPLG_RepeatReq 0 "No requset" 1 "Repeat Message State Request" ;
+VAL_ 1043 NMPLG_Actwake 0 "Node has not woken up the network (passive wakeup)" 1 "Node has woken up the network (active Wakeup)" ;
+VAL_ 1043 NMPLG_RepeatFromSleep 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_RepeatFromPrepare 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_RepeatFromNormal 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_RepeatFromReady 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_NormalFromRepeat 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_NormalFromReady 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_WakeSource 0 "Tailgate external switch" 1 "Can wakeup" 2 "Kick senor" 3 "Tailgate latch switch" 4 "KL15" ;
+VAL_ 1043 NMPLG_ActiveSource1 0 "not occur" 1 "occur" ;
+VAL_ 1043 NMPLG_ActiveSource2 0 "not occur" 1 "occur" ;
+VAL_ 157 BMS_HVConnectStt 0 "Disconnect" 1 "Connecting" 2 "Connect" 3 "Unknown" ;
+VAL_ 291 ESP_VehicleSpeedValid 0 "Valid" 1 "Invalid" ;
+VAL_ 298 IP_OdometerSts 0 "Invalid" 1 "Valid" ;
+VAL_ 381 BCM_PwrDistributionSts 0 "init" 1 "Off" 2 "ACC(reserved )" 3 "ON" 4 "Crank(reserved )" 5 "Ready(reserved)" ;
+VAL_ 653 TBOX_CCMStartSet 0 "OFF" 1 "ON" 2 "No request" ;
+VAL_ 653 TBOX_CCMTempSet 63 "No request" ;
+VAL_ 653 TBOX_BlowerSpeedSet 0 "Level 1" 1 "Level 2" 2 "Level 3" 3 "Level 4" 4 "Level 5" 5 "Level 6" 6 "Level 7" 7 "No request" ;
+VAL_ 653 Tbox_ModeSet 0 "Face" 1 "Face+Foot" 2 "Foot" 3 "Foot+window" 4 "window" 7 "No request" ;
+VAL_ 653 TBOX_AutoModeSet 0 "Auto Mode OFF" 1 "Auto Mode ON" 3 "No request" ;
+VAL_ 653 TBOX_ACModeSet 0 "AC OFF" 1 "AC ON" 2 "No request" ;
+VAL_ 677 VCU_PreThemalEna 0 "Default" 1 "PreHeatEna" 2 "HoldtempEna" ;
+VAL_ 677 VCU_ElecModFlg 0 "init" 1 "LV on" 2 "IGN HV ON" 3 "Vehicle ready" 4 "Slow charge HV ON" 5 "Fast charge HV ON" 6 "Afterrun" 7 "Other HV ON" ;
+VAL_ 677 VCU_COMPEnbFlg 0 "不允许" 1 "允许" ;
+VAL_ 677 VCU_CoolingFanAval 0 "Fault" 1 "No_Fault" ;
+VAL_ 677 VCU_PTCEnbl 0 "不允许" 1 "允许" ;
+VAL_ 679 VCU_AGSFltStatus 0 "No Fault" 1 "Fault" ;
+VAL_ 679 VCU_ThermalMode 0 "Default" 1 "COMP cooling" 2 "eletric driver cooling" 3 "PTC heating" 4 "Heat pump heating" 5 "eletric driver heating" 6 "eletric driver heating error flg" 7 "Heat pump recycle  heating" 8 "Flash mode" 9 "heat Pump recycle heating  error flg" 10 "eletric driver cooling error flg" ;
+VAL_ 693 PTC_OverHeat 0 "Normal" 1 "over heat" ;
+VAL_ 693 PTC_OverCurrent 0 "Normal" 1 "Over current" ;
+VAL_ 693 PTC_OverVolt 0 "Normal" 1 "Over voltage" ;
+VAL_ 693 PTC_UnderVolt 0 "Normal" 1 "Under voltage" ;
+VAL_ 693 PTC_IGBTSts 0 "Normal" 1 "IGBT1_FAULT" 2 "IGBT2_FAULT" 3 "IGBT1_2FAULT" 4 "IGBT3_FAULT" 5 "IGBT1_3FAULT" 6 "IGBT2_3FAULT" 7 "IGBT1_2_3FAULT" 8 "IGBT4_FAULT" 9 "IGBT1_4FAULT" 10 "IGBT2_4FAULT" 11 "IGBT1_2_4FAULT" 12 "IGBT3_4FAULT" 13 "IGBT1_3_4FAULT" 14 "IGBT2_3_4FAULT" 15 "IGBT1_2_3_4FAULT" ;
+VAL_ 693 PTC_LGBTOverHeat 0 "Normal" 1 "Over heat" ;
+VAL_ 700 BMS_DCChgMode 0 "Default" 1 "HandOver" 2 "ParaConfig" 3 "Chging" 4 "ChgEnd" 5 "ChgWaring" 6 "ChgFault" ;
+VAL_ 700 BMS_ACChgMode 0 "Default" 1 "ChgWaiting" 2 "Preheat" 3 "Chging" 4 "ChgEnd" 5 "ChgWaring" 6 "ChgFault" ;
+VAL_ 700 OBC_Status 0 "ini" 1 "ready" 2 "CHARGING" 3 "V2L Discharging" 4 "Hold temp" 5 "V2V Discharging" 6 "Drating" 7 "Stop" 8 "PRE-HEATing" 9 "POWER OFF" 10 "FAULT" ;
+VAL_ 700 BMS_PreThemalReq 0 "Default" 1 "PreHeatReq" 2 "hold temp" ;
+VAL_ 700 BMS_PreThemalMode 0 "Default" 1 "DChrgPreHeat" 2 "AChrgPreHeat" 3 "hold temp" 4 "reserved" 5 "reserved" 6 "reserved" 7 "Fault" ;
+VAL_ 704 BMS_CoolingReq 0 "No request" 1 "Cool request" 2 "Flash request" ;
+VAL_ 704 BMS_Heatreq 0 "No request" 1 "Request" ;
+VAL_ 722 BCM_RemoteControlSt 0 "Invalid" 1 "Valid" ;
+VAL_ 727 TPS_CCMDrvTempSet 63 "No request" ;
+VAL_ 727 TPS_CCMFrntPassTempSet 63 "No request" ;
+VAL_ 727 TPS_BlowerLvlSet 0 "Level 1" 1 "Level 2" 2 "Level 3" 3 "Level 4" 4 "Level 5" 5 "Level 6" 6 "Level 7" 7 "No request" ;
+VAL_ 734 EAC_TempSnsrFalt 0 "normal" 1 "fault" ;
+VAL_ 734 EAC_DrvVoltFalt 0 "normal" 1 "fault" ;
+VAL_ 734 EAC_OvLoadFalt 0 "normal" 1 "fault" ;
+VAL_ 734 EAC_MotorLackFalt 0 "normal" 1 "fault" ;
+VAL_ 741 COMP_IPM_HWFLt 0 "Normal" 1 "Fault" ;
+VAL_ 741 COMP_ComLost 0 "Normal" 1 "Fault" ;
+VAL_ 741 COMP_IPM_TempOverFlt 0 "Normal" 1 "Fault" ;
+VAL_ 741 COMP_VoltLessErr 0 "Normal" 1 "Fault" ;
+VAL_ 741 COMP_VoltOverErr 0 "Normal" 1 "Fault" ;
+VAL_ 741 COMP_CurOverProtect 0 "Normal" 1 "Fault" ;
+VAL_ 741 COMP_Init 0 "Initializing" 1 "Init Complete" ;
+VAL_ 741 COMP_Sta 0 "Standby" 1 "Working" 2 "Fault" 3 "Limit state" ;
+VAL_ 741 COMP_CtrlCircFlt 0 "Normal" 1 "Fault" ;
+VAL_ 746 COMP_VoltVaild 0 "valid" 1 "invaild" ;
+VAL_ 746 COMP_CurVaild 0 "valid" 1 "invaild" ;
+VAL_ 746 COMP_SpdVaild 0 "valid" 1 "invaild" ;
+VAL_ 752 CCM_SpdEnable 0 "Disable" 1 "Enable" ;
+VAL_ 752 CCM_Display 0 "NO Display" 2 "Display" ;
+VAL_ 752 CCM_Off 0 "Off" 1 "ON" ;
+VAL_ 752 CCM_EvapSensorSCOrOC 0 "No Fault" 1 "ShortCircuit Fault" 2 "OpenCircuit Fault" ;
+VAL_ 752 CCM_PressureAbnormal 0 "No Fault" 1 "Low VoltageFault" 2 "High VoltageFault" ;
+VAL_ 753 CCM_PreHeatWorkSt 0 "Disable" 1 "Enable" ;
+VAL_ 753 CCM_PreCoolWorkSt 0 "Disable" 1 "Enable" ;
+VAL_ 753 CCM_ACVaild 0 "InitValue" 1 "Normal(No Work)" 2 "Normal(Work)" 3 "Abort(异常)" ;
+VAL_ 753 CCM_InsideWorkMode 0 "Default" 1 "Cool" 2 "Heat" 3 "Reserved" ;
+VAL_ 753 CCM_ST_AGS 0 "Off" 1 "ON" ;
+VAL_ 753 CCM_3_ValveStatus 0 "Default" 1 "eletric driver circulation" 2 "eletric driver small circulation" ;
+VAL_ 753 CCM_4_ValveStatus 0 "Default" 1 "eletric driver and battery flash independent" 2 "eletric drive connect battery flash" ;
+VAL_ 753 CCM_HVACValveStatus 0 "Default" 1 "HVAC and battery  circulation" 2 "HVAC circulation" 3 "Battery circulation" ;
+VAL_ 755 CCM_PTCVaild 0 "InitValue" 1 "Normal(No Work)" 2 "Normal(Work)" 3 "Abort(异常)" ;
+VAL_ 755 CCM_PTCWorkPerm 0 "OFF" 1 "ON" ;
+VAL_ 755 CCM_FrontDefrostSts 0 "OFF" 1 "ON" ;
+VAL_ 755 CCM_ThermalMode 0 "OFF 压缩机热模式为关闭" 1 "Changing 压缩机热系统模式切换中" 2 "Cooling mode of compressor 压缩机制冷模式" 3 "Heating mode of compressor 压缩机制热模式" 4 "Deice mode of compressor 压缩机化霜模式" 5 "Dehumidity cooling mode of compressor 压缩机除湿模式" 6 "Dehumidity heating mode of compressor 压缩机除湿模式" ;
+VAL_ 832 CCM_ACSts 0 "AC OFF" 1 "AC ON" ;
+VAL_ 832 CCM_AUTOSts 0 "Auto Mode OFF" 1 "Auto Mode ON" ;
+VAL_ 832 CCM_ModelDisplay 0 "Face" 1 "Face+Foot" 2 "Foot" 3 "Foot+window" 4 "window" ;
+VAL_ 832 CCM_CycleStatus 0 "REC" 1 "FRE" ;
+VAL_ 832 AC_RemoteControlSt 0 "Invalid" 1 "Valid" ;
+VAL_ 832 CCM_FanGearDisplay 0 "Level 1" 1 "Level 2" 2 "Level 3" 3 "Level 4" 4 "Level 5" 5 "Level 6" 6 "Level 7" 7 "Fan_Off" ;
+VAL_ 832 CCM_DrvMdResp 0 "Reserved" 1 "Eco mode" 2 "Normal mode" ;
+VAL_ 832 CCM_SYNCSts 0 "Singel mode" 1 "Dual mode" ;
+VAL_ 838 CCM_EXVEvapEn 0 "Disable" 1 "Enable" ;
+VAL_ 838 CCM_EXVChillerEn 0 "Disable" 1 "Enable" ;
+VAL_ 838 CCM_ERVOhexEXVEn 0 "Disable" 1 "Enable" ;
+VAL_ 838 CCM_EXVEvapDTC 0 "nor error" 1 "Lin bus lost communication" 2 "Do not achieve target position" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 838 CCM_EXVChillerDTC 0 "nor error" 1 "Lin bus lost communication" 2 "Do not achieve target position" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 838 CCM_ERVOhexEXVDTC 0 "nor error" 1 "Lin bus lost communication" 2 "Do not achieve target position" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 838 CCM_ERVOhexSVReq 0 "do not request ohex ERV-SV open" 1 "request ohex ERV-SV open" ;
+VAL_ 838 CCM_ERVOhexSVErrSts 0 "no error" 1 "error is happened." ;
+VAL_ 838 CCM_SOVReq 0 "do not request SOV open" 1 "request ohex SOV open" ;
+VAL_ 838 CCM_SOVErrSts 0 "no error" 1 "error is happened." ;
+VAL_ 838 CCM_Valve3WCabinDTC 0 "nor error" 1 "Lin bus lost communication" 2 "Do not achieve target position" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 838 CCM_Valve3WCabinEn 0 "Disable" 1 "Enable" ;
+VAL_ 839 CCM_Valve3WeAxleEn 0 "Disable" 1 "Enable" ;
+VAL_ 839 CCM_Valve3WeAxleDTC 0 "nor error" 1 "Lin bus lost communication" 2 "Do not achieve target position" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 839 CCM_Valve4WPosPercentFB 0 "Small cycle, water cycle stand alone" 1 "Big cycle, battery & eAxle water together" ;
+VAL_ 839 CCM_Valve4WEn 0 "Disable" 1 "Enable" ;
+VAL_ 839 CCM_Valve4WDTC 0 "nor error" 1 "Lin bus lost communication" 2 "Do not achieve target position" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 839 CCM_PumpBattDTC 0 "nor error" 1 "PWM lost communication - not recognized" 2 "Pump motor stuck" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 839 CCM_PumpCabinRunEn 0 "Disable" 1 "Enable" ;
+VAL_ 839 CCM_PumpBattRunEn 0 "Disable" 1 "Enable" ;
+VAL_ 839 CCM_PumpCabinDTC 0 "nor error" 1 "PWM lost communication - not recognized" 2 "Pump motor stuck" 3 "both 1 & 2 failure or other failure." ;
+VAL_ 865 IVI_CCMACReq 0 "AC OFF" 1 "AC ON" 2 "No request" ;
+VAL_ 865 IVI_CCMOnOffReq 0 "OFF" 1 "ON" 2 "No request" ;
+VAL_ 865 IVI_BlowerLvlSet 0 "Level 1" 1 "Level 2" 2 "Level 3" 3 "Level 4" 4 "Level 5" 5 "Level 6" 6 "Level 7" 7 "No request" ;
+VAL_ 865 IVI_ModeSet 0 "Face" 1 "Face+Foot" 2 "Foot" 3 "Foot+window" 4 "window" 7 "No request" ;
+VAL_ 865 IVI_CCMFrontDefrostHeatCtl 0 "OFF" 1 "ON" 3 "No request" ;
+VAL_ 865 IVI_CCMCycleMode 0 "REC" 1 "FRE" 3 "No request" ;
+VAL_ 865 IVI_CCMCtrlMode 0 "Auto Mode OFF" 1 "Auto Mode ON" 3 "No request" ;
+VAL_ 865 IVI_CCMFrntPassTempSet 63 "No request" ;
+VAL_ 865 IVI_CCMDrvTempSet 63 "No request" ;
+VAL_ 865 IVI_CCMDrvMdSet 0 "No request" 1 "Eco mode" 2 "Nomal mode" ;
+VAL_ 865 IVI_SYNCSet 0 "Singel mode" 1 "Dual mode" 3 "No request" ;
+

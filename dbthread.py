@@ -26,6 +26,7 @@ from PyQt5.QtCore import (Qt,QThread,QMutex)
 from PyQt5.QtCore import pyqtSignal as Signal
 from PyQt5.QtCore import pyqtSlot as Slot
 import time,os
+import traceback
 
 from matrixrd import *
 
@@ -52,24 +53,23 @@ class DBThread(QThread):
                   self.wait()
                   self.listmessageboxfile.append('It generate error when creating Database')
 
-            self.result.emit(True)
-            
+            self.result.emit(True)            
 
       def DBCreate(self,dbcpath):
-            
 
-            list_fdbcname=[]
-
-            for root, dirs, files in os.walk(str(dbcpath)):
+            try:
+                  list_fdbcname=list()
+                  for root, dirs, files in os.walk(str(dbcpath)):
                   
-                  for name in [name for name in files
-                               if name.endswith((".dbc", ".ldf"))]:
-                        fname = os.path.join(root, name)
-                        list_fdbcname.append(fname)
+                        for name in [name for name in files
+                                    if name.endswith((".dbc", ".ldf"))]:
+                              fname = os.path.join(root, name)
+                              list_fdbcname.append(fname)
 
-            can_info=MatrixInfo()
-            candbc=can_info.CanMatrixDb(list_fdbcname,self.listmessageboxfile,self.listmessageboxinsert)
-            
-            return candbc
-      
-            
+                  can_info=MatrixInfo()
+                  candbc=can_info.CanMatrixDb(list_fdbcname,self.listmessageboxfile,self.listmessageboxinsert)            
+                  return True
+            except Exception as e:
+                  mymsgbox = traceback.print_exc()
+                  self.listmessageboxfile(mymsgbox)
+                  return False

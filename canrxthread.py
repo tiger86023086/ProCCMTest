@@ -77,7 +77,7 @@ class RxThread(QThread):
             #print('bbbb')
             try:
                    
-                   mysiglist = mycantrx.initrxsig(dictACFlg)
+                   mysiglist,msgbox = mycantrx.initrxsig(dictACFlg)
 ##                   print('bbbb')
 ##                   print(mysiglist)
                    mysigdict = mycantrx.mymsgrecv(mysiglist)

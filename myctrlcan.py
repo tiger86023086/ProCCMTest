@@ -35,16 +35,18 @@ from signalbit import canconvert
 class myctrlcan:
     def __init__(self,dbfile,canbox):
         
-        listmsgbox = ''
-        self.mapdict = mapread('map.xls',listmsgbox)
+        self.listmsgbox = list()
+        self.mapdict = mapread('map.xls',self.listmsgbox)
         if dbfile != '':
               self.mycanconv = canconvert()
               self.mycanconv.initcandb(dbfile)
               mymsgbox = 'The dbc has been install --'+dbfile
               print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
         else:
             mymsgbox = 'The dbc is none'
             print(mymsgbox)
+            self.listmsgbox.append(mymsgbox)
 
         self.mycantrx = cantrx()
                             
@@ -53,12 +55,25 @@ class myctrlcan:
                 self.mycantrx.initcan(canbox,0,500000)
                 mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
                 print(mymsgbox)
+                self.listmsgbox.append(mymsgbox)
             except Exception as e:                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
+        elif canbox == 'kvaser':
+            try:
+                self.mycantrx.initcan(canbox,0,500000)
+                mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
+                print(mymsgbox)
+                self.listmsgbox.append(mymsgbox)
+            except Exception as e:                  
+              mymsgbox = traceback.print_exc()
+              print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
         else:
             mymsgbox = 'You select null canbox!'
             print(mymsgbox)
+            self.listmsgbox.append(mymsgbox)
 
     def inittxsig(self,dictACFlg,dictSigVal):
 
@@ -88,7 +103,11 @@ class myctrlcan:
         mysigdata,myid  = self.mycanconv.encodemsg(dictsig)
         mylistmsg = self.mycantrx.clustermsg(mysigdata,myid)
 
-        return mylistmsg
+        mymsgbox = 'Master send messages'
+        print(mymsgbox)
+        self.listmsgbox.append(mymsgbox)
+
+        return mylistmsg,self.listmsgbox
     def initrxsig(self,dictACFlg):
         mysiglist = list()
         iterdictac = iter(dictACFlg)
@@ -102,7 +121,11 @@ class myctrlcan:
                         mysiglist.append(CANsigRx)
               except StopIteration:
                     break
-        return mysiglist
+
+        mymsgbox = 'Master recieve messages '
+        print(mymsgbox)
+        self.listmsgbox.append(mymsgbox)
+        return mysiglist,self.listmsgbox
 
     def mymsgtxperiod(self,mylistmsg):
         

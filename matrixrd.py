@@ -93,7 +93,7 @@ offset TEXT NOT NULL,minnum TEXT NOT NULL,maxnum TEXT NOT NULL,initval TEXT NOT 
                               listmessageboxfile.append(excu)
                               cursor.execute(excu)                             
                         
-                              dbc_content=open(dbc_file_name,'r')            
+                              dbc_content=open(dbc_file_name,'r',encoding='gbk')            
                               row_content_by_lines = dbc_content.readlines()
                               listnum=0
 
@@ -256,7 +256,7 @@ offset TEXT NOT NULL,minnum TEXT NOT NULL,maxnum TEXT NOT NULL,initval TEXT NOT 
             return reinsert
 
 if __name__=='__main__':
-      dbclist=['E:\\Project\\ProCCMTest\\ProCCMTest\\DBC\\M891改制冬标车版本_Body.dbc']
+      dbclist=['E:\\Project\\ProCCMTest\\ProCCMTest\\M891改制冬标车版本_Body.dbc']
       listmessagebox=[]
       listmessageboxinsert=[]
       dbcrd = MatrixInfo()

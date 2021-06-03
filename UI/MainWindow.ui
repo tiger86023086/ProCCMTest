@@ -13,8 +13,245 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../car.ico</normaloff>../car.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_7">
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBoxDialogs">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Dialogs</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="3" column="3">
+        <widget class="QToolButton" name="pushButtonDBC">
+         <property name="text">
+          <string>SetPath</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>This is a tool tip</string>
+         </property>
+         <property name="statusTip">
+          <string>This is a status tip</string>
+         </property>
+         <property name="whatsThis">
+          <string>This is &quot;what is this&quot;</string>
+         </property>
+         <property name="text">
+          <string>canbox:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="3">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Select can tool and database</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>This is a tool tip</string>
+         </property>
+         <property name="statusTip">
+          <string>This is a status tip</string>
+         </property>
+         <property name="whatsThis">
+          <string>This is &quot;what is this&quot;</string>
+         </property>
+         <property name="text">
+          <string>DBCPath:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="comboBoxSelectCANbox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>This is a tool tip</string>
+         </property>
+         <property name="statusTip">
+          <string>This is a status tip</string>
+         </property>
+         <property name="whatsThis">
+          <string>This is &quot;what is this&quot;</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>canalystii</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>pcan</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>neovi</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>kvaser</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>vector</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEditDBC">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>This is a tool tip</string>
+         </property>
+         <property name="statusTip">
+          <string>This is a status tip</string>
+         </property>
+         <property name="whatsThis">
+          <string>This is &quot;what is this&quot;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Info</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#7d7d7d;&quot;&gt;Pulish by Will at 202105,Coprright 2021&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::TextBrowserInteraction</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
@@ -51,7 +288,7 @@
                    <x>-8</x>
                    <y>12</y>
                    <width>1171</width>
-                   <height>601</height>
+                   <height>677</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout">
@@ -123,50 +360,7 @@ border-style: outset;</string>
                    </layout>
                   </item>
                   <item>
-                   <widget class="QTextBrowser" name="textBrowser">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>500</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>1150</width>
-                      <height>1000</height>
-                     </size>
-                    </property>
-                    <property name="tabletTracking">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoFillBackground">
-                     <bool>false</bool>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <property name="lineWidth">
-                     <number>1</number>
-                    </property>
-                    <property name="midLineWidth">
-                     <number>0</number>
-                    </property>
-                    <property name="verticalScrollBarPolicy">
-                     <enum>Qt::ScrollBarAsNeeded</enum>
-                    </property>
-                    <property name="sizeAdjustPolicy">
-                     <enum>QAbstractScrollArea::AdjustIgnored</enum>
-                    </property>
-                   </widget>
+                   <widget class="QListWidget" name="listWidget"/>
                   </item>
                  </layout>
                 </widget>
@@ -179,7 +373,7 @@ border-style: outset;</string>
          </widget>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
-           <string>AC Simulation</string>
+           <string>HMI Simulation</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_6">
            <item row="3" column="0">
@@ -842,9 +1036,266 @@ border-style: outset;</string>
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="tab_5">
+          <attribute name="title">
+           <string>TPS Simulation</string>
+          </attribute>
+          <widget class="QGroupBox" name="groupBox_8">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>52</y>
+             <width>1185</width>
+             <height>211</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>BlowerLevel</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0">
+             <widget class="QSplitter" name="splitter_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <widget class="QSlider" name="horizontalSliderBlwrLvlT">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>1000</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>This is a tool tip</string>
+               </property>
+               <property name="statusTip">
+                <string>This is a status tip</string>
+               </property>
+               <property name="whatsThis">
+                <string>This is &quot;what is this&quot;</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>7</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLCDNumber" name="displayBlwrLvlT">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Agency FB</family>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="midLineWidth">
+               <number>1</number>
+              </property>
+              <property name="smallDecimalPoint">
+               <bool>false</bool>
+              </property>
+              <property name="digitCount">
+               <number>5</number>
+              </property>
+              <property name="segmentStyle">
+               <enum>QLCDNumber::Filled</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_9">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>270</y>
+             <width>1185</width>
+             <height>210</height>
+            </rect>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>1300</width>
+             <height>220</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Temperature</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>39</number>
+              </property>
+              <item>
+               <widget class="QScrollBar" name="scrollBarLeftTempT">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>125</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>70</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>This is a tool tip</string>
+                </property>
+                <property name="statusTip">
+                 <string>This is a status tip</string>
+                </property>
+                <property name="whatsThis">
+                 <string>This is &quot;what is this&quot;</string>
+                </property>
+                <property name="minimum">
+                 <number>16</number>
+                </property>
+                <property name="maximum">
+                 <number>32</number>
+                </property>
+                <property name="value">
+                 <number>22</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEditTempLT">
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 20pt &quot;华文彩云&quot;;
+text-decoration: underline;</string>
+                </property>
+                <property name="text">
+                 <string>22</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_15">
+              <property name="bottomMargin">
+               <number>39</number>
+              </property>
+              <item>
+               <widget class="QScrollBar" name="scrollBarRightTempT">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>125</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>70</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>This is a tool tip</string>
+                </property>
+                <property name="statusTip">
+                 <string>This is a status tip</string>
+                </property>
+                <property name="whatsThis">
+                 <string>This is &quot;what is this&quot;</string>
+                </property>
+                <property name="minimum">
+                 <number>16</number>
+                </property>
+                <property name="maximum">
+                 <number>32</number>
+                </property>
+                <property name="value">
+                 <number>22</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="invertedAppearance">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEditTempRT">
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 20pt &quot;华文彩云&quot;;
+text-decoration: underline;</string>
+                </property>
+                <property name="text">
+                 <string>22</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
          <widget class="QWidget" name="tab_4">
           <attribute name="title">
-           <string>Related</string>
+           <string>Signal</string>
           </attribute>
           <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
@@ -1150,12 +1601,7 @@ border-style: outset;</string>
          </widget>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
-           <string>DB Generate</string>
-          </attribute>
-         </widget>
-         <widget class="QWidget" name="tab_5">
-          <attribute name="title">
-           <string>Page</string>
+           <string>Signal</string>
           </attribute>
          </widget>
          <widget class="QWidget" name="tab_6">
@@ -1202,239 +1648,6 @@ border-style: outset;</string>
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QGroupBox" name="groupBoxDialogs">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="title">
-       <string>Dialogs</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="3" column="3">
-        <widget class="QToolButton" name="pushButtonDBC">
-         <property name="text">
-          <string>SetPath</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_11">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="toolTip">
-          <string>This is a tool tip</string>
-         </property>
-         <property name="statusTip">
-          <string>This is a status tip</string>
-         </property>
-         <property name="whatsThis">
-          <string>This is &quot;what is this&quot;</string>
-         </property>
-         <property name="text">
-          <string>canbox:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_13">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="toolTip">
-          <string>This is a tool tip</string>
-         </property>
-         <property name="statusTip">
-          <string>This is a status tip</string>
-         </property>
-         <property name="whatsThis">
-          <string>This is &quot;what is this&quot;</string>
-         </property>
-         <property name="text">
-          <string>DBCPath:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" colspan="2">
-        <widget class="QLineEdit" name="lineEditDBC">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>This is a tool tip</string>
-         </property>
-         <property name="statusTip">
-          <string>This is a status tip</string>
-         </property>
-         <property name="whatsThis">
-          <string>This is &quot;what is this&quot;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" colspan="3">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Select can tool and database</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="comboBoxSelectCANbox">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>150</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>This is a tool tip</string>
-         </property>
-         <property name="statusTip">
-          <string>This is a status tip</string>
-         </property>
-         <property name="whatsThis">
-          <string>This is &quot;what is this&quot;</string>
-         </property>
-         <item>
-          <property name="text">
-           <string>canalystii</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>pcan</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>neovi</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>kvaser</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>vector</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="title">
-       <string>Info</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="lineWidth">
-          <number>0</number>
-         </property>
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#7d7d7d;&quot;&gt;Pulish by Will at 202105,Coprright 2021&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::RichText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-         <property name="openExternalLinks">
-          <bool>true</bool>
-         </property>
-         <property name="textInteractionFlags">
-          <set>Qt::TextBrowserInteraction</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1453,10 +1666,17 @@ border-style: outset;</string>
     <addaction name="actionDarkStyle"/>
     <addaction name="actionLightStyle"/>
    </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>About QDarkStyle</string>
+   <widget class="QMenu" name="menuTool">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionDB_Create"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -1464,8 +1684,8 @@ border-style: outset;</string>
     </property>
    </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menuTool"/>
    <addaction name="menuHelp"/>
-   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBarMenus">
@@ -1660,6 +1880,11 @@ border-style: outset;</string>
    </property>
    <property name="text">
     <string>Action Transp. Icon</string>
+   </property>
+  </action>
+  <action name="actionDB_Create">
+   <property name="text">
+    <string>DB Create</string>
    </property>
   </action>
  </widget>

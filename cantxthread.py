@@ -31,11 +31,8 @@ import traceback
 
 from cantrx import cantrx
 from myctrlcan import myctrlcan
-
-
-
 class TxThread(QThread):
-      #redict = Signal(dict)      
+      msgbox = Signal(list)      
       
       def __init__(self,parent=None):
             super(TxThread,self).__init__(parent)           
@@ -79,7 +76,8 @@ class TxThread(QThread):
                       dictSigVal):
             
             try:
-                   mylistmsg = mycantrx.inittxsig(dictACFlg,dictSigVal)
+                   mylistmsg,mymsgbox = mycantrx.inittxsig(dictACFlg,dictSigVal)
+                   self.msgbox.emit(mymsgbox)
                   
                   #print('aaaaa')
                    for i in range(5):
@@ -90,4 +88,6 @@ class TxThread(QThread):
 
             except Exception as e:
                   print(traceback.print_exc())
+                  mymsgbox = traceback.print_exc()
+                  self.msgbox.emit(mymsgbox)
                   return False
