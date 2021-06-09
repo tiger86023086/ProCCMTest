@@ -33,8 +33,8 @@ from cantrx import cantrx
 from signalbit import canconvert
 
 class myctrlcan:
-    def __init__(self,dbfile,canbox):
-        
+    def __init__(self,dbfile,canbox,canchannel):
+        self.channel = canchannel
         self.listmsgbox = list()
         self.mapdict = mapread('map.xls',self.listmsgbox)
         if dbfile != '':
@@ -52,7 +52,7 @@ class myctrlcan:
                             
         if canbox == 'canalystii':
             try:
-                self.mycantrx.initcan(canbox,0,500000)
+                self.mycantrx.initcan(canbox,canchannel,500000)
                 mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
@@ -62,7 +62,7 @@ class myctrlcan:
               self.listmsgbox.append(mymsgbox)
         elif canbox == 'kvaser':
             try:
-                self.mycantrx.initcan(canbox,0,500000)
+                self.mycantrx.initcan(canbox,canchannel,500000)
                 mymsgbox = 'You slecet canbox--kavaser'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
@@ -72,17 +72,18 @@ class myctrlcan:
               self.listmsgbox.append(mymsgbox)
         elif canbox == 'pcan':
             try:
-                self.mycantrx.initcan(canbox,'PCAN_USBBUS1',500000)
-                mymsgbox = 'You slecet canbox--PCAN'
-                print(mymsgbox)
-                self.listmsgbox.append(mymsgbox)
+                if canchannel ==0:
+                    self.mycantrx.initcan(canbox,'PCAN_USBBUS1',500000)
+                    mymsgbox = 'You slecet canbox--PCAN'
+                    print(mymsgbox)
+                    self.listmsgbox.append(mymsgbox)
             except Exception as e:                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
         elif canbox == 'neovi':
             try:
-                self.mycantrx.initcan(canbox,1,500000)
+                self.mycantrx.initcan(canbox,canchannel,500000)
                 mymsgbox = 'You slecet canbox--neoVI'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
@@ -121,7 +122,7 @@ class myctrlcan:
                     break        
 
         mysigdata,myid  = self.mycanconv.encodemsg(dictsig)
-        mylistmsg = self.mycantrx.clustermsg(mysigdata,myid)
+        mylistmsg = self.mycantrx.clustermsg(mysigdata,myid,self.channel)
 
         mymsgbox = 'Master send messages'
         print(mymsgbox)
@@ -180,14 +181,17 @@ class myctrlcan:
         for i in range(len(mylistid)):
 
             while True:
-                canrecvmsg = self.mycantrx.recvmsg()
-##                print(canrecvmsg.arbitration_id)
-##                print(mylistid[i])
-                if canrecvmsg.arbitration_id == mylistid[i] :
-                    dicttemp = self.mycanconv.decodemsg(canrecvmsg.arbitration_id,
-                                               canrecvmsg.data)
-                    mysigdict.update(dicttemp)
-                    break
+                try:
+                    canrecvmsg = self.mycantrx.recvmsg()
+                    # print(canrecvmsg.arbitration_id)
+                    # print(mylistid[i])
+                    if canrecvmsg.arbitration_id == mylistid[i] :
+                        dicttemp = self.mycanconv.decodemsg(canrecvmsg.arbitration_id,
+                                                canrecvmsg.data)
+                        mysigdict.update(dicttemp)
+                        break
+                except:
+                    pass
                 #print('qqqq')
             #time.sleep(0.5)
         return mysigdict
