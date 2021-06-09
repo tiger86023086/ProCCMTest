@@ -512,11 +512,11 @@ class MainWin(QMainWindow,
                         self.displayWIN.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
                         self.displayFOOT.setStyleSheet("QPushButton{}")
                         self.displayFACE.setStyleSheet("QPushButton{}")
-                  elif mysigdict['CCM_ModelDisplay'] == 0:
+                  elif mysigdict['CCM_ModelDisplay'] == 2:
                         self.displayFOOT.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
                         self.displayWIN.setStyleSheet("QPushButton{}")
                         self.displayFACE.setStyleSheet("QPushButton{}")
-                  elif mysigdict['CCM_ModelDisplay'] == 2:
+                  elif mysigdict['CCM_ModelDisplay'] == 0:
                         self.displayFACE.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
                         self.displayWIN.setStyleSheet("QPushButton{}")
                         self.displayFOOT.setStyleSheet("QPushButton{}")

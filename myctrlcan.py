@@ -63,7 +63,27 @@ class myctrlcan:
         elif canbox == 'kvaser':
             try:
                 self.mycantrx.initcan(canbox,0,500000)
-                mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
+                mymsgbox = 'You slecet canbox--kavaser'
+                print(mymsgbox)
+                self.listmsgbox.append(mymsgbox)
+            except Exception as e:                  
+              mymsgbox = traceback.print_exc()
+              print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
+        elif canbox == 'pcan':
+            try:
+                self.mycantrx.initcan(canbox,'PCAN_USBBUS1',500000)
+                mymsgbox = 'You slecet canbox--PCAN'
+                print(mymsgbox)
+                self.listmsgbox.append(mymsgbox)
+            except Exception as e:                  
+              mymsgbox = traceback.print_exc()
+              print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
+        elif canbox == 'neovi':
+            try:
+                self.mycantrx.initcan(canbox,1,500000)
+                mymsgbox = 'You slecet canbox--neoVI'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
             except Exception as e:                  
@@ -177,7 +197,7 @@ class myctrlcan:
 if __name__ == "__main__":
     import time
     canbox = 'canalystii'
-    dbfile = 'E:\\Project\\ProCCMTest\\ProCCMTest\\DBC\\M891改制冬标车版本_Body.dbc'
+    dbfile = 'E:\\Project\\ProCCMTest\\ProCCMTest\\DBC\\MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc'
     flgacrun=1
     flagrun =None
     objectcantrx = None
@@ -187,14 +207,14 @@ if __name__ == "__main__":
                 'flgacrec':3,
                 'valacbl':7,
                 'flgacdef':3,
-                'flgacwindow':7,
-                'flgacface':7,
-                'flgacfoot':7,
-                'valacltemp':22,
-                'valacrtemp':22,
-                'flgacdual':3,
-                'flgacldef':3,
-                'flgaclauto':3}
+                'flgacmode':7,                            
+                'valacltemp':47.5,
+                 'valacrtemp':47.5,
+                 'flgacdual':3,
+                'valacblT':7,
+                'valacltempT':47.5,
+                'valacrtempT':47.5,
+                'flgbcmon':3}
     dictSigVal = {'vspd':0,
                  'battcooltemp':0,
                  'battheattemp':0,
@@ -202,26 +222,26 @@ if __name__ == "__main__":
                  'comppwr':0}
 
     mycan = myctrlcan(dbfile,canbox)
-    mylistmsg = mycan.inittxsig(dictACFlg,dictSigVal)
-    mysiglist = mycan.initrxsig(dictACFlg)
+    mylistmsg,msgbox = mycan.inittxsig(dictACFlg,dictSigVal)
+    mysiglist,msgbox = mycan.initrxsig(dictACFlg)
     mycan.mymsgtxperiod(mylistmsg)
 
-    dictACFlg={'flgacon':0,
-            'flgacauto':0,
-            'flgacac':0,
-            'flgacrec':0,
-            'valacbl':1,
-            'flgacdef':1,
-            'flgacwindow':0,
-            'flgacface':0,
-            'flgacfoot':0,
-            'valacltemp':22,
-            'valacrtemp':22,
-            'flgacdual':0,
-            'flgacldef':0,
-            'flgaclauto':1}
+    dictACFlg={'flgacon':3,
+                'flgacauto':1,
+                'flgacac':2,
+                'flgacrec':3,
+                'valacbl':7,
+                'flgacdef':3,
+                'flgacmode':7,                            
+                'valacltemp':47.5,
+                 'valacrtemp':47.5,
+                 'flgacdual':3,
+                'valacblT':7,
+                'valacltempT':47.5,
+                'valacrtempT':47.5,
+                'flgbcmon':3}
 
-    mylistmsg = mycan.inittxsig(dictACFlg,dictSigVal)
+    mylistmsg,msgbox= mycan.inittxsig(dictACFlg,dictSigVal)
     for i in range(5):        
         mycan.mymsgtx(mylistmsg)
         time.sleep(0.004)
