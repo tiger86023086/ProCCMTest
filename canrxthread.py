@@ -28,14 +28,11 @@ from PyQt5.QtCore import pyqtSlot as Slot
 import time,os
 import traceback
 
-
 from cantrx import cantrx
 from myctrlcan import myctrlcan
 
-
-
 class RxThread(QThread):
-      redict = Signal(dict)      
+      redict = Signal(dict)   
       
       def __init__(self,parent=None):
             super(RxThread,self).__init__(parent)           
@@ -52,37 +49,27 @@ class RxThread(QThread):
             self.mycantrx = mycantrx
             self.dictACFlg = dictACFlg                       
 
-      def run(self):
-            
-            
-            #while self.working ==True:
-                  
+      def run(self):                  
             reflag,mysigdict=self.CANRxSig(self.mycantrx,
                                  self.dictACFlg)
-            #print(mysigdict)
-            
-            #print 'cccc'
+            #print(mysigdict)            
             if reflag == True:
                   self.redict.emit(mysigdict)                  
                   self.wait()
                   #self.finished.emit(self.completed)
             else:
                  self.wait()
-
             #self.result.emit(True)
-
       def CANRxSig(self,
                    mycantrx,
                    dictACFlg):
             #print('bbbb')
-            try:
-                   
+            try:                   
                    mysiglist,msgbox = mycantrx.initrxsig(dictACFlg)
-##                   print('bbbb')
+                   #print('bbbb')
 ##                   print(mysiglist)
                    mysigdict = mycantrx.mymsgrecv(mysiglist)
-##                   print('ccccc')
-                  
+                   #print('ccccc')                  
                    return True,mysigdict           
 
             except Exception as e:

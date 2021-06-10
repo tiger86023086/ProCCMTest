@@ -18,63 +18,14 @@
     <normaloff>../car.ico</normaloff>../car.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_7">
-    <item row="2" column="0">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="title">
-       <string>Info</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="lineWidth">
-          <number>0</number>
-         </property>
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#7d7d7d;&quot;&gt;Pulish by Will at 202105,Coprright 2021&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::RichText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-         <property name="openExternalLinks">
-          <bool>true</bool>
-         </property>
-         <property name="textInteractionFlags">
-          <set>Qt::TextBrowserInteraction</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
        <string>list tab</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
           <number>0</number>
@@ -89,8 +40,8 @@
              <property name="title">
               <string>Information</string>
              </property>
-             <layout class="QGridLayout" name="gridLayout_5">
-              <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
                <widget class="QFrame" name="frame">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -98,88 +49,82 @@
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QWidget" name="layoutWidget">
-                 <property name="geometry">
-                  <rect>
-                   <x>-8</x>
-                   <y>12</y>
-                   <width>1171</width>
-                   <height>677</height>
-                  </rect>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout">
-                  <property name="leftMargin">
-                   <number>18</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>11</number>
-                  </property>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_12">
-                    <item>
-                     <widget class="QPushButton" name="pushButtonACStart">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>60</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>60</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">border-radius: 20px;  border: 2px groove gray;
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout">
+                   <property name="leftMargin">
+                    <number>18</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>11</number>
+                   </property>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_12">
+                     <item>
+                      <widget class="QPushButton" name="pushButtonACStart">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>60</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>60</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 20px;  border: 2px groove gray;
 font: 12pt &quot;Arial&quot;;
 border-style: outset;</string>
-                      </property>
-                      <property name="text">
-                       <string>Start</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="pushButtonACStop">
-                      <property name="minimumSize">
-                       <size>
-                        <width>60</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>60</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">border-radius: 20px;  border: 2px groove gray;
+                       </property>
+                       <property name="text">
+                        <string>Start</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButtonACStop">
+                       <property name="minimumSize">
+                        <size>
+                         <width>60</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>60</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <property name="layoutDirection">
+                        <enum>Qt::LeftToRight</enum>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border-radius: 20px;  border: 2px groove gray;
 font: 12pt &quot;Arial&quot;;
 border-style: outset;</string>
-                      </property>
-                      <property name="text">
-                       <string>Stop</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QListWidget" name="listWidget"/>
-                  </item>
-                 </layout>
-                </widget>
+                       </property>
+                       <property name="text">
+                        <string>Stop</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QTextBrowser" name="textBrowserMain"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -1510,7 +1455,7 @@ text-decoration: underline;</string>
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item>
      <widget class="QGroupBox" name="groupBoxDialogs">
       <property name="maximumSize">
        <size>
@@ -1758,6 +1703,55 @@ text-decoration: underline;</string>
       </layout>
      </widget>
     </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Info</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#7d7d7d;&quot;&gt;Pulish by Will at 202105,Coprright 2021&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::TextBrowserInteraction</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1910,7 +1904,7 @@ text-decoration: underline;</string>
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../../../¤Treasure/☆Collection/python_pkg/QDarkStyleSheet-master/qdarkstyle/dark/style.qrc">
+    <iconset>
      <normaloff>:/qss_icons/dark/rc/window_undock_focus.png</normaloff>:/qss_icons/dark/rc/window_undock_focus.png</iconset>
    </property>
    <property name="text">
@@ -1922,7 +1916,7 @@ text-decoration: underline;</string>
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../../../¤Treasure/☆Collection/python_pkg/QDarkStyleSheet-master/qdarkstyle/dark/style.qrc">
+    <iconset>
      <normaloff>:/qss_icons/dark/rc/window_close_focus.png</normaloff>:/qss_icons/dark/rc/window_close_focus.png</iconset>
    </property>
    <property name="text">
@@ -1934,7 +1928,7 @@ text-decoration: underline;</string>
   </action>
   <action name="actionLightStyle">
    <property name="icon">
-    <iconset resource="../../../../¤Treasure/☆Collection/python_pkg/QDarkStyleSheet-master/qdarkstyle/dark/style.qrc">
+    <iconset>
      <normaloff>:/qss_icons/dark/rc/window_grip_focus.png</normaloff>:/qss_icons/dark/rc/window_grip_focus.png</iconset>
    </property>
    <property name="text">
@@ -1985,7 +1979,7 @@ text-decoration: underline;</string>
   </action>
   <action name="actionActionTranspIcon">
    <property name="icon">
-    <iconset resource="../../../../¤Treasure/☆Collection/python_pkg/QDarkStyleSheet-master/qdarkstyle/dark/style.qrc">
+    <iconset>
      <normaloff>:/qss_icons/dark/rc/transparent.png</normaloff>:/qss_icons/dark/rc/transparent.png</iconset>
    </property>
    <property name="text">
@@ -1999,7 +1993,7 @@ text-decoration: underline;</string>
   </action>
  </widget>
  <resources>
-  <include location="../../../../¤Treasure/☆Collection/python_pkg/QDarkStyleSheet-master/qdarkstyle/dark/style.qrc"/>
+  <include location="../style.qrc"/>
  </resources>
  <connections/>
 </ui>

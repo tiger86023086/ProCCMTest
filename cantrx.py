@@ -57,9 +57,10 @@ class cantrx:
                 sys.exit()
             return task
         except:
-            task = self.mybus.send_periodic(mymsg,period,store_task=True)
-            #assert isinstance(task, can.CyclicSendTaskABC)
-            return task
+            pass
+            # task = self.mybus.send_periodic(mymsg,period,store_task=True)
+            # #assert isinstance(task, can.CyclicSendTaskABC)
+            # return task
     def stopsendperiod(self):
         try:
             self.mybus.stop_all_periodic_tasks()
@@ -69,10 +70,13 @@ class cantrx:
     def recvmsg(self):
         try:
             mymsg = self.mybus.recv()
+            print(mymsg)
             if mymsg == None:
                 mymsg = self.mybus.recv(timeout=0.001)
         except:
-            mymsg = self.mybus.recv(timeout=0.01)
+            mymsg=None
+##            mymsg = self.mybus.recv(timeout=0.01)
+            pass
         return mymsg
     
     def clustermsg(self,datadict,cycdict,channel):

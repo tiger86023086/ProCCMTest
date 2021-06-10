@@ -45,17 +45,15 @@ class TxThread(QThread):
       def init(self,
                mycantrx,
                dictACFlg,
-               dictSigVal):            
+               dictSigVal,
+               listmsgbox):            
 
             self.mycantrx = mycantrx
             self.dictACFlg = dictACFlg
-            self.dictSigVal = dictSigVal           
+            self.dictSigVal = dictSigVal
+            self.listmsgbox = listmsgbox           
 
-      def run(self):
-            
-            #print 'bbbb'
-            #while self.working ==True:
-                  
+      def run(self):                  
             reflag=self.CANTxSingel(self.mycantrx,
                                  self.dictACFlg,
                                  self.dictSigVal)
@@ -76,8 +74,7 @@ class TxThread(QThread):
                       dictSigVal):
             
             try:
-                   mylistmsg,mymsgbox = mycantrx.inittxsig(dictACFlg,dictSigVal)
-                   self.msgbox.emit(mymsgbox)
+                   mylistmsg,mymsgbox = mycantrx.inittxsig(dictACFlg,dictSigVal)                   
                   
                   #print('aaaaa')
                    for i in range(5):
@@ -89,5 +86,5 @@ class TxThread(QThread):
             except Exception as e:
                   print(traceback.print_exc())
                   mymsgbox = traceback.print_exc()
-                  self.msgbox.emit(mymsgbox)
+                  self.listmsgbox.append(mymsgbox)
                   return False

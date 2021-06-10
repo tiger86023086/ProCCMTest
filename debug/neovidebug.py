@@ -1,7 +1,10 @@
 import can
 import time
 
-mybus = can.Bus(bustype='neovi', channel=1, bitrate=500000)
+mybus = can.Bus(bustype='neovi', channel=1, bitrate=500000,receive_own_messages=True)
+mylog=can.Logger('test1.blf')
+mynotifier = can.Notifier(mybus,[mylog,can.Printer()])
+
 
 print(mybus)
 mymessage = can.Message(arbitration_id=0x400, is_extended_id=False,
@@ -13,8 +16,8 @@ bb = mybus.send_periodic(mymessage,0.1)
 print(bb)
 time.sleep(10)
 mybus.stop_all_periodic_tasks()
-time.sleep(10)
-
+#time.sleep(10)
+##
 while True:
     for i in range(4):
         msg = mybus.recv(timeout=0.001)
@@ -35,4 +38,6 @@ while True:
 ####
 ######else:
 ######    print(msg)
+#time.sleep(30)
+mynotifier.stop()
 mybus.shutdown()

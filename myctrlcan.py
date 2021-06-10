@@ -33,9 +33,10 @@ from cantrx import cantrx
 from signalbit import canconvert
 
 class myctrlcan:
-    def __init__(self,dbfile,canbox,canchannel):
+    def __init__(self,dbfile,canbox,canchannel,listmsgbox,error):
         self.channel = canchannel
-        self.listmsgbox = list()
+        self.listmsgbox = listmsgbox
+        self.error = error
         self.mapdict = mapread('map.xls',self.listmsgbox)
         if dbfile != '':
               self.mycanconv = canconvert()
@@ -44,6 +45,7 @@ class myctrlcan:
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
         else:
+            self.error = True
             mymsgbox = 'The dbc is none'
             print(mymsgbox)
             self.listmsgbox.append(mymsgbox)
@@ -56,7 +58,8 @@ class myctrlcan:
                 mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
-            except Exception as e:                  
+            except Exception as e:
+              self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
@@ -66,7 +69,8 @@ class myctrlcan:
                 mymsgbox = 'You slecet canbox--kavaser'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
-            except Exception as e:                  
+            except Exception as e:
+              self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
@@ -77,7 +81,8 @@ class myctrlcan:
                     mymsgbox = 'You slecet canbox--PCAN'
                     print(mymsgbox)
                     self.listmsgbox.append(mymsgbox)
-            except Exception as e:                  
+            except Exception as e:
+              self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
@@ -87,11 +92,13 @@ class myctrlcan:
                 mymsgbox = 'You slecet canbox--neoVI'
                 print(mymsgbox)
                 self.listmsgbox.append(mymsgbox)
-            except Exception as e:                  
+            except Exception as e:
+              self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
         else:
+            self.error = True
             mymsgbox = 'You select null canbox!'
             print(mymsgbox)
             self.listmsgbox.append(mymsgbox)
@@ -126,13 +133,12 @@ class myctrlcan:
 
         mymsgbox = 'Master send messages'
         print(mymsgbox)
-        self.listmsgbox.append(mymsgbox)
+        #self.listmsgbox.append(mymsgbox)
 
         return mylistmsg,self.listmsgbox
     def initrxsig(self,dictACFlg):
         mysiglist = list()
         iterdictac = iter(dictACFlg)
-
         while True:
               try:
                     dictkey = next(iterdictac)
@@ -145,12 +151,10 @@ class myctrlcan:
 
         mymsgbox = 'Master recieve messages '
         print(mymsgbox)
-        self.listmsgbox.append(mymsgbox)
+        #self.listmsgbox.append(mymsgbox)
         return mysiglist,self.listmsgbox
 
-    def mymsgtxperiod(self,mylistmsg):
-        
-        
+    def mymsgtxperiod(self,mylistmsg):        
         for msg in mylistmsg:
             mymsg = msg[0]
           #print(type(mymsg))
@@ -177,22 +181,24 @@ class myctrlcan:
         mysigdict = dict()
         mylistid = self.mycanconv.idserach(mysiglist)
         #print(mylistid)
-
         for i in range(len(mylistid)):
-
-            while True:
+            while True:                               
                 try:
                     canrecvmsg = self.mycantrx.recvmsg()
-                    # print(canrecvmsg.arbitration_id)
-                    # print(mylistid[i])
-                    if canrecvmsg.arbitration_id == mylistid[i] :
-                        dicttemp = self.mycanconv.decodemsg(canrecvmsg.arbitration_id,
-                                                canrecvmsg.data)
-                        mysigdict.update(dicttemp)
-                        break
-                except:
-                    pass
-                #print('qqqq')
+                    print(canrecvmsg)
+                    #print(mylistid[i])
+                    if canrecvmsg != None:
+                        if canrecvmsg.arbitration_id == mylistid[i] :
+                            dicttemp = self.mycanconv.decodemsg(canrecvmsg.arbitration_id,
+                                                    canrecvmsg.data)
+                            mysigdict.update(dicttemp)
+                            break
+                except Exception as e:
+                    mymsgbox = traceback.print_exc()
+                    print(mymsgbox)
+                    time.sleep(0.01)
+                    #self.listmsgbox.append('waitting receive rxmessage')  
+                    
             #time.sleep(0.5)
         return mysigdict
     def mydelcan(self):
