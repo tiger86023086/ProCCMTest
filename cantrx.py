@@ -72,11 +72,11 @@ class cantrx:
             mymsg = self.mybus.recv()
             print(mymsg)
             if mymsg == None:
-                mymsg = self.mybus.recv(timeout=0.001)
-        except:
-            mymsg=None
-##            mymsg = self.mybus.recv(timeout=0.01)
-            pass
+                mymsg = self.mybus.recv(timeout=0.01)
+        except TypeError:
+            #mymsg=None
+            mymsg = self.mybus.recv(timeout=0.001)      
+            
         return mymsg
     
     def clustermsg(self,datadict,cycdict,channel):
@@ -133,6 +133,7 @@ if __name__=='__main__':
             print(canrecvmsg.arbitration_id)
         except:
             pass
+            
 
     mycantrx.delcan()
 

@@ -185,7 +185,7 @@ class myctrlcan:
             while True:                               
                 try:
                     canrecvmsg = self.mycantrx.recvmsg()
-                    print(canrecvmsg)
+                    #print(canrecvmsg)
                     #print(mylistid[i])
                     if canrecvmsg != None:
                         if canrecvmsg.arbitration_id == mylistid[i] :
@@ -206,8 +206,11 @@ class myctrlcan:
 
 if __name__ == "__main__":
     import time
-    canbox = 'canalystii'
-    dbfile = 'E:\\Project\\ProCCMTest\\ProCCMTest\\DBC\\MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc'
+    canbox = 'neovi'
+    dbfile = 'E:\\Project\\ProCCMTest\\ProCCMTest\\code\\DBC\\6.0\\MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc'
+    channel = 1
+    listmsgbox = list()
+    myerror = False
     flgacrun=1
     flagrun =None
     objectcantrx = None
@@ -231,7 +234,7 @@ if __name__ == "__main__":
                  'ptcpwr':0,
                  'comppwr':0}
 
-    mycan = myctrlcan(dbfile,canbox)
+    mycan = myctrlcan(dbfile,canbox,channel,listmsgbox,myerror)
     mylistmsg,msgbox = mycan.inittxsig(dictACFlg,dictSigVal)
     mysiglist,msgbox = mycan.initrxsig(dictACFlg)
     mycan.mymsgtxperiod(mylistmsg)
