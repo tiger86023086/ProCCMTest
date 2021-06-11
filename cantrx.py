@@ -72,7 +72,7 @@ class cantrx:
             mymsg = self.mybus.recv()
             print(mymsg)
             if mymsg == None:
-                mymsg = self.mybus.recv(timeout=0.01)
+                mymsg = self.mybus.recv()
         except TypeError:
             #mymsg=None
             mymsg = self.mybus.recv(timeout=0.001)      

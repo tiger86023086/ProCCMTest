@@ -17,7 +17,7 @@ print(mybus)
 
 #while True:
 for i in range(4):
-    msg = mybus.recv()
+    msg = mybus.recv(timeout=0.001)
     if msg is not None:
         print(msg)
         print(msg.arbitration_id)
