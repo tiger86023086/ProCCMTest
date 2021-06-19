@@ -33,75 +33,146 @@ from cantrx import cantrx
 from signalbit import canconvert
 
 class myctrlcan:
-    def __init__(self,dbfile,canbox,canchannel,listmsgbox,error):
-        self.channel = canchannel
+    def __init__(self,dbfile,canbox,canchannel,listmsgbox,error,mylogger):
+        self.channel = 0
         self.listmsgbox = listmsgbox
         self.error = error
-        self.mapdict = mapread('map.xls',self.listmsgbox)
-        if dbfile != '':
-              self.mycanconv = canconvert()
-              self.mycanconv.initcandb(dbfile)
-              mymsgbox = 'The dbc has been install --'+dbfile
+        self.mylogger = mylogger
+        try:
+            self.mapdict = mapread('map.xls',self.listmsgbox)
+        except Exception as e:
+              self.error = True                  
+              mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
-        else:
-            self.error = True
-            mymsgbox = 'The dbc is none'
-            print(mymsgbox)
-            self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
+        try: 
+            if dbfile != None:
+                self.mycanconv = canconvert()
+                self.mycanconv.initcandb(dbfile)
+                mymsgbox = 'The dbc has been install --'+dbfile
+                print(mymsgbox)
+                self.listmsgbox.append(mymsgbox)
+                self.mylogger.info(mymsgbox)
+            else:
+                self.error = True
+                mymsgbox = 'The dbc is none'
+                print(mymsgbox)
+                self.listmsgbox.append(mymsgbox)
+                self.mylogger.war(mymsgbox)
+        except Exception as e:
+              self.error = True                  
+              mymsgbox = traceback.print_exc()
+              print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
 
         self.mycantrx = cantrx()
                             
         if canbox == 'canalystii':
             try:
-                self.mycantrx.initcan(canbox,canchannel,500000)
-                mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
-                print(mymsgbox)
-                self.listmsgbox.append(mymsgbox)
+                if canchannel != None:
+                    self.channel = eval(canchannel)
+                    print(canchannel)
+                    res = self.mycantrx.initcan(canbox,self.channel,500000)
+                    if res:
+                        mymsgbox = 'You slecet canbox--canalystii(chuangxin)'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)                    
+                    else:
+                        mymsgbox = 'You cannot initialize canalystii(chuangxin)'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)
+                    
             except Exception as e:
               self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
         elif canbox == 'kvaser':
             try:
-                self.mycantrx.initcan(canbox,canchannel,500000)
-                mymsgbox = 'You slecet canbox--kavaser'
-                print(mymsgbox)
-                self.listmsgbox.append(mymsgbox)
+                if canchannel != None:
+                    self.channel = eval(canchannel)
+                    res = self.mycantrx.initcan(canbox,self.channel,500000)
+                    if res:
+                        mymsgbox = 'You slecet canbox--kavaser'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)                    
+                    else:
+                        mymsgbox = 'You cannot initialize kavaser'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)
+                    
             except Exception as e:
               self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
         elif canbox == 'pcan':
             try:
-                if canchannel ==0:
-                    self.mycantrx.initcan(canbox,'PCAN_USBBUS1',500000)
-                    mymsgbox = 'You slecet canbox--PCAN'
-                    print(mymsgbox)
-                    self.listmsgbox.append(mymsgbox)
+                if canchannel != None:
+                    res = self.mycantrx.initcan(canbox,canchannel,500000)
+                    if res:
+                        mymsgbox = 'You slecet canbox--PCAN'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)                        
+                    else:
+                        mymsgbox = 'You cannot initialize kavaser'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)
+                    if canchannel == 'PCANUSB1':
+                        self.channel = 0
+                    elif canchannel == 'PCANUSB2':
+                        self.channel = 1
+                    elif canchannel == 'PCANUSB3':
+                        self.channel = 2
+                    elif canchannel == 'PCANUSB4':
+                        self.channel = 3
+                    else:
+                        self.channel = 0
+                    
             except Exception as e:
               self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
         elif canbox == 'neovi':
             try:
-                self.mycantrx.initcan(canbox,canchannel,500000)
-                mymsgbox = 'You slecet canbox--neoVI'
-                print(mymsgbox)
-                self.listmsgbox.append(mymsgbox)
+                if canchannel != None:
+                    self.channel = eval(canchannel)
+                    res = self.mycantrx.initcan(canbox,self.channel,500000)
+                    if res:
+                        mymsgbox = 'You slecet canbox--neoVI'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)                    
+                    else:
+                        mymsgbox = 'You cannot initialize neoVI'
+                        print(mymsgbox)
+                        self.listmsgbox.append(mymsgbox)
+                        self.mylogger.info(mymsgbox)
+                    
             except Exception as e:
               self.error = True                  
               mymsgbox = traceback.print_exc()
               print(mymsgbox)
               self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
         else:
             self.error = True
             mymsgbox = 'You select null canbox!'
             print(mymsgbox)
             self.listmsgbox.append(mymsgbox)
+            self.mylogger.info(mymsgbox)
 
     def inittxsig(self,dictACFlg,dictSigVal):
 
@@ -127,12 +198,20 @@ class myctrlcan:
                     dictsig[CANsigTx] = CANsigTxVal
               except StopIteration:
                     break        
-
-        mysigdata,myid  = self.mycanconv.encodemsg(dictsig)
-        mylistmsg = self.mycantrx.clustermsg(mysigdata,myid,self.channel)
+        try:
+            mysigdata,myid  = self.mycanconv.encodemsg(dictsig)
+            mylistmsg = self.mycantrx.clustermsg(mysigdata,myid,self.channel)
+        except Exception as e:
+              self.error = True                  
+              mymsgbox = traceback.print_exc()
+              print(mymsgbox)
+              self.listmsgbox.append(mymsgbox)
+              self.mylogger.error(mymsgbox)
+        
 
         mymsgbox = 'Master send messages'
         print(mymsgbox)
+        self.mylogger.info(mymsgbox)
         #self.listmsgbox.append(mymsgbox)
 
         return mylistmsg,self.listmsgbox
@@ -151,6 +230,7 @@ class myctrlcan:
 
         mymsgbox = 'Master recieve messages '
         print(mymsgbox)
+        self.mylogger.info(mymsgbox)
         #self.listmsgbox.append(mymsgbox)
         return mysiglist,self.listmsgbox
 
@@ -196,7 +276,8 @@ class myctrlcan:
                 except Exception as e:
                     mymsgbox = traceback.print_exc()
                     print(mymsgbox)
-                    time.sleep(0.01)
+                    self.mylogger.error(mymsgbox)
+                    time.sleep(0.001)
                     #self.listmsgbox.append('waitting receive rxmessage')  
                     
             #time.sleep(0.5)
@@ -206,9 +287,12 @@ class myctrlcan:
 
 if __name__ == "__main__":
     import time
-    canbox = 'neovi'
+    import logging
+    from mylog import Logger
+    mylogger = Logger('mylog.log',logging.ERROR,logging.DEBUG)
+    canbox = 'canalystii'
     dbfile = 'E:\\Project\\ProCCMTest\\ProCCMTest\\code\\DBC\\6.0\\MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc'
-    channel = 1
+    channel = '0'
     listmsgbox = list()
     myerror = False
     flgacrun=1
@@ -234,37 +318,38 @@ if __name__ == "__main__":
                  'ptcpwr':0,
                  'comppwr':0}
 
-    mycan = myctrlcan(dbfile,canbox,channel,listmsgbox,myerror)
+    mycan = myctrlcan(dbfile,canbox,channel,listmsgbox,myerror,mylogger)
     mylistmsg,msgbox = mycan.inittxsig(dictACFlg,dictSigVal)
-    mysiglist,msgbox = mycan.initrxsig(dictACFlg)
+    #mysiglist,msgbox = mycan.initrxsig(dictACFlg)
     mycan.mymsgtxperiod(mylistmsg)
+    time.sleep(10)
 
-    dictACFlg={'flgacon':3,
-                'flgacauto':1,
-                'flgacac':2,
-                'flgacrec':3,
-                'valacbl':7,
-                'flgacdef':3,
-                'flgacmode':7,                            
-                'valacltemp':47.5,
-                 'valacrtemp':47.5,
-                 'flgacdual':3,
-                'valacblT':7,
-                'valacltempT':47.5,
-                'valacrtempT':47.5,
-                'flgbcmon':3}
+    # dictACFlg={'flgacon':3,
+    #             'flgacauto':1,
+    #             'flgacac':2,
+    #             'flgacrec':3,
+    #             'valacbl':7,
+    #             'flgacdef':3,
+    #             'flgacmode':7,                            
+    #             'valacltemp':47.5,
+    #              'valacrtemp':47.5,
+    #              'flgacdual':3,
+    #             'valacblT':7,
+    #             'valacltempT':47.5,
+    #             'valacrtempT':47.5,
+    #             'flgbcmon':3}
 
-    mylistmsg,msgbox= mycan.inittxsig(dictACFlg,dictSigVal)
-    for i in range(5):        
-        mycan.mymsgtx(mylistmsg)
-        time.sleep(0.004)
+    # mylistmsg,msgbox= mycan.inittxsig(dictACFlg,dictSigVal)
+    # for i in range(5):        
+    #     mycan.mymsgtx(mylistmsg)
+    #     time.sleep(0.004)
     
-    print(mysiglist)
-    mysigdict = mycan.mymsgrecv(mysiglist)
-    print('aaaaaaaa')
-    print(mysigdict)
-    print('bbbbbbb')
-    time.sleep(20)
+    # print(mysiglist)
+    # mysigdict = mycan.mymsgrecv(mysiglist)
+    # print('aaaaaaaa')
+    # print(mysigdict)
+    # print('bbbbbbb')
+    # time.sleep(20)
     mycan.mymsgstop()
 
     mycan.mydelcan

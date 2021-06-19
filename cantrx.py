@@ -25,7 +25,10 @@
 import sys
 import can
 import time
-
+import can.interfaces.canalystii
+import can.interfaces.ics_neovi
+import can.interfaces.pcan
+import can.interfaces.kvaser
 class cantrx:
     def initcan(self,bustype,channel,bitrate):
         try:
@@ -33,13 +36,21 @@ class cantrx:
                                  bitrate=bitrate)
             if self.mybus == None:
                 print('Cannot open device!')
+                flginit = False
                 sys.exit()
+                
+            else:
+                flginit = True               
+             
         except:
             self.mybus = can.Bus(bustype=bustype, channel=channel,
                                  bitrate=bitrate)
             if self.mybus == None:
                 print('Cannot open device!')
+                flginit = False
                 sys.exit()
+
+        return flginit
     def sendmsg(self,mymsg):
         try:
             self.mybus.send(mymsg)
@@ -125,29 +136,29 @@ if __name__=='__main__':
     #                                   'IVI_HourSet':12,'ESP_VehicleSpeed':20})
     
     mycantrx = cantrx()
-    mycantrx.initcan('neovi',1,500000)
+    mycantrx.initcan('canalystii',0,500000)
 
-    while True:
-        try:
-            canrecvmsg = mycantrx.recvmsg()
-            print(canrecvmsg.arbitration_id)
-        except:
-            pass
+    # while True:
+    #     try:
+    #         canrecvmsg = mycantrx.recvmsg()
+    #         print(canrecvmsg.arbitration_id)
+    #     except:
+    #         pass
             
 
-    mycantrx.delcan()
+    # mycantrx.delcan()
 
-##    mymessage = can.Message(arbitration_id=0x400, is_extended_id=False,
-##                      data=[2,2,3,4,5,6,7,8],dlc = 8,
-##                      channel = 0)
-##    mymessage1 = can.Message(arbitration_id=0x410, is_extended_id=False,
-##                      data=[1,2,3,4,5,6,7,8],dlc = 8,
-##                      channel = 0)
-##    #mycantrx.sendmsg(mymessage)
-##    aa = mycantrx.sendmsgperiod(mymessage,0.01)
-##    bb = mycantrx.sendmsgperiod(mymessage1,0.1)
-##    print(aa)
-##    print(bb)
+    mymessage = can.Message(arbitration_id=0x400, is_extended_id=False,
+                      data=[2,2,3,4,5,6,7,8],dlc = 8,
+                      channel = 0)
+    mymessage1 = can.Message(arbitration_id=0x410, is_extended_id=False,
+                      data=[1,2,3,4,5,6,7,8],dlc = 8,
+                      channel = 0)
+    #mycantrx.sendmsg(mymessage)
+    aa = mycantrx.sendmsgperiod(mymessage,0.01)
+    bb = mycantrx.sendmsgperiod(mymessage1,0.1)
+    print(aa)
+    print(bb)
 ##    time.sleep(100)
 #     mylistmsg = mycantrx.clustermsg(mysigdata,myid)
 #     mylistmsg1 = mycantrx.clustermsg(mysigdata1,myid1)
@@ -188,5 +199,5 @@ if __name__=='__main__':
 #         tasks[tkey].stop()
 #         time.sleep(5)
 # ##    mycantrx.stopsendperiod()
-# ##    time.sleep(10)
-#     mycantrx.delcan()
+    time.sleep(10)
+    mycantrx.delcan()

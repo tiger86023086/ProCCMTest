@@ -55,3 +55,10 @@ class Logger:
  
   def cri(self,message):
    self.logger.critical(message)
+
+if __name__ == "__main__":
+    mylogger = Logger('123.log',logging.ERROR,logging.DEBUG)
+    mylogger.error('111111')
+    mylogger.info('222222')
+    mylogger.cri('233333')
+    mylogger.debug('444444')

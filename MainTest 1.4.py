@@ -44,7 +44,8 @@ import dbthread
 import ctrlcantrx
 from myctrlcan import myctrlcan
 import traceback
-
+from mylog import Logger
+import logging
 class MainWin(QMainWindow,
            ui_MainWindow.Ui_MainWindow):
       def __init__(self,parent=None):
@@ -54,6 +55,7 @@ class MainWin(QMainWindow,
             self.error=False
 
             self.mycantrx = None
+            self.DBCdirfile =None
 
             self.flagacon = False
             self.flgacauto = False
@@ -79,7 +81,7 @@ class MainWin(QMainWindow,
 
             # self.timertextbrower=QTimer(self)
             # self.timertextbrower.timeout.connect(self.showtimetextbrower)
-
+            self.logger = Logger('mylog.log',logging.ERROR,logging.DEBUG)
             self.setupUi(self)
 
       @Slot()
@@ -113,21 +115,24 @@ class MainWin(QMainWindow,
       @Slot()
       def on_pushButtonACStart_clicked(self):
             try:
-                  if not self.flgacrun:
-                        self.pushButtonACStart.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
-                        self.pushButtonACStop.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")           
-                  
-                        self.flgacrun = 1
+                  if not self.flgacrun:                  
+                                                
                         self.mycantrx = None
                   
                         canbox = self.comboBoxSelectCANbox.currentText()
-                        canchannel = eval(self.comboBoxSelectCANCH.currentText())
+                        canchannel = self.comboBoxSelectCANCH.currentText()
                         dbfile = self.DBCdirfile
-                        self.mycantrx = myctrlcan(dbfile,canbox,canchannel,self.listmsgbox,self.error)                  
-                        mylistmsg,msgbox= self.mycantrx.inittxsig(self.dictACFlg,self.dictSigVal)                  
-                        self.mycantrx.mymsgtxperiod(mylistmsg)
-                        #self.displayinfo(msgbox)
-                        self.timer.start(1)
+                        self.mycantrx = myctrlcan(dbfile,canbox,canchannel,self.listmsgbox,self.error,self.logger)
+                        if self.mycantrx ==None:                                                            
+                              self.textBrowserMain.append('we cannot initialize the canbox!')
+                              self.logger.error('we cannot initialize the canbox!')
+                        else:
+                              self.pushButtonACStart.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0);border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
+                              self.pushButtonACStop.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")           
+                              mylistmsg,msgbox= self.mycantrx.inittxsig(self.dictACFlg,self.dictSigVal)                  
+                              self.mycantrx.mymsgtxperiod(mylistmsg)
+                              self.flgacrun = 1
+                              self.timer.start(1)
                   else:
                         pass
             except Exception as e:
@@ -158,10 +163,14 @@ class MainWin(QMainWindow,
             self.comboBoxSelectCANCH.clear()
 
             canbox = self.comboBoxSelectCANbox.currentText()
-            if canbox == 'canalystii' or canbox == 'kvaser' or canbox == 'pcan':
-                 self.comboBoxSelectCANCH.addItems([str(0),str(1)])            
+            if canbox == 'canalystii' or canbox == 'kvaser':
+                 self.comboBoxSelectCANCH.addItems([str(0),str(1),str(2),str(3)])
+            elif canbox == 'pcan':
+                  self.comboBoxSelectCANCH.addItems([str('PCAN_USBBUS1'),str('PCAN_USBBUS2'),str('PCAN_USBBUS3'),
+                  str('PCAN_USBBUS4')])
+
             elif canbox == 'neovi':
-                  self.comboBoxSelectCANCH.addItems([str(1),str(2)])
+                  self.comboBoxSelectCANCH.addItems([str(1),str(2),str(3),str(4)])
             else:
                   pass            
       @Slot()
@@ -679,15 +688,14 @@ class MainWin(QMainWindow,
                        self.textBrowserMain.append(prt)
             
       def stoped(self):
-            if self.error:
-                  self.timer.stop()
-                  self.timertextbrower.stop()
-                  self.textBrowserMain.append("There is some error!")            
-                  self.txthread.wait()
-                  self.rxthread.wait()
-                  QMessageBox.critical(self,"错误","严重错误",
+            
+            self.timer.stop()           
+            self.textBrowserMain.append("There is some error!")            
+            self.txthread.wait()
+            self.rxthread.wait()
+            QMessageBox.critical(self,"错误","严重错误",
                                     QMessageBox.Yes | QMessageBox.No ,  QMessageBox.Yes)
-                  self.error = False
+            self.error = False
 
             
 class Matrix(QDialog,
