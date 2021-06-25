@@ -19,7 +19,7 @@ isotp_params = {
    'max_frame_size' : 4095               # Limit the size of receive frame.
 }
 
-mybus = can.Bus(bustype='canalystii', channel=0, bitrate=500000)
+mybus = can.Bus(bustype='neovi', channel=1, bitrate=500000)
 ##mylog=can.Logger('test1.blf')
 ##mynotifier = can.Notifier(mybus,[mylog,can.Printer()])
 ###print(mybus)
@@ -31,7 +31,6 @@ config['data_identifiers'] = {
    0xF180 : udsoncan.AsciiCodec(15)       # Codec that read ASCII string. We must tell the length of the string
    }
 config['use_server_timing'] = False
-config['p2_timeout'] = 5
 
 tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=0x731, rxid=0x739) # Network layer addressing scheme
 stack = isotp.CanStack(bus=mybus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)

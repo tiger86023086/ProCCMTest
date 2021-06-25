@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'E:\Project\ProCCMTest\ProCCMTest\code\UI\MainWindow.ui'
+# Form implementation generated from reading ui file 'E:\Project\ProCCMTest\ProCCMTest\code\UI\MainWindownew.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -548,6 +548,56 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_4, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
+        self.widget = QtWidgets.QWidget(self.tab_3)
+        self.widget.setGeometry(QtCore.QRect(41, 40, 951, 191))
+        self.widget.setObjectName("widget")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.pushButtonTsStart = QtWidgets.QPushButton(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButtonTsStart.sizePolicy().hasHeightForWidth())
+        self.pushButtonTsStart.setSizePolicy(sizePolicy)
+        self.pushButtonTsStart.setMinimumSize(QtCore.QSize(60, 60))
+        self.pushButtonTsStart.setMaximumSize(QtCore.QSize(60, 60))
+        self.pushButtonTsStart.setStyleSheet("border-radius: 20px;  border: 2px groove gray;\n"
+"font: 12pt \"Arial\";\n"
+"border-style: outset;")
+        self.pushButtonTsStart.setObjectName("pushButtonTsStart")
+        self.horizontalLayout_16.addWidget(self.pushButtonTsStart)
+        self.pushButtonTsStop = QtWidgets.QPushButton(self.widget)
+        self.pushButtonTsStop.setMinimumSize(QtCore.QSize(60, 60))
+        self.pushButtonTsStop.setMaximumSize(QtCore.QSize(60, 60))
+        self.pushButtonTsStop.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.pushButtonTsStop.setStyleSheet("border-radius: 20px;  border: 2px groove gray;\n"
+"font: 12pt \"Arial\";\n"
+"border-style: outset;")
+        self.pushButtonTsStop.setObjectName("pushButtonTsStop")
+        self.horizontalLayout_16.addWidget(self.pushButtonTsStop)
+        self.pushButtonTsResult = QtWidgets.QPushButton(self.widget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButtonTsResult.sizePolicy().hasHeightForWidth())
+        self.pushButtonTsResult.setSizePolicy(sizePolicy)
+        self.pushButtonTsResult.setMaximumSize(QtCore.QSize(100, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Agency FB")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonTsResult.setFont(font)
+        self.pushButtonTsResult.setObjectName("pushButtonTsResult")
+        self.horizontalLayout_16.addWidget(self.pushButtonTsResult)
+        self.verticalLayout_6.addLayout(self.horizontalLayout_16)
+        self.progressBarTs = QtWidgets.QProgressBar(self.widget)
+        self.progressBarTs.setProperty("value", 0)
+        self.progressBarTs.setObjectName("progressBarTs")
+        self.verticalLayout_6.addWidget(self.progressBarTs)
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
@@ -755,7 +805,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -841,7 +891,10 @@ class Ui_MainWindow(object):
         self.label_35.setText(_translate("MainWindow", "Reverse"))
         self.lineEdit_15.setText(_translate("MainWindow", "0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Signal"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Signal"))
+        self.pushButtonTsStart.setText(_translate("MainWindow", "Start"))
+        self.pushButtonTsStop.setText(_translate("MainWindow", "Stop"))
+        self.pushButtonTsResult.setText(_translate("MainWindow", "Result"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Test"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("MainWindow", "Page"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("MainWindow", "Page"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), _translate("MainWindow", "Page"))

@@ -1,0 +1,293 @@
+[2021-06-25 14:05:48] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:05:49] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:05:49] [INFO] Master send messages
+[2021-06-25 14:05:54] [INFO] -----------test1------------
+[2021-06-25 14:05:54] [INFO] Master send messages
+[2021-06-25 14:05:54] [INFO] test1 ONOFF test
+[2021-06-25 14:05:59] [INFO] Master recieve messages 
+[2021-06-25 14:06:44] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:06:44] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:06:44] [INFO] Master send messages
+[2021-06-25 14:06:49] [INFO] -----------test1------------
+[2021-06-25 14:06:49] [INFO] Master send messages
+[2021-06-25 14:06:49] [INFO] test1 ONOFF test
+[2021-06-25 14:06:54] [INFO] Master recieve messages 
+[2021-06-25 14:07:34] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 14:07:34] [INFO] Master send messages
+[2021-06-25 14:07:39] [INFO] Master recieve messages 
+[2021-06-25 14:08:24] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 14:08:24] [INFO] ------------test1 over----------------
+[2021-06-25 14:12:27] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:12:28] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:12:28] [INFO] Master send messages
+[2021-06-25 14:12:33] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 14:12:33] [INFO] -----------test1------------
+[2021-06-25 14:12:33] [INFO] Master send messages
+[2021-06-25 14:12:33] [INFO] test1 ONOFF test
+[2021-06-25 14:12:38] [INFO] Master recieve messages 
+[2021-06-25 14:13:18] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 14:13:18] [INFO] Master send messages
+[2021-06-25 14:13:23] [INFO] Master recieve messages 
+[2021-06-25 14:14:08] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 14:14:08] [INFO] ------------test1 over----------------
+[2021-06-25 14:14:08] [INFO] ------------------test2---------------
+[2021-06-25 14:14:08] [INFO] Master send messages
+[2021-06-25 14:14:08] [INFO] test2 AutoONOFF test
+[2021-06-25 14:14:13] [INFO] Master recieve messages 
+[2021-06-25 14:14:58] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:14:58] [INFO] Master send messages
+[2021-06-25 14:15:03] [INFO] Master recieve messages 
+[2021-06-25 14:15:48] [INFO] test2 Fail:CCM_AUTOSts=0
+[2021-06-25 14:15:48] [INFO] -------------------test2 over--------------
+[2021-06-25 14:15:48] [INFO] -----------#############------------
+[2021-06-25 14:31:36] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:31:37] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:31:37] [INFO] Master send messages
+[2021-06-25 14:31:42] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 14:31:42] [INFO] -----------test1------------
+[2021-06-25 14:31:42] [INFO] Master send messages
+[2021-06-25 14:31:42] [INFO] test1 ONOFF test
+[2021-06-25 14:31:47] [INFO] Master recieve messages 
+[2021-06-25 14:32:27] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 14:32:27] [INFO] Master send messages
+[2021-06-25 14:32:32] [INFO] Master recieve messages 
+[2021-06-25 14:33:17] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 14:33:17] [INFO] ------------test1 over----------------
+[2021-06-25 14:33:17] [INFO] ------------------test2---------------
+[2021-06-25 14:33:17] [INFO] Master send messages
+[2021-06-25 14:33:17] [INFO] test2 AutoONOFF test
+[2021-06-25 14:33:22] [INFO] Master recieve messages 
+[2021-06-25 14:34:07] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:34:07] [INFO] Master send messages
+[2021-06-25 14:34:12] [INFO] Master recieve messages 
+[2021-06-25 14:34:57] [INFO] test2 Fail:CCM_AUTOSts=0
+[2021-06-25 14:34:57] [INFO] -------------------test2 over--------------
+[2021-06-25 14:34:57] [INFO] -----------#############------------
+[2021-06-25 14:41:25] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:41:25] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:41:25] [INFO] Master send messages
+[2021-06-25 14:41:30] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 14:41:30] [INFO] -----------test1------------
+[2021-06-25 14:41:30] [INFO] Master send messages
+[2021-06-25 14:41:30] [INFO] test1 ONOFF test
+[2021-06-25 14:41:35] [INFO] Master recieve messages 
+[2021-06-25 14:41:50] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 14:41:50] [INFO] Master send messages
+[2021-06-25 14:41:55] [INFO] Master recieve messages 
+[2021-06-25 14:42:15] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 14:42:15] [INFO] ------------test1 over----------------
+[2021-06-25 14:42:15] [INFO] ------------------test2---------------
+[2021-06-25 14:42:15] [INFO] Master send messages
+[2021-06-25 14:42:15] [INFO] test2 AutoONOFF test
+[2021-06-25 14:42:20] [INFO] Master recieve messages 
+[2021-06-25 14:42:40] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:42:40] [INFO] Master send messages
+[2021-06-25 14:42:45] [INFO] Master recieve messages 
+[2021-06-25 14:43:05] [INFO] test2 Fail:CCM_AUTOSts=0
+[2021-06-25 14:43:05] [INFO] -------------------test2 over--------------
+[2021-06-25 14:43:05] [INFO] -----------#############------------
+[2021-06-25 14:47:05] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:47:05] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:47:05] [INFO] Master send messages
+[2021-06-25 14:47:10] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 14:47:10] [INFO] -----------test1------------
+[2021-06-25 14:47:10] [INFO] Master send messages
+[2021-06-25 14:47:10] [INFO] test1 ONOFF test
+[2021-06-25 14:47:15] [INFO] Master recieve messages 
+[2021-06-25 14:47:20] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 14:47:20] [INFO] Master send messages
+[2021-06-25 14:47:25] [INFO] Master recieve messages 
+[2021-06-25 14:47:35] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 14:47:35] [INFO] ------------test1 over----------------
+[2021-06-25 14:47:35] [INFO] ------------------test2---------------
+[2021-06-25 14:47:35] [INFO] Master send messages
+[2021-06-25 14:47:35] [INFO] test2 AutoONOFF test
+[2021-06-25 14:47:40] [INFO] Master recieve messages 
+[2021-06-25 14:47:50] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:47:50] [INFO] Master send messages
+[2021-06-25 14:47:55] [INFO] Master recieve messages 
+[2021-06-25 14:48:05] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:48:05] [INFO] -------------------test2 over--------------
+[2021-06-25 14:48:05] [INFO] -----------#############------------
+[2021-06-25 14:49:26] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:49:26] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:49:26] [INFO] Master send messages
+[2021-06-25 14:49:31] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 14:49:31] [INFO] -----------test1------------
+[2021-06-25 14:49:31] [INFO] Master send messages
+[2021-06-25 14:49:31] [INFO] test1 ONOFF test
+[2021-06-25 14:49:36] [INFO] Master recieve messages 
+[2021-06-25 14:49:41] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 14:49:41] [INFO] Master send messages
+[2021-06-25 14:49:46] [INFO] Master recieve messages 
+[2021-06-25 14:49:56] [INFO] test1 Fail:CCM_Off=1
+[2021-06-25 14:49:56] [INFO] ------------test1 over----------------
+[2021-06-25 14:49:56] [INFO] ------------------test2---------------
+[2021-06-25 14:49:56] [INFO] Master send messages
+[2021-06-25 14:49:56] [INFO] test2 AutoONOFF test
+[2021-06-25 14:50:01] [INFO] Master recieve messages 
+[2021-06-25 14:50:11] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:50:11] [INFO] Master send messages
+[2021-06-25 14:50:16] [INFO] Master recieve messages 
+[2021-06-25 14:50:26] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 14:50:26] [INFO] -------------------test2 over--------------
+[2021-06-25 14:50:26] [INFO] -----------#############------------
+[2021-06-25 14:59:54] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 14:59:54] [INFO] You slecet canbox--neoVI
+[2021-06-25 14:59:54] [INFO] Master send messages
+[2021-06-25 14:59:59] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 14:59:59] [INFO] -----------test1------------
+[2021-06-25 14:59:59] [INFO] Master send messages
+[2021-06-25 14:59:59] [INFO] test1 ONOFF test
+[2021-06-25 15:00:04] [INFO] Master recieve messages 
+[2021-06-25 15:00:09] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 15:00:09] [INFO] Master send messages
+[2021-06-25 15:00:14] [INFO] Master recieve messages 
+[2021-06-25 15:00:24] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 15:00:24] [INFO] ------------test1 over----------------
+[2021-06-25 15:00:24] [INFO] ------------------test2---------------
+[2021-06-25 15:00:24] [INFO] Master send messages
+[2021-06-25 15:00:24] [INFO] test2 AutoONOFF test
+[2021-06-25 15:00:29] [INFO] Master recieve messages 
+[2021-06-25 15:00:39] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 15:00:39] [INFO] Master send messages
+[2021-06-25 15:00:44] [INFO] Master recieve messages 
+[2021-06-25 15:00:54] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 15:00:54] [INFO] -------------------test2 over--------------
+[2021-06-25 15:00:54] [INFO] -------------test3-----------------
+[2021-06-25 15:00:54] [INFO] Master send messages
+[2021-06-25 15:00:54] [INFO] test3 ACONOFF test
+[2021-06-25 15:00:59] [INFO] Master recieve messages 
+[2021-06-25 15:01:09] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-25 15:01:09] [INFO] Master send messages
+[2021-06-25 15:01:14] [INFO] Master recieve messages 
+[2021-06-25 15:01:24] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-25 15:01:24] [INFO] ---------test3 over--------
+[2021-06-25 15:01:24] [INFO] ------------test4 RECONOFF test---------------
+[2021-06-25 15:01:24] [INFO] test4
+[2021-06-25 15:01:24] [INFO] Master send messages
+[2021-06-25 15:01:25] [INFO] Master recieve messages 
+[2021-06-25 15:01:39] [INFO] test2 Pass:CCM_CycleStatus=0
+[2021-06-25 15:01:39] [INFO] Master send messages
+[2021-06-25 15:01:44] [INFO] Master recieve messages 
+[2021-06-25 15:01:54] [INFO] test4 Pass:CCM_CycleStatus=1
+[2021-06-25 15:04:54] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 15:04:54] [INFO] You slecet canbox--neoVI
+[2021-06-25 15:04:54] [INFO] Master send messages
+[2021-06-25 15:04:59] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 15:04:59] [INFO] -----------test1------------
+[2021-06-25 15:04:59] [INFO] Master send messages
+[2021-06-25 15:04:59] [INFO] test1 ONOFF test
+[2021-06-25 15:05:04] [INFO] Master recieve messages 
+[2021-06-25 15:05:09] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 15:05:09] [INFO] Master send messages
+[2021-06-25 15:05:14] [INFO] Master recieve messages 
+[2021-06-25 15:05:24] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 15:05:24] [INFO] ------------test1 over----------------
+[2021-06-25 15:05:24] [INFO] ------------------test2---------------
+[2021-06-25 15:05:24] [INFO] Master send messages
+[2021-06-25 15:05:24] [INFO] test2 AutoONOFF test
+[2021-06-25 15:05:29] [INFO] Master recieve messages 
+[2021-06-25 15:05:39] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 15:05:39] [INFO] Master send messages
+[2021-06-25 15:05:44] [INFO] Master recieve messages 
+[2021-06-25 15:05:54] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 15:05:54] [INFO] -------------------test2 over--------------
+[2021-06-25 15:05:54] [INFO] -------------test3-----------------
+[2021-06-25 15:05:54] [INFO] Master send messages
+[2021-06-25 15:05:54] [INFO] test3 ACONOFF test
+[2021-06-25 15:05:59] [INFO] Master recieve messages 
+[2021-06-25 15:06:09] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-25 15:06:09] [INFO] Master send messages
+[2021-06-25 15:06:14] [INFO] Master recieve messages 
+[2021-06-25 15:06:24] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-25 15:06:24] [INFO] ---------test3 over--------
+[2021-06-25 15:06:24] [INFO] ------------test4 RECONOFF test---------------
+[2021-06-25 15:06:24] [INFO] test4
+[2021-06-25 15:06:24] [INFO] Master send messages
+[2021-06-25 15:06:25] [INFO] Master recieve messages 
+[2021-06-25 15:06:39] [INFO] test2 Pass:CCM_CycleStatus=0
+[2021-06-25 15:06:39] [INFO] Master send messages
+[2021-06-25 15:06:44] [INFO] Master recieve messages 
+[2021-06-25 15:06:54] [INFO] test4 Pass:CCM_CycleStatus=1
+[2021-06-25 15:06:54] [INFO] ----------------------test4 over-------------------
+[2021-06-25 15:06:54] [INFO] -----------#############------------
+[2021-06-25 15:33:46] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-25 15:33:46] [INFO] You slecet canbox--neoVI
+[2021-06-25 15:33:46] [INFO] Master send messages
+[2021-06-25 15:33:51] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-25 15:33:51] [INFO] -----------test1------------
+[2021-06-25 15:33:51] [INFO] Master send messages
+[2021-06-25 15:33:51] [INFO] test1 ONOFF test
+[2021-06-25 15:33:56] [INFO] Master recieve messages 
+[2021-06-25 15:34:01] [INFO] test1 Pass:CCM_Off=1
+[2021-06-25 15:34:01] [INFO] Master send messages
+[2021-06-25 15:34:06] [INFO] Master recieve messages 
+[2021-06-25 15:34:16] [INFO] test1 Pass:CCM_Off=0
+[2021-06-25 15:34:16] [INFO] ------------test1 over----------------
+[2021-06-25 15:34:16] [INFO] ------------------test2---------------
+[2021-06-25 15:34:16] [INFO] Master send messages
+[2021-06-25 15:34:16] [INFO] test2 AutoONOFF test
+[2021-06-25 15:34:21] [INFO] Master recieve messages 
+[2021-06-25 15:34:31] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 15:34:31] [INFO] Master send messages
+[2021-06-25 15:34:36] [INFO] Master recieve messages 
+[2021-06-25 15:34:46] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-25 15:34:46] [INFO] -------------------test2 over--------------
+[2021-06-25 15:34:46] [INFO] -------------test3-----------------
+[2021-06-25 15:34:46] [INFO] Master send messages
+[2021-06-25 15:34:46] [INFO] test3 ACONOFF test
+[2021-06-25 15:34:51] [INFO] Master recieve messages 
+[2021-06-25 15:35:01] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-25 15:35:01] [INFO] Master send messages
+[2021-06-25 15:35:06] [INFO] Master recieve messages 
+[2021-06-25 15:35:16] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-25 15:35:16] [INFO] ---------test3 over--------
+[2021-06-25 15:35:16] [INFO] ------------test4 RECONOFF test---------------
+[2021-06-25 15:35:16] [INFO] test4
+[2021-06-25 15:35:16] [INFO] Master send messages
+[2021-06-25 15:35:17] [INFO] Master recieve messages 
+[2021-06-25 15:35:31] [INFO] test2 Pass:CCM_CycleStatus=0
+[2021-06-25 15:35:31] [INFO] Master send messages
+[2021-06-25 15:35:36] [INFO] Master recieve messages 
+[2021-06-25 15:35:46] [INFO] test4 Pass:CCM_CycleStatus=1
+[2021-06-25 15:35:46] [INFO] -----------test4 over----------
+[2021-06-25 15:35:46] [INFO] ------------test5 DEFONOFF test---------------
+[2021-06-25 15:35:46] [INFO] test5
+[2021-06-25 15:35:46] [INFO] Master send messages
+[2021-06-25 15:35:47] [INFO] Master recieve messages 
+[2021-06-25 15:36:01] [INFO] test5 Pass:CCM_FrontDefrostSts=0
+[2021-06-25 15:36:01] [INFO] Master send messages
+[2021-06-25 15:36:06] [INFO] Master recieve messages 
+[2021-06-25 15:36:16] [INFO] test5 Pass:CCM_FrontDefrostSts=0
+[2021-06-25 15:36:16] [INFO] -----------test5 over----------
+[2021-06-25 15:36:16] [INFO] ------------test6 Blower Level test---------------
+[2021-06-25 15:36:16] [INFO] test6
+[2021-06-25 15:36:16] [INFO] Master send messages
+[2021-06-25 15:36:17] [INFO] Master recieve messages 
+[2021-06-25 15:36:31] [INFO] test6 Pass:CCM_FanGearDisplay=5
+[2021-06-25 15:36:31] [INFO] Master send messages
+[2021-06-25 15:36:36] [INFO] Master recieve messages 
+[2021-06-25 15:36:46] [INFO] test6 Pass:CCM_FanGearDisplay=1
+[2021-06-25 15:36:46] [INFO] -----------test6 over----------
+[2021-06-25 15:36:46] [INFO] ------------test7 Tempature test---------------
+[2021-06-25 15:36:46] [INFO] test7
+[2021-06-25 15:36:46] [INFO] Master send messages
+[2021-06-25 15:36:51] [INFO] Master send messages
+[2021-06-25 15:36:56] [INFO] Master recieve messages 
+[2021-06-25 15:37:01] [INFO] test7 Pass
+[2021-06-25 15:37:01] [INFO] Master send messages
+[2021-06-25 15:37:06] [INFO] Master recieve messages 
+[2021-06-25 15:37:16] [INFO] test7
+[2021-06-25 15:37:16] [INFO] Master send messages
+[2021-06-25 15:37:16] [INFO] -----------test7 over----------
+[2021-06-25 15:37:16] [INFO] ------------test8 SYNONOFF test---------------
+[2021-06-25 15:37:16] [INFO] test8
+[2021-06-25 15:37:16] [INFO] Master send messages
+[2021-06-25 15:37:17] [INFO] Master recieve messages 
+[2021-06-25 15:37:31] [INFO] test8 Fail:CCM_SYNCSts=1
+[2021-06-25 15:37:31] [INFO] Master send messages
+[2021-06-25 15:37:36] [INFO] Master recieve messages 
+[2021-06-25 15:37:46] [INFO] test8 Pass:CCM_SYNCSts=1
+[2021-06-25 15:37:46] [INFO] -----------test8 over----------
+[2021-06-25 15:37:46] [INFO] -----------#############------------

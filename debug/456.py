@@ -27,8 +27,9 @@ while True:
                 print('yes1')
             if msg.arbitration_id == 837:
                 print('yes2')
-            if msg.arbitration_id == 0x340:
+            if msg.arbitration_id == 0x100:
                 print('yes3')
+                
 
 
 
