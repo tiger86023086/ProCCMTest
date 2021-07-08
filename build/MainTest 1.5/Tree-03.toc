@@ -1,5 +1,0 @@
-('d:\\python37\\lib\\site-packages\\mypy_extensions-0.4.1-py3.7.egg',
- None,
- {'*.cp37-win_amd64.pyd', 'EGG-INFO', '*.pyw', '*.pyc', '*.pyd', '*.py'},
- 'DATA',
- [])
