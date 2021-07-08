@@ -80,16 +80,24 @@ class TestSqe():
         self.mycantrx.mymsgtxperiod(mylistmsg)
         time.sleep(5)        
 
-      def test(self):
+      def test(self,progressVal):
           self.mylogger.info('-----------$$$$$$$$$$$------------')
           self.test1()
+          progressVal[0] = 12.5
           self.test2()
+          progressVal[0] = progressVal+12.5
           self.test3()
+          progressVal[0] = progressVal+12.5
           self.test4()
+          progressVal[0] = progressVal+12.5
           self.test5()
+          progressVal[0] = progressVal+12.5
           self.test6()
+          progressVal[0] = progressVal+12.5
           self.test7()
+          progressVal[0] = progressVal+12.5
           self.test8()
+          progressVal[0] = progressVal+12.5
           self.mylogger.info('-----------#############------------')
           self.mycantrx.mymsgstop()
           self.mycantrx.mydelcan()

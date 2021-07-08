@@ -43,7 +43,8 @@ class TestThread(QThread):
                      flgacrun,
                      dictACFlg,
                      dictSigVal,
-                     listmsgbox):            
+                     listmsgbox,
+                     progressVal):            
 
             self.canbox = canbox
             self.canchannel = canchannel
@@ -53,6 +54,7 @@ class TestThread(QThread):
             self.dictACFlg = dictACFlg
             self.dictSigVal = dictSigVal
             self.listmesgbox = listmsgbox
+            self.progressVal = progressVal
             
       def run(self):                 
             reflag=self.testexc(self.canbox,
@@ -61,7 +63,8 @@ class TestThread(QThread):
                                  self.dictACFlg,
                                  self.dictSigVal,
                                  self.listmesgbox,
-                                 self.error)               
+                                 self.error,
+                                 self.progressVal)               
             if reflag == True:                                    
                   self.wait()                  
             else:
@@ -73,11 +76,12 @@ class TestThread(QThread):
                    dictACFlg,
                    dictSigVal,
                    listmsgbox,
-                   error):
+                   error,
+                   progressVal):
             try:
                   mytest = TestSqe()
                   mytest.caninit(dbfile,canbox,canchannel,listmsgbox,error)
-                  res=mytest.test()                  
+                  res=mytest.test(progressVal)                  
                   self.result.emit(res)
                  
                   return True

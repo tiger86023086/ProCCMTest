@@ -54,6 +54,7 @@ class MainWin(QMainWindow,
 
             self.listmsgbox=list()
             self.error=False
+            self.progressVal = list()
 
             self.mycantrx = None
             self.DBCdirfile =None
@@ -83,8 +84,9 @@ class MainWin(QMainWindow,
             self.timer=QTimer(self)
             self.timer.timeout.connect(self.showtime)
 
-            # self.timertextbrower=QTimer(self)
-            # self.timertextbrower.timeout.connect(self.showtimetextbrower)
+            self.timertest=QTimer(self)
+            self.timertest.timeout.connect(self.showtimetest)
+
             self.logger = Logger('mylog.log',logging.ERROR,logging.DEBUG)
             self.setupUi(self)
 
@@ -715,8 +717,10 @@ class MainWin(QMainWindow,
                                         self.flgacrun,
                                         self.dictACFlg,
                                         self.dictSigVal,
-                                        self.listmsgbox)
+                                        self.listmsgbox,
+                                        self.progressVal)
                   self.tsthread.start()
+                  self.timertest.start(5)
                   self.flgtsrun = 1
       def on_pushButtonTsStop_clicked(self):
           if self.flgacrun:
@@ -724,13 +728,17 @@ class MainWin(QMainWindow,
                   self.pushButtonTsStart.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
                   self.initsigval()
                   self.initacsig()
+                  self.timertest.stop()
       def tsresult(self,myresult):
+          self.timertest.stop()
           if myresult:
               self.pushButtonTsResult.setStyleSheet("QPushButton{background-color: rgb(0, 255, 0)}")
           else:
               self.pushButtonTsResult.setStyleSheet("QPushButton{background-color: rgb(255, 0, 0)}")
           self.pushButtonTsStart.setStyleSheet("QPushButton{border-radius: 20px;  border: 2px groove gray;font: 12pt 'Arial'}")
-                      
+
+      def showtimetest(self):
+            self.progressBarTs.setValue(self.progressVal[0])                
 class Matrix(QDialog,
        ui_Matrix.Ui_MatrixDlg):
      def __init__(self,parent=None):

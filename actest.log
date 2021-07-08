@@ -291,3 +291,84 @@
 [2021-06-25 15:37:46] [INFO] test8 Pass:CCM_SYNCSts=1
 [2021-06-25 15:37:46] [INFO] -----------test8 over----------
 [2021-06-25 15:37:46] [INFO] -----------#############------------
+[2021-06-28 16:47:18] [INFO] The dbc has been install --E:/Project/ProCCMTest/ProCCMTest/code/DBC/6.0/MAS891A_VehicleBody_Matrix_V6.0_for_B5_R0.5.0 - CCM.dbc
+[2021-06-28 16:47:41] [INFO] You slecet canbox--neoVI
+[2021-06-28 16:47:41] [INFO] Master send messages
+[2021-06-28 16:47:46] [INFO] -----------$$$$$$$$$$$------------
+[2021-06-28 16:47:46] [INFO] -----------test1------------
+[2021-06-28 16:47:46] [INFO] Master send messages
+[2021-06-28 16:47:46] [INFO] test1 ONOFF test
+[2021-06-28 16:47:51] [INFO] Master recieve messages 
+[2021-06-28 16:47:56] [INFO] test1 Pass:CCM_Off=1
+[2021-06-28 16:47:56] [INFO] Master send messages
+[2021-06-28 16:48:01] [INFO] Master recieve messages 
+[2021-06-28 16:48:11] [INFO] test1 Pass:CCM_Off=0
+[2021-06-28 16:48:11] [INFO] ------------test1 over----------------
+[2021-06-28 16:48:11] [INFO] ------------------test2---------------
+[2021-06-28 16:48:11] [INFO] Master send messages
+[2021-06-28 16:48:11] [INFO] test2 AutoONOFF test
+[2021-06-28 16:48:16] [INFO] Master recieve messages 
+[2021-06-28 16:48:26] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-28 16:48:26] [INFO] Master send messages
+[2021-06-28 16:48:31] [INFO] Master recieve messages 
+[2021-06-28 16:48:41] [INFO] test2 Pass:CCM_AUTOSts=1
+[2021-06-28 16:48:41] [INFO] -------------------test2 over--------------
+[2021-06-28 16:48:41] [INFO] -------------test3-----------------
+[2021-06-28 16:48:41] [INFO] Master send messages
+[2021-06-28 16:48:41] [INFO] test3 ACONOFF test
+[2021-06-28 16:48:46] [INFO] Master recieve messages 
+[2021-06-28 16:48:56] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-28 16:48:56] [INFO] Master send messages
+[2021-06-28 16:49:01] [INFO] Master recieve messages 
+[2021-06-28 16:49:11] [INFO] test3 Pass:CCM_ACSts=1
+[2021-06-28 16:49:11] [INFO] ---------test3 over--------
+[2021-06-28 16:49:11] [INFO] ------------test4 RECONOFF test---------------
+[2021-06-28 16:49:11] [INFO] test4
+[2021-06-28 16:49:11] [INFO] Master send messages
+[2021-06-28 16:49:12] [INFO] Master recieve messages 
+[2021-06-28 16:49:26] [INFO] test2 Pass:CCM_CycleStatus=0
+[2021-06-28 16:49:26] [INFO] Master send messages
+[2021-06-28 16:49:31] [INFO] Master recieve messages 
+[2021-06-28 16:49:41] [INFO] test4 Pass:CCM_CycleStatus=1
+[2021-06-28 16:49:41] [INFO] -----------test4 over----------
+[2021-06-28 16:49:41] [INFO] ------------test5 DEFONOFF test---------------
+[2021-06-28 16:49:41] [INFO] test5
+[2021-06-28 16:49:41] [INFO] Master send messages
+[2021-06-28 16:49:42] [INFO] Master recieve messages 
+[2021-06-28 16:49:56] [INFO] test5 Pass:CCM_FrontDefrostSts=0
+[2021-06-28 16:49:56] [INFO] Master send messages
+[2021-06-28 16:50:01] [INFO] Master recieve messages 
+[2021-06-28 16:50:11] [INFO] test5 Pass:CCM_FrontDefrostSts=0
+[2021-06-28 16:50:11] [INFO] -----------test5 over----------
+[2021-06-28 16:50:11] [INFO] ------------test6 Blower Level test---------------
+[2021-06-28 16:50:11] [INFO] test6
+[2021-06-28 16:50:11] [INFO] Master send messages
+[2021-06-28 16:50:12] [INFO] Master recieve messages 
+[2021-06-28 16:50:26] [INFO] test6 Pass:CCM_FanGearDisplay=5
+[2021-06-28 16:50:26] [INFO] Master send messages
+[2021-06-28 16:50:31] [INFO] Master recieve messages 
+[2021-06-28 16:50:41] [INFO] test6 Pass:CCM_FanGearDisplay=1
+[2021-06-28 16:50:41] [INFO] -----------test6 over----------
+[2021-06-28 16:50:41] [INFO] ------------test7 Tempature test---------------
+[2021-06-28 16:50:41] [INFO] test7
+[2021-06-28 16:50:41] [INFO] Master send messages
+[2021-06-28 16:50:46] [INFO] Master send messages
+[2021-06-28 16:50:51] [INFO] Master recieve messages 
+[2021-06-28 16:50:56] [INFO] test7 Pass
+[2021-06-28 16:50:56] [INFO] Master send messages
+[2021-06-28 16:51:01] [INFO] Master recieve messages 
+[2021-06-28 16:51:11] [INFO] test7 pass
+[2021-06-28 16:51:11] [INFO] Master send messages
+[2021-06-28 16:51:11] [INFO] -----------test7 over----------
+[2021-06-28 16:51:11] [INFO] ------------test8 SYNONOFF test---------------
+[2021-06-28 16:51:11] [INFO] test8
+[2021-06-28 16:51:11] [INFO] Master send messages
+[2021-06-28 16:51:16] [INFO] Master send messages
+[2021-06-28 16:51:17] [INFO] Master recieve messages 
+[2021-06-28 16:51:26] [INFO] test8 Fail:CCM_SYNCSts=1
+[2021-06-28 16:51:26] [INFO] Master send messages
+[2021-06-28 16:51:31] [INFO] Master recieve messages 
+[2021-06-28 16:51:41] [INFO] test8 Pass:CCM_SYNCSts=1
+[2021-06-28 16:51:41] [INFO] Master send messages
+[2021-06-28 16:51:46] [INFO] -----------test8 over----------
+[2021-06-28 16:51:46] [INFO] -----------#############------------
